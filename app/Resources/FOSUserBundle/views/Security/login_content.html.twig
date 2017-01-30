@@ -1,0 +1,70 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% if error %}
+	<div class="alert alert-warning alert-dismissible" role="alert">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<strong>Atenci&oacute;n!</strong> {{ error.messageKey|trans(error.messageData, 'security') }}
+	</div>
+{% endif %}
+
+<form action="{{ path("fos_user_security_check") }}" method="post" class="form-horizontal form-login form-signin" role="form">
+	<fieldset>
+	
+	    {% if csrf_token %}
+	        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+	    {% endif %}
+	    
+    	<!-- Username -->
+		<div class="form-group" style="margin-bottom:0;">
+			<label class="col-xs-2 control-label ico-label" for="Usuario" style="padding-top: 0;">
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-circle fa-stack-2x"></i>
+					<i class="fa fa-user fa-stack-1x fa-inverse"></i>
+				</span>
+			</label>
+			<div class="col-xs-10">
+				<input id="username" name="_username" value="{{ last_username }}" placeholder="Email" class="form-control input-md" required="required" type="text" value="">
+			</div>
+		</div>
+
+		<!-- Password -->
+		<div class="form-group">
+			<label class="col-xs-2 control-label ico-label" for="Password" style="padding-top: 0;">
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-circle fa-stack-2x"></i>
+					<i class="fa fa-unlock-alt fa-stack-1x fa-inverse"></i>
+				</span>
+			</label>
+			<div class="col-xs-10">
+				<input id="password" name="_password" placeholder="Password" class="form-control input-md" required="" type="password">
+			</div>
+		</div>	
+
+		<!-- Remember me -->
+		<div class="form-group">
+			<label class="col-xs-2 control-label" style="padding-top: 0;"></label>		
+			<div class="col-xs-10">
+				<input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+	    		<label for="remember_me">Recordar me</label>
+			</div>		
+		</div>	
+		
+		<!-- Button enter -->
+		<div class="form-group">
+			<div class="col-md-12">
+				<button type="submit" class="btn btn-lg btn-sample btn-block">Entrar</button>
+			</div>
+		</div>
+		
+		<!-- forgot password y registration -->
+		<div class="form-group">
+            <div class="col-md-6">
+                <a href="resetting/request" class="btn-register btn btn-default btn-block">&iquest;Olvid&oacute; su contrase&ntilde;a?</a>
+            </div>
+			<div class="col-md-6">
+				<a href="register" class="btn-register btn btn-default btn-block">Registrarse</a>
+			</div>
+		</div>
+	
+	</fieldset>
+</form>

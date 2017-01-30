@@ -1,0 +1,33 @@
+<form name="webForm" method="post" class="form-horizontal" id="webForm">
+	<!-- Checkboxes -->
+	<div class="form-block radios-block">
+		<p class="tittle-form">{{ titulos.webinar | raw }}</p>
+		
+		{% for var in webinar %}
+			<div class="form-group">
+				<div class="col-xs-12">
+					<label class="radio-inline" for="web_{{ loop.index0}}">
+						<input type="radio" id="web_{{ loop.index0}}" name="webFormRadio" required="required" value="{{ var }}">					
+						<label for="web_{{ loop.index0}}">&nbsp;</label>
+						<span class="control-label bold">{{ var }}</span>
+					</label>						
+				</div>
+			</div>
+		{% endfor %}
+					
+	</div>
+
+	<!-- BUTTON -->
+	<div class="form-block button-block">
+		<!-- Button (Double) -->
+		<div class="form-group" style="margin-bottom:0;">
+			<div class="col-xs-12 col-md-8 show-grid">
+				<button type="submit" id="button1id" name="button1id" class="col-xs-12 col-sm-12 btn btn-success btn-lg">Listo!</button>												
+			</div>
+			<div class="col-xs-12 col-md-4">
+				<button type="reset" id="button2id" name="button2id" class="col-xs-12 col-sm-12 btn btn-danger" style="margin-top: 6px;">Borrar formulario</button>
+			</div>
+		</div>
+	</div>
+</form>																
+

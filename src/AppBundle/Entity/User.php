@@ -55,20 +55,44 @@ class User extends BaseUser
 	private $apellido;
 	
 	/**
-	 * @var string
-	 * @ORM\Column(type="string")
+	 * @ORM\Column(type="string", length=255)
+	 *
+	 * @Assert\NotBlank(message="Please enter your name.", groups={"Registration", "Profile"})
+	 * @Assert\Length(
+	 *     min=3,
+	 *     max=255,
+	 *     minMessage="The name is too short.",
+	 *     maxMessage="The name is too long.",
+	 *     groups={"Registration", "Profile"}
+	 * )
 	 */
-	private $dni;
+	private $zona;
 
 	/**
-	 * @var string
-	 * @ORM\Column(type="string")
+	 * @ORM\Column(type="string", length=255)
+	 *
+	 * @Assert\NotBlank(message="Please enter your name.", groups={"Registration", "Profile"})
+	 * @Assert\Length(
+	 *     min=3,
+	 *     max=255,
+	 *     minMessage="The name is too short.",
+	 *     maxMessage="The name is too long.",
+	 *     groups={"Registration", "Profile"}
+	 * )
 	 */
-	private $telefono;
+	private $hospital;
 	
 	/**
-	 * @var string
-	 * @ORM\Column(type="string")
+	 * @ORM\Column(type="string", length=255)
+	 *
+	 * @Assert\NotBlank(message="Please enter your name.", groups={"Registration", "Profile"})
+	 * @Assert\Length(
+	 *     min=3,
+	 *     max=255,
+	 *     minMessage="The name is too short.",
+	 *     maxMessage="The name is too long.",
+	 *     groups={"Registration", "Profile"}
+	 * )
 	 */
 	private $codigo;
 
@@ -94,54 +118,6 @@ class User extends BaseUser
     public function getApellido()
     {
         return $this->apellido;
-    }
-
-    /**
-     * Set dni
-     *
-     * @param string $dni
-     *
-     * @return User
-     */
-    public function setDni($dni)
-    {
-        $this->dni = $dni;
-
-        return $this;
-    }
-
-    /**
-     * Get dni
-     *
-     * @return string
-     */
-    public function getDni()
-    {
-        return $this->dni;
-    }
-
-    /**
-     * Set telefono
-     *
-     * @param string $telefono
-     *
-     * @return User
-     */
-    public function setTelefono($telefono)
-    {
-        $this->telefono = $telefono;
-
-        return $this;
-    }
-
-    /**
-     * Get telefono
-     *
-     * @return string
-     */
-    public function getTelefono()
-    {
-        return $this->telefono;
     }
 
     /**
@@ -190,5 +166,53 @@ class User extends BaseUser
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set zona
+     *
+     * @param string $zona
+     *
+     * @return User
+     */
+    public function setZona($zona)
+    {
+        $this->zona = $zona;
+
+        return $this;
+    }
+
+    /**
+     * Get zona
+     *
+     * @return string
+     */
+    public function getZona()
+    {
+        return $this->zona;
+    }
+
+    /**
+     * Set hospital
+     *
+     * @param string $hospital
+     *
+     * @return User
+     */
+    public function setHospital($hospital)
+    {
+        $this->hospital = $hospital;
+
+        return $this;
+    }
+
+    /**
+     * Get hospital
+     *
+     * @return string
+     */
+    public function getHospital()
+    {
+        return $this->hospital;
     }
 }

@@ -1,0 +1,48 @@
+{{ form_start(cuestForm, {'attr': {'class': 'form-horizontal', 'id': 'cuestForm'}}) }}
+{{ form_errors(cuestForm) }}
+																	
+<!-- Pregunta1 -->
+<div class="form-block">
+	<p class="tittle-form"><span class="label simplicity">2</span>{{ titulos.p1 | raw }}</p>				
+	<div class="form-group">
+		<div class="col-xs-12">
+			{% for var in cuestForm.p1 %}
+				<label class="radio-inline" for="form_p1_{{ loop.index0}}">
+					{{ form_widget(var) }}
+					<label for="form_p1_{{ loop.index0 }}">&nbsp;</label>
+					<span>{{ form_label(var) }}</span>
+				</label>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+<!-- Pregunta2 -->
+<div class="form-block">
+	<p class="tittle-form"><span class="label simplicity">2</span>{{ titulos.p2 | raw }}</p>				
+	<div class="form-group">
+		<div class="col-xs-12">
+			{% for var in cuestForm.p2 %}
+				<label class="radio-inline" for="form_p2_{{ loop.index0}}">
+					{{ form_widget(var) }}
+					<label for="form_p2_{{ loop.index0 }}">&nbsp;</label>
+					<span>{{ form_label(var) }}</span>
+				</label>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+<!-- BUTTON -->
+<div class="form-block button-block">
+	<!-- Button (Double) -->
+	<div class="form-group" style="margin-bottom:0;">
+		<div class="col-xs-12 col-md-8 show-grid">
+			<button type="submit" id="button1id" name="button1id" class="col-xs-12 col-sm-12 btn btn-success btn-lg">Listo!</button>												
+		</div>
+		<div class="col-xs-12 col-md-4">
+			<button type="reset" id="button2id" name="button2id" class="col-xs-12 col-sm-12 btn btn-danger" style="margin-top: 6px;">Borrar formulario</button>
+		</div>
+	</div>
+</div>
+{{ form_end(cuestForm) }}

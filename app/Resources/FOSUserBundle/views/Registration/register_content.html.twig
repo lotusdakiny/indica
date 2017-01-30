@@ -1,0 +1,96 @@
+
+{% trans_default_domain 'FOSUserBundle' %}
+{{form_start(form, {'method': 'POST', 'attr':{'class': 'register form-horizontal'}})}}
+
+	<!-- Nombre -->
+	<div class="form-group">
+	    <label class="col-md-4 control-label" for="textinput">Nombre</label>
+	    <div class="col-md-8">
+	    	{{ form_widget(form.name, {'attr': {'class': 'form-control input-md'}}) }}
+	    	{{ form_errors(form.name, {'attr': {'class': 'form-error'}}) }}
+	    </div>
+	</div>
+	
+	<!-- Apellido -->
+	<div class="form-group">
+	    <label class="col-md-4 control-label" for="textinput">Apellido</label>
+	    <div class="col-md-8">
+	    	{{ form_widget(form.apellido, {'attr': {'class': 'form-control input-md'}}) }}
+	    	{{ form_errors(form.apellido) }}
+	    </div>
+	</div>	
+	
+	<!-- Username -->
+	<div class="form-group">
+	    <label class="col-md-4 control-label" for="textinput">Username</label>
+	    <div class="col-md-8">
+	    	{{ form_widget(form.username, {'attr': {'class': 'form-control input-md'}}) }}
+	    	{{ form_errors(form.username) }}
+	    </div>
+	</div>	
+	
+	<!-- Email -->
+	<div class="form-group">
+	    <label class="col-md-4 control-label" for="textinput">Email</label>
+	    <div class="col-md-8">
+	    	{{ form_widget(form.email, {'attr': {'class': 'form-control input-md'}}) }}
+	    	{{ form_errors(form.email) }}
+	    </div>
+	</div>		
+
+	<!-- Zona -->
+	<div class="form-group">
+	    <label class="col-md-4 control-label" for="textinput">Zona</label>
+	    <div class="col-md-8">
+	    	{{ form_widget(form.zona, {'attr': {'class': 'form-control input-md'}}) }}
+	    	{{ form_errors(form.zona) }}
+	    </div>
+	</div>	
+	
+	<!-- Hospital -->
+	<div class="form-group">
+	    <label class="col-md-4 control-label" for="textinput">Hospital</label>
+	    <div class="col-md-8">
+	    	{{ form_widget(form.hospital, {'attr': {'class': 'form-control input-md'}}) }}
+	    	{{ form_errors(form.hospital) }}
+	    </div>
+	</div>
+	
+	<!-- Codigo -->
+	<div class="form-group">
+	    <label class="col-md-4 control-label" for="textinput">Codigo del delegado</label>
+	    <div class="col-md-8">
+	    	{{ form_widget(form.codigo, {'attr': {'class': 'form-control input-md'}}) }}
+	    	{{ form_errors(form.codigo) }}
+	    </div>
+	</div>
+					
+	<!-- Password 1 -->
+	<div class="form-group">
+	    <label class="col-md-4 control-label" for="textinput">Contrase&ntilde;a</label>
+	    <div class="col-md-8">
+	    	{{ form_widget(form.plainPassword.first, {'attr': {'class': 'form-control input-md'}}) }}
+	    	{{ form_errors(form.plainPassword.first) }}
+	    </div>
+	</div>		
+	
+	<!-- Password 2 -->
+	<div class="form-group">
+	    <label class="col-md-4 control-label" for="textinput">Repita el contrase&ntilde;a</label>
+	    <div class="col-md-8">
+	    	{{ form_widget(form.plainPassword.second, {'attr': {'class': 'form-control input-md'}}) }}
+	    	{{ form_errors(form.plainPassword.second) }}
+	    </div>
+	</div>		
+	
+    <!-- Button -->
+    <div class="form-group">
+    	<label class="col-md-4 control-label" for="textinput"></label>
+        <div class="col-md-8">
+            <button type="submit" id="button1id" name="button1id" class="btn btn-sample btn-md col-md-12 col-xs-12">
+				REGISTRAR
+			</button>
+        </div>
+    </div>	
+
+{{ form_end(form) }}

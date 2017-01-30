@@ -12,8 +12,8 @@ class RegistrationType extends AbstractType
 	{
 		$builder->add('name');
 		$builder->add('apellido');
-		$builder->add('dni');
-		$builder->add('telefono');
+		$builder->add('zona');
+		$builder->add('hospital');
 		$builder->add('codigo');		
 	}
 
@@ -40,12 +40,12 @@ class RegistrationType extends AbstractType
 		return $this->getBlockPrefix();
 	}
 	
-	public function getDni()
+	public function getZona()
 	{
 		return $this->getBlockPrefix();
 	}
 	
-	public function getTelefono()
+	public function getHospital()
 	{
 		return $this->getBlockPrefix();
 	}
