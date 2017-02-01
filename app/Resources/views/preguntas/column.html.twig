@@ -1,0 +1,23 @@
+	<!-- Pregunta10 -->
+	<div class="form-block radios-block">
+		<p class="tittle-form"><span class="label simplicity">{{ numero }}</span>{{ titulo | raw }}</p>
+		
+		{% set margin = '' %}
+		{% if type == 'checkbox' %}
+			{% set margin = 'mr10' %}
+		{% endif %}
+		
+		{% for var in form %}
+			<div class="form-group">
+				<div class="col-xs-12">
+					<label class="control-label2 no-margin {{ margin }}" for="radios"><span class="badge">{{ form_label(var) }}</span></label>
+					<label class="{{ type }}-inline" for="form_p{{ numero }}_{{ loop.index0 }}">
+						{{ form_widget(var) }}						
+						<label for="form_p{{ numero }}_{{ loop.index0 }}">&nbsp;</label>
+						<span class="control-label bold">{{ var.vars.value }}</span>
+					</label>							
+				</div>
+			</div>
+		{% endfor %}
+					
+	</div>	

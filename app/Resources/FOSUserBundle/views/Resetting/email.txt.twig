@@ -1,0 +1,13 @@
+{% block subject %}
+{% autoescape false %}
+Password Reset Email
+{% endautoescape %}
+{% endblock %}
+{% block body_text %}
+{% autoescape false %}
+You can reset your password by visiting {{ confirmationUrl }}
+{% endautoescape %}
+{% endblock %}
+{% block body_html %}{% endblock %}
+
+

@@ -7,7 +7,7 @@ body{
 	font-family: 'Roboto Condensed', sans-serif;
 }
 .simplicity{
-	background-color: #51788D;
+	background-color: #009ac0;
 }
 .bold{
     font-weight: bold !important;
@@ -17,6 +17,16 @@ body{
 }
 .show-grid{
     margin-bottom: 15px;
+}
+.tittle-section{
+    margin: 0;
+    border-bottom: solid 5px white;
+    padding: 15px;    
+    color: white;
+    background-color: #009ac0;
+}
+.mr10{
+	margin-right: 10px
 }
 /**********************************
 Some Style Overrides on Bootstrap
@@ -163,7 +173,7 @@ Some Style Overrides on Bootstrap
 .page-form .form-block .tittle-form,
 .page-form .form-block .tittle-form-double {
     padding: 10px;
-    background-color: #f7ddbe;
+    background-color: #e6e6e6;
     padding-left: 45px;
 }
 .page-form .form-horizontal .form-group{
@@ -231,11 +241,11 @@ Some Style Overrides on Bootstrap
     /*transition: all .1s ease-in-out;*/
 }
 .page-form .form-horizontal .radio-inline:hover span{
-    color: #5ebe37;
+    color: rgb(202, 62, 80);
 }
 .page-form .form-horizontal input[type=radio]:checked ~ span{
 	font-weight: bold;
-    color: #5ebe37;
+    color: rgb(202, 62, 80);
 }
 .page-form .form-horizontal input[type=radio]:checked + label::before {
     content: "\f192";
@@ -243,7 +253,7 @@ Some Style Overrides on Bootstrap
     /*font-size: 20px;
     top: 6px;
     left: 5px;*/
-    color: #5ebe37;
+    color: rgb(234, 178, 185);
     -webkit-transform: scale3d(1.5, 1.5, 1.5);
     transform: scale3d(1.5, 1.5, 1.5);
 }
@@ -259,7 +269,7 @@ Some Style Overrides on Bootstrap
 .page-form .form-horizontal .button-block .form-group{
     border: none;
     padding: 20px 10px;
-    background-color: #f7ddbe;
+    background-color: #e6e6e6;
 }
 .page-form .form-horizontal.form-resultados .form-group img{
     margin-top: -2px
@@ -375,7 +385,7 @@ margin-bottom:0;
 }
 .form-group .checkbox-inline input[type=checkbox]:checked + label::before{
     content: "\f205";
-    color: #008000;
+    color: #a94442;
 }
 
 .form-group .checkbox-inline > label::before{
@@ -400,7 +410,7 @@ margin-bottom:0;
 .form-group .checkbox-inline input[type=checkbox]:checked + label::before,
 .form-group .checkbox-inline input[type=radio]:checked + label::before{
     content: "\f205";
-    color: #008000;
+    color: #a94442;
 	transform: initial;
 }
 
@@ -424,7 +434,7 @@ margin-bottom:0;
     opacity: .1;
     -webkit-transform: scale3d(1.8, 1.8, 1.8);
     transform: scale3d(1.8, 1.8, 1.8);
-    color: #5ebe37;
+    color: rgb(234, 178, 185);
     }
     50% {
     opacity: 1;
@@ -441,7 +451,7 @@ margin-bottom:0;
     opacity: 1;
     -webkit-transform: scale3d(0.5, 0.5, 0.5);
     transform: scale3d(0.5, 0.5, 0.5);
-    color: #5ebe37;
+    color: rgb(234, 178, 185);
     }
 }
 @keyframes animateSend {

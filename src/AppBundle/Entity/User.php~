@@ -167,4 +167,52 @@ class User extends BaseUser
     {
         return $this->name;
     }
+
+    /**
+     * Set zona
+     *
+     * @param string $zona
+     *
+     * @return User
+     */
+    public function setZona($zona)
+    {
+        $this->zona = $zona;
+
+        return $this;
+    }
+
+    /**
+     * Get zona
+     *
+     * @return string
+     */
+    public function getZona()
+    {
+        return $this->zona;
+    }
+
+    /**
+     * Set hospital
+     *
+     * @param string $hospital
+     *
+     * @return User
+     */
+    public function setHospital($hospital)
+    {
+        $this->hospital = $hospital;
+
+        return $this;
+    }
+
+    /**
+     * Get hospital
+     *
+     * @return string
+     */
+    public function getHospital()
+    {
+        return $this->hospital;
+    }
 }

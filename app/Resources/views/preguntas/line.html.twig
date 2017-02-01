@@ -1,0 +1,13 @@
+<!-- Multiple Radios (inline) -->
+<div class="form-group">
+	<label class="col-md-6 control-label p1-label" for="radios"><span class="badge">{{ letra | capitalize }}</span> {{ titulo | raw }}</label>
+	<div class="col-md-6">
+		{% for var in form %}
+			<label class="radio-inline" for="form_p{{ numero }}{{ letra }}_{{ loop.index0}}">
+				{{ form_widget(var) }}
+				<label for="form_p{{ numero }}{{ letra }}_{{ loop.index0 }}">&nbsp;</label>
+				<span>{{ loop.index }}</span>
+			</label>
+		{% endfor %}
+	</div>
+</div>
