@@ -90,4 +90,4 @@ fos_user:
         email:
             from_email:
                 address:        info@proyectosimplicity.es
-                sender_name:    Demo Resetting                 
+                sender_name:    Demo Resetting                            

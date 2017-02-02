@@ -2,13 +2,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-	<div class="well well-lg">
-		<p class="no-margin">Estimado Experto/a Experto!, si como consecuencia de su pr&aacute;ctica cl&iacute;nica no puede contestar alguna de las preguntas debido a que caen fuera de su competencia profesional, por favor, ind&iacute;quelo seleccionando la opci&oacute;n de "No aplica".</p>
-	</div>						
+						
 	<ul class="nav nav-tabs" id="myTabs" role="tablist">
 		<li role="presentation" class="active"><a href="#cuestionario" id="cuestionario-tab" role="tab" data-toggle="tab" aria-controls="cuestionario" aria-expanded="true"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> CUESTIONARIO </a></li>
-		<li role="presentation"><a href="#webinar" id="webinar-tab" role="tab" data-toggle="tab" data-placement="top" aria-controls="webinar"><i class="fa fa-video-camera" aria-hidden="true"></i> WEBINAR </a></li>
-		<li role="presentation"><a href="#tab3" id="tab3-tab" role="tab" data-toggle="tab" data-placement="top" aria-controls="tab3"><i class="fa fa-video-camera" aria-hidden="true"></i> CUESTIONARIO 2 </a></li>
+		<li role="presentation" class="disabled"><a href="#" id="webinar-tab" role="tab" data-toggle="tab" data-placement="top" aria-controls="webinar"><i class="fa fa-minus-circle" aria-hidden="true"></i> WEBINAR </a></li>
+		<li role="presentation" class="disabled"><a href="#" id="tab3-tab" role="tab" data-toggle="tab" data-placement="top" aria-controls="tab3"><i class="fa fa-minus-circle" aria-hidden="true"></i> CUESTIONARIO 2 </a></li>
 	</ul>
 	<div class="tab-content" id="myTabContent">
 		<div class="tab-pane fade in active" role="tabpanel" id="cuestionario" aria-labelledby="home-tab">
@@ -19,7 +17,7 @@
 				
 			{% else %}
 				
-				<p class="align-center send-ok">El cuestionario ya sido enviado</p>			
+				<p class="align-center send-ok">El cuestionario ya sido enviado, gracias por tu colaboración</p>			
 				
 			{% endif %}
 

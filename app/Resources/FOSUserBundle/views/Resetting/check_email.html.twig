@@ -4,8 +4,8 @@
 
 {% block body %}
 
-<p class="text-center send-ok">
-    For recover password, please check your email. 
+<p class="text-center send-message">
+    {{ 'resetting.check_email'|trans({'%tokenLifetime%': tokenLifetime})|nl2br }}
 </p>
 
 {% endblock %}

@@ -7,7 +7,7 @@ body{
 	font-family: 'Roboto Condensed', sans-serif;
 }
 .simplicity{
-	background-color: #009ac0;
+	background-color: #0088AA;
 }
 .bold{
     font-weight: bold !important;
@@ -23,7 +23,7 @@ body{
     border-bottom: solid 5px white;
     padding: 15px;    
     color: white;
-    background-color: #009ac0;
+    background-color: #0088AA;
 }
 .mr10{
 	margin-right: 10px
@@ -306,8 +306,15 @@ p.tittle-form-double span.label{
     margin: 40px;
     color: #5ebe37;
 }
+
 .send-ok .ok-animate{
     animation: animateSend 1s;
+}
+
+.send-message{
+    font-size: 18px;
+    margin: 40px 0;
+    color: gray;
 }
 
 /*---------------------*/
@@ -315,7 +322,7 @@ p.tittle-form-double span.label{
  /*---------------------*/
 .btn-sample {
   color: #FFFFFF;
-  background-color: #51788D;
+  background-color: #0088AA;
   border-color: #3f657a;
 }
 
@@ -325,7 +332,7 @@ p.tittle-form-double span.label{
 .btn-sample.active,
 .open .dropdown-toggle.btn-sample {
   color: #FFFFFF;
-  background-color: #65899D;
+  background-color: #009AC0;
   border-color: #3f657a;
 }
 
@@ -350,12 +357,12 @@ fieldset[disabled] .btn-sample:active,
 .btn-sample.disabled.active,
 .btn-sample[disabled].active,
 fieldset[disabled] .btn-sample.active {
-  background-color: #51788D;
+  background-color: #0088AA;
   border-color: #3f657a;
 }
 
 .btn-sample .badge {
-  color: #51788D;
+  color: #0088aa;
   background-color: #FFFFFF;
 }
 

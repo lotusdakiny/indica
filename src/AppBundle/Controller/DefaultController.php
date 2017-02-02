@@ -12,6 +12,7 @@ use AppBundle\Entity\Datas;
 use AppBundle\Entity\Webinar;
 use Symfony\Component\DomCrawler\Form;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 
 class DefaultController extends Controller
 {
@@ -37,6 +38,12 @@ class DefaultController extends Controller
 		
 		// create a cuestionario form
 		$cuestForm = $this->createFormBuilder($cuestionario)
+			//datos privados
+			->add('p0a', ChoiceType::class, $datas->getChoices_sexo())
+			->add('p0b', IntegerType::class)
+			->add('p0c', IntegerType::class)
+			->add('p0d', ChoiceType::class, $datas->getChoices_centro())
+			->add('p0e', IntegerType::class)
 			//pregunta1
 		 	->add('p1a', ChoiceType::class, $datas->getChoices_porcentaje())
 		 	->add('p1b', ChoiceType::class, $datas->getChoices_porcentaje())

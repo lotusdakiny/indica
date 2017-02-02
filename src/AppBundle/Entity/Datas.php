@@ -570,6 +570,26 @@ class Datas
 		return $choices;
 	}
 	
+	public function getChoices_sexo()
+	{
+		$choices = array('choices' => array(
+				'V' => 'V',
+				'M' => 'M',
+		), 'multiple'=>false, 'expanded'=>true );
+		return $choices;
+	}
+	
+	public function getChoices_centro()
+	{
+		$choices = array('choices' => array(
+				utf8_encode('Hospital de referencia')=>utf8_encode('Hospital de referencia'),
+				utf8_encode('Hospital regional')=>utf8_encode('Hospital regional'),
+				utf8_encode('Hospital comarcal')=>utf8_encode('Hospital comarcal'),
+				utf8_encode('Centro privado')=>utf8_encode('Centro privado'),
+		), 'multiple'=>false, 'expanded'=>false );
+		return $choices;
+	}
+	
 	public function getNumbers_webinar()
 	{
 		$numbers_webinar = array(
@@ -597,6 +617,12 @@ class Datas
 	public function getTitulos_cuestionario()
 	{
 		$titulos_cuestionario = array(
+				'titulo0'=>utf8_encode('0. DATOS PROFESIONALES'),
+				'p0a'=>utf8_encode('Sexo:'),
+				'p0b'=>utf8_encode('Edad:'),
+				'p0c'=>utf8_encode('Años de ejercicio profesional:'),
+				'p0d'=>utf8_encode('Tipo de centro en el que trabaja:'),
+				'p0e'=>utf8_encode('Número de pacientes atendidos en su consulta un día normal:'),
 				'titulo1'=>utf8_encode('1. EPIDEMIOLOGÍA Y ESTRATIFICACIÓN DE LA INSUFICIENCIA CARDÍACA (IC)'),
 				'p1'=>utf8_encode('¿En qué situación recibe a sus pacientes nuevos con IC? Indique el porcentaje'),
 				'p1a'=>utf8_encode('Como sospecha diagnóstica desde Atención Primaria'),
@@ -659,7 +685,7 @@ class Datas
 				'p24titulo2'=>utf8_encode('Disponibilidad en mi centro'),
 				'p25'=>utf8_encode('¿Qué parámetros de laboratorio solicita Vd. En la valoración inicial de un paciente con IC?:'),
 				'p26'=>utf8_encode('¿A qué pacientes con ICC solicita usted una resonancia magnética cardiaca? (señale todas las que considere adecuadas):'),
-				'p27'=>utf8_encode('¿En qué porcentaje de sus pacientes con IC evalúa usted…?'),
+				'p27'=>utf8_encode('¿En qué porcentaje de sus pacientes con IC evalúa usted?...'),
 				'p27a'=>utf8_encode('Los niveles de ferritina'),
 				'p27b'=>utf8_encode('El grado de depresión'),
 				'p27c'=>utf8_encode('La situación cognitiva'),
@@ -739,7 +765,7 @@ class Datas
 				'p51b'=>utf8_encode('Protocolos de actuación de su centro o área de salud'),
 				'p51c'=>utf8_encode('Exigencias de tratamiento de los pacientes'),
 				'p51d'=>utf8_encode('Experiencia de otros colegas'),
-				'p52'=>utf8_encode('Habitualmente, ¿cuánto tiempo de consulta dedica a un “paciente tipo” con ICC? '),
+				'p52'=>utf8_encode('Habitualmente, ¿cuánto tiempo de consulta dedica a un "paciente tipo" con ICC? (indicar en minutos)'),
 				'p53'=>utf8_encode('¿De qué tipo es la información que da al paciente acerca de la enfermedad  y su alcance?'),
 				'p54'=>utf8_encode('A la hora de tratar a su paciente, ¿en qué medida tiene en cuenta el grado de conocimiento de la enfermedad y del tratamiento por parte del paciente? Valorar del 1  al  9 (siendo 9 el valor más elevado)'),
 				'p55'=>utf8_encode('A la hora de tratar a su paciente, ¿en qué medida tiene en cuenta el estilo de vida del paciente? Valorar del 1  al  9 (siendo 9 el valor más elevado)'),
@@ -795,7 +821,7 @@ class Datas
 				'p79'=>utf8_encode('¿Dispone su centro de servicio de Cirugía Cardíaca?'),
 				'p80'=>utf8_encode('¿Dispone su centro de servicio de programa de trasplante cardíaco?'),
 				'p81'=>utf8_encode('En su unidad/programa de Insuficiencia cardíaca, ¿trabaja algún médico no Cardiólogo?'),
-				'p82'=>utf8_encode('La mayor parte de su tiempo de trabajo la dedica a …'),
+				'p82'=>utf8_encode('La mayor parte de su tiempo de trabajo la dedica a ...'),
 				'p83'=>utf8_encode('¿Qué tipo de formación adicional sobre IC consideraría adecuada? (valore de 1 a 9, siendo 9 el valor máximo)'),
 				'p83a'=>utf8_encode('Cursos de formación sobre uso y manejo de tratamientos'),
 				'p83b'=>utf8_encode('Formación sobre seguridad y efectos adversos de tratamientos'),
