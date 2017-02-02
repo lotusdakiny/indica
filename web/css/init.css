@@ -105,7 +105,7 @@ Some Style Overrides on Bootstrap
 .small-logo span {
     font-size: 12px;
     line-height: 72px;
-    color: #ff8700;
+    color: #9d9d9d;
     font-weight: bold;
 }
 .small-logo span label {
@@ -135,13 +135,13 @@ Some Style Overrides on Bootstrap
     font-family: 'Fira Sans', sans-serif;
 }
 .nav-tabs {
-    border-bottom: 1px solid #ff8d00;
+    border-bottom: 1px solid #ddd;
 }
 .nav-tabs>li.active>h2, .nav-tabs>li.active>h2:focus, .nav-tabs>li.active>h2:hover {
     color: #555;
     cursor: default;
     background-color: #f7ddbe;
-    border: 1px solid #ff8d00;
+    border: 1px solid #ddd;
     border-bottom-color: rgba(0, 0, 0, 0);
     margin: 0;
     padding: 10px;
@@ -157,14 +157,14 @@ Some Style Overrides on Bootstrap
 .footer-content >div{
 	margin-top: 0;
 	padding-top: 20px;
-	border-top: 1px solid #ff8d00;
+	border-top: 1px solid #ddd;
 }
 .page-form .nav-tabs li:not(.active) a{
-    border-bottom: solid 1px #ff8d00;
+    border-bottom: solid 1px #eee;
 }
 .page-form .form-horizontal .form-block{
-    border-left: solid 1px #ff8d00;
-    border-right: solid 1px #ff8d00;
+    border-left: solid 1px #ddd;
+    border-right: solid 1px #ddd;
     padding-bottom: 10px;
 }
 .page-form #home-tab{

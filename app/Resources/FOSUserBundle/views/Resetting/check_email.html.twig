@@ -1,9 +1,16 @@
-{% extends "@FOSUser/layout.html.twig" %}
+{% extends "simplebase.html.twig" %}
 
 {% trans_default_domain 'FOSUserBundle' %}
 
-{% block fos_user_content %}
-<p>
-{{ 'resetting.check_email'|trans({'%tokenLifetime%': tokenLifetime})|nl2br }}
+{% block body %}
+
+<p class="text-center send-ok">
+    For recover password, please check your email. 
 </p>
+
 {% endblock %}
+
+
+
+	
+
