@@ -116,14 +116,14 @@ class Datas
 	public function getChoices_p3()
 	{
 		$choices_p3 = array('choices' => array(
-				'A' => '0-20%',
-				'B' => '20-40%',
-				'C' => '40-60%',
-				'D' => '60-80%',
-				'E' => '80-100%',
+				'0-20%' => '0-20%',
+				'20-40%' => '20-40%',
+				'40-60%' => '40-60%',
+				'60-80%' => '60-80%',
+				'80-100%' => '80-100%',
 		),  
 			'multiple'=>false, 
-			'expanded'=>true
+			'expanded'=>false
 		);
 	
 		return $choices_p3;
@@ -147,14 +147,14 @@ class Datas
 	public function getChoices_p6()
 	{
 		$choices_p6 = array('choices' => array(
-				'A' => '<10%',
-				'B' => '10-20%',
-				'C' => '20-40%',
-				'D' => '40-60%',
-				'E' => '>60%',
+				'<10%' => '<10%',
+				'10-20%' => '10-20%',
+				'20-40%' => '20-40%',
+				'40-60%' => '40-60%',
+				'>60%' => '>60%',
 		),
 				'multiple'=>false,
-				'expanded'=>true
+				'expanded'=>false
 		);
 	
 		return $choices_p6;
@@ -179,9 +179,9 @@ class Datas
 	public function getChoices_p9()
 	{
 		$choices = array('choices' => array(
-				'A' => utf8_encode('Es menor que en HFpEF'),
-				'B' => utf8_encode('Es mayor que en HFpEF'),
-				'C' => utf8_encode('Es similar en HFrEF y en HFpEF'),
+				'A' => utf8_encode('HFpEF'),
+				'B' => utf8_encode('HFrEF'),
+				'C' => utf8_encode('HFmEF'),
 		), 'multiple'=>false, 'expanded'=>true );	
 		return $choices;
 	}
@@ -638,10 +638,10 @@ class Datas
 				'p3'=>utf8_encode('De sus pacientes con IC, ¿qué porcentaje son mujeres?'),
 				'p4'=>utf8_encode('¿Cuál considera que es la edad media de sus pacientes con IC?'),
 				'p5'=>utf8_encode('¿Cómo se distribuyen por edades sus pacientes con IC? Indique el porcentaje'),
-				'p6'=>utf8_encode('¿Qué porcentaje de sus pacientes con IC y FEVI reducida tienen ICC estable, entendida como ICC sin síntomas/cambios en el último mes?/ ¿Qué porcentaje de sus pacientes con IC tienen FEVI reducida en tratamiento actual?'),
-				'p7'=>utf8_encode('¿En qué porcentaje de sus pacientes con IC y FEVI reducida, ésta muestra empeoramiento o agudización?'),
+				'p6'=>utf8_encode('¿Qué porcentaje de sus pacientes con IC y FEVI reducida tienen ICC estable, entendida como ICC sin cambios en el último mes?'),
+				'p7'=>utf8_encode('¿Qué porcentaje de sus pacientes con IC tienen FEVI reducida en tratamiento actual?'),
 				'p8'=>utf8_encode('¿Cuál es, en su opinión, la causa más frecuente de agudización de la IC en pacientes con FEVI reducida?'),
-				'p9'=>utf8_encode('A su juicio, la mortalidad por cualquier causa asociada a la HFrEF: '),
+				'p9'=>utf8_encode('Según su juicio y su práctica clínica, ¿qué tipo de IC tiene mayor mortalidad/peor pronóstico? : '),
 				'p10'=>utf8_encode('¿Cuántos pacientes ve al año con diagnóstico de insuficiencia cardíaca (IC)?'),
 				'p11'=>utf8_encode('¿Qué porcentaje de sus pacientes con IC se encuentran en cada una de las siguientes clases funcionales?'),
 				'p11a'=>utf8_encode('I'),
@@ -831,5 +831,40 @@ class Datas
 				'webinar'=>utf8_encode('Elige tu webinar'),
 		);
 		return $titulos_cuestionario;
+	}
+	
+	public function getHeaders_cuestionario()
+	{
+		return array(
+				'', '', 
+				'0.a','0.b','0.c','0.d','0.e',
+				'1.a','1.b','1.c','1.d',
+				'2.a','2.b','2.c','2.d','2.e',
+				'3', '4', '5', '6', '7', '8', '9', '10',
+				'11.a','11.b','11.c','11.d',
+				'12.a','12.b','12.c','12.d','12.e',
+				'13', '14', '15', '16', '17', '18', '19', '20', '21', 
+				'22.a','22.b','22.c','22.d','22.e',
+				'23',
+				'24 disponibilidad', '24.a','24.b','24.c','24.d','24.e','24.f','24.g','24.h',
+				'25', '26', 
+				'27.a','27.b','27.c','27.d','27.e','27.f',
+				'28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42',
+				'43.a','43.b','43.c','43.d',
+				'44.a','44.b','44.c','44.d','44.e','44.f','44.g','44.h','44.i','44.j','44.k','44.l','44.m','44.n','44.o','44.p',
+				'45.a','45.b','45.c','45.d','45.e','45.f','45.g','45.h','45.i','45.j','45.k','45.l','45.m','45.n','45.o',
+				'46.a','46.b','46.c','46.d','46.e','46.f','46.g',
+				'47', '48', '49', '50', 
+				'51.a','51.b','51.c','51.d',
+				'52', '53', '54', '55', '56', '57', '58', '59', '60', '61', 
+				'62.a','62.b','62.c','62.d','62.e',
+				'63', '64', 
+				'65.a','65.b','65.c','65.d','65.e','65.f','65.g','65.h','65.i','65.j','65.k','65.l',
+				'66', '67', '68', '69', 
+				'70.a','70.b','70.c','70.d','70.e','70.f','70.g',
+				'71', '72', '73', '74', '75', '76', '77', '78', '79', '80', '81', '82', 
+				'83.a','83.b','83.c','83.d',
+				'84', 
+		);
 	}
 }

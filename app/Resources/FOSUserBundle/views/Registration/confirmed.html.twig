@@ -3,10 +3,9 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block body %}
-    <p class="text-center send-ok">Registration confirmed por el usuario <strong>{{ user.username }}</strong></p>
+    <p class="text-center send-message">{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</strong></p>
     {% if targetUrl %}
-    	<p><a href="{{ targetUrl }}" class="btn btn-lg btn-sample btn-block">Empiesa</a></p>
+    	<p><a href="{{ targetUrl }}" class="btn btn-lg btn-sample btn-block">Empezar</a></p>
     {% endif %}
 {% endblock body %}
-
 

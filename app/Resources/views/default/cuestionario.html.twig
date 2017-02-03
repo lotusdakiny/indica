@@ -71,24 +71,8 @@
 		
 	</div>											
 	
-		<!-- Pregunta3 -->
-		<div class="form-block radios-block">
-			<p class="tittle-form"><span class="label simplicity">3</span>{{ titulos.p3 | raw }}</p>
-			
-			{% for var in form.p3 %}
-				<div class="form-group">
-					<div class="col-xs-12">
-						<label class="control-label2 no-margin" for="radios"><span class="badge">{{ form_label(var) }}</span></label>
-						<label class="radio-inline" for="form_p3_{{ loop.index0 }}">
-							{{ form_widget(var) }}						
-							<label for="form_p3_{{ loop.index0 }}">&nbsp;</label>
-							<span class="control-label bold">{{ var.vars.value }}</span>
-						</label>							
-					</div>
-				</div>
-			{% endfor %}
-						
-		</div>	
+	<!-- Pregunta3 -->
+	{% include 'preguntas/porcentaje1.html.twig' with {'titulo': titulos.p3, 'numero': '3', 'form': form.p3} %}
 		
 		<!-- Pregunta4 -->
 		<div class="form-block radios-block">
@@ -123,42 +107,10 @@
 		</div>			
 		
 		<!-- Pregunta6 -->
-		<div class="form-block radios-block">
-			<p class="tittle-form"><span class="label simplicity">6</span>{{ titulos.p6 | raw }}</p>
-			
-			{% for var in form.p6 %}
-				<div class="form-group">
-					<div class="col-xs-12">
-						<label class="control-label2 no-margin" for="radios"><span class="badge">{{ form_label(var) }}</span></label>
-						<label class="radio-inline" for="form_p6_{{ loop.index0 }}">
-							{{ form_widget(var) }}						
-							<label for="form_p6_{{ loop.index0 }}">&nbsp;</label>
-							<span class="control-label bold">{{ var.vars.value }}</span>
-						</label>							
-					</div>
-				</div>
-			{% endfor %}
-						
-		</div>	
+		{% include 'preguntas/porcentaje1.html.twig' with {'titulo': titulos.p6, 'numero': '6', 'form': form.p6} %}
 		
 		<!-- Pregunta7 -->
-		<div class="form-block radios-block">
-			<p class="tittle-form"><span class="label simplicity">7</span>{{ titulos.p7 | raw }}</p>
-			
-			{% for var in form.p7 %}
-				<div class="form-group">
-					<div class="col-xs-12">
-						<label class="control-label2 no-margin" for="radios"><span class="badge">{{ form_label(var) }}</span></label>
-						<label class="radio-inline" for="form_p7_{{ loop.index0 }}">
-							{{ form_widget(var) }}						
-							<label for="form_p7_{{ loop.index0 }}">&nbsp;</label>
-							<span class="control-label bold">{{ var.vars.value }}</span>
-						</label>							
-					</div>
-				</div>
-			{% endfor %}
-						
-		</div>			
+		{% include 'preguntas/porcentaje1.html.twig' with {'titulo': titulos.p7, 'numero': '7', 'form': form.p7} %}		
 		
 		<!-- Pregunta8 -->
 		<div class="form-block radios-block">

@@ -5440,4 +5440,75 @@ class Cuestionario
     {
         return $this->p84;
     }
+    
+    /**
+     * Get array p24 as string
+     *
+     * @return string
+     */
+    public function getP24asString()
+    {
+    	return implode(', ', (array) $this->p24);
+    }
+    
+    /**
+     * Get array p26 as string
+     *
+     * @return string
+     */
+    public function getP26asString()
+    {    	
+    	return implode(', ', (array) $this->p26);
+    }
+    
+    /**
+     * Get array p30 as string
+     *
+     * @return string
+     */
+    public function getP30asString()
+    {
+    	return implode(', ', (array) $this->p30);
+    }
+    
+    /**
+     * Get array p32 as string
+     *
+     * @return string
+     */
+    public function getP32asString()
+    {
+    	return implode(', ', (array) $this->p32);
+    }
+    
+    /**
+     * Get array p33 as string
+     *
+     * @return string
+     */
+    public function getP33asString()
+    {
+    	return implode(', ', (array) $this->p33);
+    }
+    
+    /**
+     * Get array p36 as string
+     *
+     * @return string
+     */
+    public function getP36asString()
+    {
+    	return implode(', ', (array) $this->p36);
+    }
+    
+    /**
+     * Get array p42 as string
+     *
+     * @return string
+     */
+    public function getP42asString()
+    {
+    	return implode(', ', (array) $this->p42);
+    }
+    
 }
