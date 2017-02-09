@@ -13,6 +13,11 @@ use AppBundle\Entity\Webinar;
 use Symfony\Component\DomCrawler\Form;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use AppBundle\Entity\DatosPersonales;
+use AppBundle\Entity\Epidemiologia;
+use AppBundle\Entity\Diagnostico;
+use AppBundle\Entity\Tratamiento;
+use AppBundle\Entity\Manejo;
 
 class DefaultController extends Controller
 {
@@ -31,6 +36,492 @@ class DefaultController extends Controller
 		
 		return $this->render('default/index.html.twig', array(
 				'user' => $user,
+		));
+	}
+	
+	/**
+	 * @Route("/precuest")
+	 */
+	public function precuestAction(Request $request)
+	{
+		//check if user is logged
+		if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+			throw $this->createAccessDeniedException();
+		}
+			
+		// if user is logged, $user get user's object
+		$user = $this->get('security.token_storage')->getToken()->getUser();
+		
+		return $this->render('default/precuest.html.twig', array(
+				'user' => $user,
+		));
+	}
+	
+	/**
+	 * @Route("/datos-personales")
+	 */
+	public function datosPersonalesAction(Request $request)
+	{
+		//check if user is logged
+		if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+			throw $this->createAccessDeniedException();
+		}
+			
+		// if user is logged, $user get user's object
+		$user = $this->get('security.token_storage')->getToken()->getUser();
+	
+		// create an object of arrays of choices
+		$datas = new Datas();
+	
+		// create an object of class of each DBtable with questions
+		$formObject = new DatosPersonales();
+	
+		// create a form
+		$form = $this->createFormBuilder($formObject)
+		->add('p0a', ChoiceType::class, $datas->getChoices_sexo())
+		->add('p0b', IntegerType::class)
+		->add('p0c', IntegerType::class)
+		->add('p0d', ChoiceType::class, $datas->getChoices_centro())
+		->add('p0e', IntegerType::class)
+		->getForm();
+	
+		$form->handleRequest($request);
+	
+		//if we are getting datas with our form
+		if ($form->isSubmitted() && $form->isValid()) {
+				
+			$formObject = $form->getData();
+	
+			//working with DB
+			$formObject->setUserid($user->getId());
+			$em = $this->getDoctrine()->getManager();
+	
+			//If user already has record in Form table,
+			$isUserInDB = $this->getDoctrine()
+			->getRepository('AppBundle:DatosPersonales')
+			->findOneBy(array('userid' => $user->getId()));
+	
+			//then we want to delete it for further refreshing
+			if ($isUserInDB) {
+				$formField = $this->getDoctrine()
+				->getRepository('AppBundle:DatosPersonales')
+				->findOneBy(array('userid' => $user->getId()));
+					
+				$em->remove($formField);
+				$em->flush();
+			}
+	
+			//persist data in DB
+			$em = $this->getDoctrine()->getManager();
+			$em->persist($formObject);
+			$em->flush();
+	
+			//return new Response(var_dump($cuestionario));
+			return $this->render('partes/datos-personales.html.twig', array(
+					'user' => $user,
+					'datos' => $formObject,					
+					'titulos' => $datas->getTitulos_cuestionario(),
+			));
+				
+		}
+	
+		return $this->render('partes/datos-personales.html.twig', array(
+				'user' => $user,
+				'form' => $form->createView(),
+				'titulos' => $datas->getTitulos_cuestionario(),
+		));
+	}
+	
+	/**
+	 * @Route("/epidemiologia")
+	 */
+	public function epidemiologiaAction(Request $request)
+	{
+		//check if user is logged
+		if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+			throw $this->createAccessDeniedException();
+		}
+			
+		// if user is logged, $user get user's object
+		$user = $this->get('security.token_storage')->getToken()->getUser();
+	
+		// create an object of arrays of choices
+		$datas = new Datas();
+	
+		// create an object of class of each DBtable with questions
+		$formObject = new Epidemiologia();
+	
+		// create a form
+		$form = $this->createFormBuilder($formObject)
+		//pregunta1
+		->add('p1a', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p1b', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p1c', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p1d', ChoiceType::class, $datas->getChoices_porcentaje())
+		//pregunta2
+		->add('p2a', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p2b', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p2c', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p2d', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p2e', ChoiceType::class, $datas->getChoices_porcentaje())
+		//pregunta3
+		->add('p3', ChoiceType::class, $datas->getChoices_p3())
+		->add('p4', TextType::class, array('required' => false,))
+		->add('p5', ChoiceType::class, $datas->getChoices_p5())
+		->add('p6', ChoiceType::class, $datas->getChoices_p6())
+		->add('p7', ChoiceType::class, $datas->getChoices_p6())
+		->add('p8', ChoiceType::class, $datas->getChoices_p8())
+		->add('p9', ChoiceType::class, $datas->getChoices_p9())
+		->add('p10', IntegerType::class)
+		//pregunta11
+		->add('p11a', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p11b', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p11c', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p11d', ChoiceType::class, $datas->getChoices_porcentaje())
+		//pregunta12
+		->add('p12', ChoiceType::class, $datas->getChoices_si_no())
+		->add('p13', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p14', ChoiceType::class, $datas->getChoices_si_no())
+		->getForm();
+	
+		$form->handleRequest($request);
+	
+		//if we are getting datas with our form
+		if ($form->isSubmitted() && $form->isValid()) {
+	
+			$formObject = $form->getData();
+	
+			//working with DB
+			$formObject->setUserid($user->getId());
+			$em = $this->getDoctrine()->getManager();
+	
+			//If user already has record in Form table,
+			$isUserInDB = $this->getDoctrine()
+			->getRepository('AppBundle:Epidemiologia')
+			->findOneBy(array('userid' => $user->getId()));
+	
+			//then we want to delete it for further refreshing
+			if ($isUserInDB) {
+				$formField = $this->getDoctrine()
+				->getRepository('AppBundle:Epidemiologia')
+				->findOneBy(array('userid' => $user->getId()));
+					
+				$em->remove($formField);
+				$em->flush();
+			}
+	
+			//persist data in DB
+			$em = $this->getDoctrine()->getManager();
+			$em->persist($formObject);
+			$em->flush();
+	
+			//return new Response(var_dump($cuestionario));
+			return $this->render('partes/epidemiologia.html.twig', array(
+					'user' => $user,
+					'datos' => $formObject,
+					'titulos' => $datas->getTitulos_cuestionario(),
+			));
+	
+		}
+	
+		return $this->render('partes/epidemiologia.html.twig', array(
+				'user' => $user,
+				'form' => $form->createView(),
+				'titulos' => $datas->getTitulos_cuestionario(),
+		));
+	}
+	
+	/**
+	 * @Route("/diagnostico")
+	 */
+	public function diagnosticoAction(Request $request)
+	{
+		//check if user is logged
+		if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+			throw $this->createAccessDeniedException();
+		}
+			
+		// if user is logged, $user get user's object
+		$user = $this->get('security.token_storage')->getToken()->getUser();
+	
+		// create an object of arrays of choices
+		$datas = new Datas();
+	
+		// create an object of class of each DBtable with questions
+		$formObject = new Diagnostico();
+	
+		// create a form
+		$form = $this->createFormBuilder($formObject)
+		->add('p15', ChoiceType::class, $datas->getChoices_si_nosigo())
+		->add('p16', ChoiceType::class, $datas->getChoices_guia())
+		->add('p17', ChoiceType::class, $datas->getChoices_p17())
+		->add('p18', ChoiceType::class, $datas->getChoices_p18())
+		->add('p19a', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p19b', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p19c', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p19d', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p19e', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p20a', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p20b', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p20c', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p20d', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p20e', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p20f', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p20g', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p20h', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p20', ChoiceType::class, $datas->getChoices_p20())
+		->add('p21', ChoiceType::class, $datas->getChoices_p21())
+		->add('p22a', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p22b', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p22c', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p22d', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p22e', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p22f', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p23', ChoiceType::class, $datas->getChoices_si_no())
+		
+		->getForm();
+	
+		$form->handleRequest($request);
+	
+		//if we are getting datas with our form
+		if ($form->isSubmitted() && $form->isValid()) {
+	
+			$formObject = $form->getData();
+	
+			//working with DB
+			$formObject->setUserid($user->getId());
+			$em = $this->getDoctrine()->getManager();
+	
+			//If user already has record in Form table,
+			$isUserInDB = $this->getDoctrine()
+			->getRepository('AppBundle:Diagnostico')
+			->findOneBy(array('userid' => $user->getId()));
+	
+			//then we want to delete it for further refreshing
+			if ($isUserInDB) {
+				$formField = $this->getDoctrine()
+				->getRepository('AppBundle:Diagnostico')
+				->findOneBy(array('userid' => $user->getId()));
+					
+				$em->remove($formField);
+				$em->flush();
+			}
+	
+			//persist data in DB
+			$em = $this->getDoctrine()->getManager();
+			$em->persist($formObject);
+			$em->flush();
+	
+			//return new Response(var_dump($cuestionario));
+			return $this->render('partes/diagnostico.html.twig', array(
+					'user' => $user,
+					'datos' => $formObject,
+					'titulos' => $datas->getTitulos_cuestionario(),
+			));
+	
+		}
+	
+		return $this->render('partes/diagnostico.html.twig', array(
+				'user' => $user,
+				'form' => $form->createView(),
+				'titulos' => $datas->getTitulos_cuestionario(),
+		));
+	}
+	
+	/**
+	 * @Route("/tratamiento")
+	 */
+	public function tratamientoAction(Request $request)
+	{
+		//check if user is logged
+		if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+			throw $this->createAccessDeniedException();
+		}
+			
+		// if user is logged, $user get user's object
+		$user = $this->get('security.token_storage')->getToken()->getUser();
+	
+		// create an object of arrays of choices
+		$datas = new Datas();
+	
+		// create an object of class of each DBtable with questions
+		$formObject = new Tratamiento();
+	
+		// create a form
+		$form = $this->createFormBuilder($formObject)
+		->add('p24', ChoiceType::class, $datas->getChoices_p24())
+		->add('p25', ChoiceType::class, $datas->getChoices_p25())
+		->add('p26', ChoiceType::class, $datas->getChoices_precio())
+		->add('p27', ChoiceType::class, $datas->getChoices_p27())
+		->add('p28', ChoiceType::class, $datas->getChoices_p28())
+		->add('p29', ChoiceType::class, $datas->getChoices_p29())
+		->add('p30', ChoiceType::class, $datas->getChoices_p30())
+		->add('p31', ChoiceType::class, $datas->getChoices_si_no())
+		->add('p32', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p33', ChoiceType::class, $datas->getChoices_p33())
+		->add('p34', ChoiceType::class, $datas->getChoices_p34())
+		->add('p35', ChoiceType::class, $datas->getChoices_p35())
+		->add('p36', ChoiceType::class, $datas->getChoices_precio())
+		->add('p37a', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p37b', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p37c', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p37d', ChoiceType::class, $datas->getChoices_1_9())
+		->getForm();
+	
+		$form->handleRequest($request);
+	
+		//if we are getting datas with our form
+		if ($form->isSubmitted() && $form->isValid()) {
+	
+			$formObject = $form->getData();
+	
+			//working with DB
+			$formObject->setUserid($user->getId());
+			$em = $this->getDoctrine()->getManager();
+	
+			//If user already has record in Form table,
+			$isUserInDB = $this->getDoctrine()
+			->getRepository('AppBundle:Tratamiento')
+			->findOneBy(array('userid' => $user->getId()));
+	
+			//then we want to delete it for further refreshing
+			if ($isUserInDB) {
+				$formField = $this->getDoctrine()
+				->getRepository('AppBundle:Tratamiento')
+				->findOneBy(array('userid' => $user->getId()));
+					
+				$em->remove($formField);
+				$em->flush();
+			}
+	
+			//persist data in DB
+			$em = $this->getDoctrine()->getManager();
+			$em->persist($formObject);
+			$em->flush();
+	
+			//return new Response(var_dump($cuestionario));
+			return $this->render('partes/tratamiento.html.twig', array(
+					'user' => $user,
+					'datos' => $formObject,
+					'titulos' => $datas->getTitulos_cuestionario(),
+			));
+	
+		}
+	
+		return $this->render('partes/tratamiento.html.twig', array(
+				'user' => $user,
+				'form' => $form->createView(),
+				'titulos' => $datas->getTitulos_cuestionario(),
+		));
+	}
+	
+	/**
+	 * @Route("/manejo")
+	 */
+	public function manejoAction(Request $request)
+	{
+		//check if user is logged
+		if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+			throw $this->createAccessDeniedException();
+		}
+			
+		// if user is logged, $user get user's object
+		$user = $this->get('security.token_storage')->getToken()->getUser();
+	
+		// create an object of arrays of choices
+		$datas = new Datas();
+	
+		// create an object of class of each DBtable with questions
+		$formObject = new Manejo();
+	
+		// create a form
+		$form = $this->createFormBuilder($formObject)
+		->add('p38a', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p38b', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p38c', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p38d', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p38e', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p38f', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p38g', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p38h', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p38i', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p38j', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p38k', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p38l', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p38m', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p38n', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p38o', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p38p', ChoiceType::class, $datas->getChoices_porcentaje())
+		->add('p39a', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p39b', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p39c', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p39d', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p39e', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p39f', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p39g', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p39h', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p39i', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p39j', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p39k', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p39l', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p39m', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p39n', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p39o', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p40a', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p40b', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p40c', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p40d', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p40e', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p40f', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p40g', ChoiceType::class, $datas->getChoices_1_9())
+		->add('p41', ChoiceType::class, $datas->getChoices_p41())
+		
+		->getForm();
+	
+		$form->handleRequest($request);
+	
+		//if we are getting datas with our form
+		if ($form->isSubmitted() && $form->isValid()) {
+	
+			$formObject = $form->getData();
+	
+			//working with DB
+			$formObject->setUserid($user->getId());
+			$em = $this->getDoctrine()->getManager();
+	
+			//If user already has record in Form table,
+			$isUserInDB = $this->getDoctrine()
+			->getRepository('AppBundle:Manejo')
+			->findOneBy(array('userid' => $user->getId()));
+	
+			//then we want to delete it for further refreshing
+			if ($isUserInDB) {
+				$formField = $this->getDoctrine()
+				->getRepository('AppBundle:Manejo')
+				->findOneBy(array('userid' => $user->getId()));
+					
+				$em->remove($formField);
+				$em->flush();
+			}
+	
+			//persist data in DB
+			$em = $this->getDoctrine()->getManager();
+			$em->persist($formObject);
+			$em->flush();
+	
+			//return new Response(var_dump($cuestionario));
+			return $this->render('partes/manejo.html.twig', array(
+					'user' => $user,
+					'datos' => $formObject,
+					'titulos' => $datas->getTitulos_cuestionario(),
+			));
+	
+		}
+	
+		return $this->render('partes/manejo.html.twig', array(
+				'user' => $user,
+				'form' => $form->createView(),
+				'titulos' => $datas->getTitulos_cuestionario(),
 		));
 	}
 	

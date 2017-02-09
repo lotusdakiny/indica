@@ -1,0 +1,96 @@
+{# app/Resources/views/default/index.html.twig #}
+{% extends 'partes/basepartes.html.twig' %}
+	
+{% block submenu %}
+
+	<a href="datos-personales">Datos personales</a>
+
+{% endblock %}
+
+{% block form %}		
+				
+	<div class="form-block">
+		<h4 class="tittle-section">{{ titulos.titulo2 | raw }}</h4>
+	</div>
+	
+	<!-- Pregunta15 -->
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p15, 'numero': '15', 'form': form.p15} %}
+	
+	<!-- Pregunta16 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p16, 'numero': '16', 'form': form.p16, 'type': 'radio'} %}
+	
+	<!-- Pregunta17 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p17, 'numero': '17', 'form': form.p17, 'type': 'radio'} %}
+	
+	<!-- Pregunta18 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p18, 'numero': '18', 'form': form.p18, 'type': 'radio'} %}
+
+	<!-- Pregunta19 -->
+	<div class="form-block">
+		<p class="tittle-form"><span class="label simplicity">19</span> {{ titulos.p19 | raw }}</p>
+		
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p19a, 'numero': '19', 'letra': 'a', 'form': form.p19a} %}
+		
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p19b, 'numero': '19', 'letra': 'b', 'form': form.p19b} %}
+		
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p19c, 'numero': '19', 'letra': 'c', 'form': form.p19c} %}
+		
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p19d, 'numero': '19', 'letra': 'd', 'form': form.p19d} %}
+		
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p19e, 'numero': '19', 'letra': 'e', 'form': form.p19e} %}
+		
+	</div>			
+
+	<!-- Pregunta20 -->
+	<div class="form-block">
+		<p class="tittle-form"><span class="label simplicity">20</span> {{ titulos.p20 | raw }}</p>
+
+		<div class="form-group">
+			<label class="col-md-4"></label>
+			<label class="col-md-6"></label>
+			<label class="col-md-2"><center>Disponibilidad en mi centro</center></label>
+		</div>	
+		
+		{% include 'preguntas/pregunta20.html.twig' with {'titulo': titulos.p20a, 'form': form.p20a, 'formd': form.p20.0, 'letra': 'a', 'numero': '0'} %}		
+		
+		{% include 'preguntas/pregunta20.html.twig' with {'titulo': titulos.p20b, 'form': form.p20b, 'formd': form.p20.1, 'letra': 'b', 'numero': '1'} %}
+		
+		{% include 'preguntas/pregunta20.html.twig' with {'titulo': titulos.p20c, 'form': form.p20c, 'formd': form.p20.2, 'letra': 'c', 'numero': '2'} %}
+		
+		{% include 'preguntas/pregunta20.html.twig' with {'titulo': titulos.p20d, 'form': form.p20d, 'formd': form.p20.3, 'letra': 'd', 'numero': '3'} %}
+		
+		{% include 'preguntas/pregunta20.html.twig' with {'titulo': titulos.p20e, 'form': form.p20e, 'formd': form.p20.4, 'letra': 'e', 'numero': '4'} %}
+		
+		{% include 'preguntas/pregunta20.html.twig' with {'titulo': titulos.p20f, 'form': form.p20f, 'formd': form.p20.5, 'letra': 'f', 'numero': '5'} %}
+		
+		{% include 'preguntas/pregunta20.html.twig' with {'titulo': titulos.p20g, 'form': form.p20g, 'formd': form.p20.6, 'letra': 'g', 'numero': '6'} %}
+		
+		{% include 'preguntas/pregunta20.html.twig' with {'titulo': titulos.p20h, 'form': form.p20h, 'formd': form.p20.7, 'letra': 'h', 'numero': '7'} %}
+												
+	</div>
+	
+	<!-- Pregunta21 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p21, 'numero': '21', 'form': form.p21, 'type': 'checkbox'} %}	
+
+	<!-- Pregunta22 -->
+	<div class="form-block">
+		<p class="tittle-form"><span class="label simplicity">22</span> {{ titulos.p22 | raw }}</p>
+		
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p22a, 'letra': 'a', 'form': form.p22a} %}
+		
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p22b, 'letra': 'b', 'form': form.p22b} %}
+		
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p22c, 'letra': 'c', 'form': form.p22c} %}
+		
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p22d, 'letra': 'd', 'form': form.p22d} %}
+		
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p22e, 'letra': 'e', 'form': form.p22e} %}
+		
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p22f, 'letra': 'f', 'form': form.p22f} %}
+		
+	</div>
+	
+	<!-- Pregunta23 -->
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p23, 'numero': '23', 'form': form.p23} %}
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{# app/Resources/views/default/index.html.twig #}
+{% extends 'partes/basepartes.html.twig' %}
+	
+{% block submenu %}
+
+	<a href="datos-personales">Datos personales</a>
+
+{% endblock %}
+
+{% block form %}		
+				
+	<div class="form-block">
+		<h4 class="tittle-section">{{ titulos.titulo3 | raw }}</h4>
+	</div>	
+
+	<!-- Pregunta24 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p24, 'numero': '24', 'form': form.p24, 'type': 'checkbox'} %}	
+	
+	<!-- Pregunta25 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p25, 'numero': '25', 'form': form.p25, 'type': 'radio'} %}	
+	
+	<!-- Pregunta26 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p26, 'numero': '26', 'form': form.p26, 'type': 'checkbox'} %}	
+	
+	<!-- Pregunta27 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p27, 'numero': '27', 'form': form.p27, 'type': 'checkbox'} %}	
+	
+	<!-- Pregunta28 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p28, 'numero': '28', 'form': form.p28, 'type': 'radio'} %}	
+	
+	<!-- Pregunta29 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p29, 'numero': '29', 'form': form.p29, 'type': 'radio'} %}	
+	
+	<!-- Pregunta30 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p30, 'numero': '30', 'form': form.p30, 'type': 'checkbox'} %}	
+	
+	<!-- Pregunta31 -->
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p31, 'numero': '31', 'form': form.p31} %}	
+	
+	<!-- Pregunta32 -->
+	{% include 'preguntas/porcentaje1.html.twig' with {'titulo': titulos.p32, 'numero': '32', 'form': form.p32} %}		
+
+	
+	<!-- Pregunta33 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p33, 'numero': '33', 'form': form.p33, 'type': 'radio'} %}	
+	
+	<!-- Pregunta34 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p34, 'numero': '34', 'form': form.p34, 'type': 'radio'} %}	
+	
+	<!-- Pregunta35 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p35, 'numero': '35', 'form': form.p35, 'type': 'radio'} %}	
+	
+	<!-- Pregunta36 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p36, 'numero': '36', 'form': form.p36, 'type': 'checkbox'} %}	
+												
+	<!-- Pregunta37 -->
+	<div class="form-block">
+		<p class="tittle-form"><span class="label simplicity">37</span> {{ titulos.p37 | raw }}</p>
+		
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p37a, 'numero': '37', 'letra': 'a', 'form': form.p37a} %}
+		
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p37b, 'numero': '37', 'letra': 'b', 'form': form.p37b} %}
+		
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p37c, 'numero': '37', 'letra': 'c', 'form': form.p37c} %}
+		
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p37d, 'numero': '37', 'letra': 'd', 'form': form.p37d} %}
+		
+	</div>
+
+{% endblock %}

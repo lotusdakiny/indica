@@ -1,0 +1,135 @@
+{# app/Resources/views/default/index.html.twig #}
+{% extends 'partes/basepartes.html.twig' %}
+	
+{% block submenu %}
+
+	<a href="datos-personales">Datos personales</a>
+
+{% endblock %}
+
+{% block form %}		
+				
+	<div class="form-block">
+		<h4 class="tittle-section">{{ titulos.titulo1 | raw }}</h4>
+	</div>	
+												
+	<!-- Pregunta1 -->
+	<div class="form-block">
+		<p class="tittle-form"><span class="label simplicity">1</span> {{ titulos.p1 | raw }}</p>
+		
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p1a, 'letra': 'a', 'form': form.p1a} %}
+		
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p1b, 'letra': 'b', 'form': form.p1b} %}
+		
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p1c, 'letra': 'c', 'form': form.p1c} %}
+		
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p1d, 'letra': 'd', 'form': form.p1d} %}
+		
+	</div>					
+	
+	<!-- Pregunta2 -->
+	<div class="form-block">
+		<p class="tittle-form"><span class="label simplicity">2</span> {{ titulos.p2 | raw }}</p>
+		
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p2a, 'letra': 'a', 'form': form.p2a} %}
+		
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p2b, 'letra': 'b', 'form': form.p2b} %}
+		
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p2c, 'letra': 'c', 'form': form.p2c} %}
+		
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p2d, 'letra': 'd', 'form': form.p2d} %}
+		
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p2e, 'letra': 'e', 'form': form.p2e} %}
+		
+	</div>											
+	
+	<!-- Pregunta3 -->
+	{% include 'preguntas/porcentaje1.html.twig' with {'titulo': titulos.p3, 'numero': '3', 'form': form.p3} %}
+		
+	<!-- Pregunta4 -->
+	<div class="form-block radios-block">
+		<p class="tittle-form"><span class="label simplicity">4</span>{{ titulos.p4 | raw }}</p>
+
+		<div class="form-group">
+			<div class="col-md-6">
+				{{ form_errors(form.p4) }}
+				{{ form_widget(form.p4, {'attr': {'class': 'form-control input-sm'}}) }}		
+			</div>
+		</div>
+					
+	</div>			
+	
+	<!-- Pregunta5 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p5, 'numero': '5', 'form': form.p5, 'type': 'radio'} %}	
+	
+	<!-- Pregunta6 -->
+	{% include 'preguntas/porcentaje1.html.twig' with {'titulo': titulos.p6, 'numero': '6', 'form': form.p6} %}
+	
+	<!-- Pregunta7 -->
+	{% include 'preguntas/porcentaje1.html.twig' with {'titulo': titulos.p7, 'numero': '7', 'form': form.p7} %}		
+	
+	<!-- Pregunta8 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p8, 'numero': '8', 'form': form.p8, 'type': 'radio'} %}			
+
+	<!-- Pregunta9 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p9, 'numero': '9', 'form': form.p9, 'type': 'radio'} %}				
+		
+	<!-- Pregunta10 -->
+	{% include 'preguntas/porcentaje1.html.twig' with {'titulo': titulos.p10, 'numero': '10', 'form': form.p10} %}		
+		
+	<!-- Pregunta11 -->
+	<div class="form-block">
+		<p class="tittle-form"><span class="label simplicity">11</span> {{ titulos.p11 | raw }}</p>
+
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="textinput"><span class="badge">A</span> {{ titulos.p11a | raw }}</label>
+			<div class="col-md-2">
+				{{ form_errors(form.p11a) }}
+				{{ form_widget(form.p11a, {'attr': {'class': 'form-control input-sm'}}) }}		
+			</div>
+		</div>
+	
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="textinput"><span class="badge">B</span> {{ titulos.p11b | raw }}</label>
+			<div class="col-md-2">
+				{{ form_errors(form.p11b) }}
+				{{ form_widget(form.p11b, {'attr': {'class': 'form-control input-sm'}}) }}		
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="textinput"><span class="badge">C</span> {{ titulos.p11c | raw }}</label>
+			<div class="col-md-2">
+				{{ form_errors(form.p11c) }}
+				{{ form_widget(form.p11c, {'attr': {'class': 'form-control input-sm'}}) }}		
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="textinput"><span class="badge">D</span> {{ titulos.p11d | raw }}</label>
+			<div class="col-md-2">
+				{{ form_errors(form.p11d) }}
+				{{ form_widget(form.p11d, {'attr': {'class': 'form-control input-sm'}}) }}		
+			</div>
+		</div>								
+
+	</div>		
+	
+	<!-- Pregunta12 -->
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p12, 'numero': '12', 'form': form.p12} %}
+	
+	<!-- Pregunta13 -->
+	{% include 'preguntas/porcentaje1.html.twig' with {'titulo': titulos.p13, 'numero': '13', 'form': form.p13} %}
+	
+	<!-- Pregunta14 -->
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p14, 'numero': '14', 'form': form.p14} %}
+	
+	<div class="form-block">
+		<div class="form-group">
+			<div class="col-md-7">
+				{{ titulos.p14texto | raw }} <input type="text" id="p14texto" required name="p14texto" class="form-control input-sm" disabled>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
