@@ -1,0 +1,110 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="calidad")
+ */
+class Calidad
+{
+	/**
+	 * @ORM\Id
+	 * @ORM\Column(type="integer")
+	 * @ORM\GeneratedValue(strategy="AUTO")
+	 */
+	private $id;
+
+	/**
+	 * @ORM\Column(type="integer")
+	 */
+	private $userid;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p62;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p63;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p64;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p65;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p66;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p67;
+	
+	/**
+	 * @ORM\Column(type="string", length=80, nullable=true)
+	 */
+	private $p68;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p69;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p70;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p71;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p72;
+	
+	/**
+	 * @ORM\Column(type="string", length=30, nullable=true)
+	 */
+	private $p73;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p74a;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p74b;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p74c;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p74d;
+	
+	/**
+	 * @ORM\Column(type="string", length=60, nullable=true)
+	 */
+	private $p75;
+	
+}

@@ -30,23 +30,11 @@ class Cuestionario
 	
 	/**
 	 * @ORM\Column(type="smallint", nullable=true)
-	 * @Assert\Range(
-     *      min = 18,
-     *      max = 100,
-     *      minMessage = "You must be at least {{ limit }} years old to enter",
-     *      maxMessage = "You cannot be older than {{ limit }} to enter"
-     * )
 	 */
 	private $p0b;
 	
 	/**
 	 * @ORM\Column(type="smallint", nullable=true)
-	 * @Assert\Range(
-	 *      min = 0,
-	 *      max = 90,
-	 *      minMessage = "You must be at least {{ limit }} years old to enter",
-	 *      maxMessage = "You cannot be older than {{ limit }} to enter"
-	 * )
 	 */
 	private $p0c;
 	
@@ -57,12 +45,6 @@ class Cuestionario
 	
 	/**
 	 * @ORM\Column(type="smallint", nullable=true)
-	 * @Assert\Range(
-	 *      min = 0,
-	 *      max = 90,
-	 *      minMessage = "You must be at least {{ limit }} years old to enter",
-	 *      maxMessage = "You cannot be older than {{ limit }} to enter"
-	 * )
 	 */
 	private $p0e;
 	
@@ -174,27 +156,7 @@ class Cuestionario
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
-	private $p12a;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p12b;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p12c;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p12d;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p12e;
+	private $p12;
 	
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)
@@ -207,39 +169,99 @@ class Cuestionario
 	private $p14;
 	
 	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
+	 * @ORM\Column(type="string", length=40, nullable=true)
 	 */
 	private $p15;
 	
 	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
+	 * @ORM\Column(type="string", length=50, nullable=true)
 	 */
 	private $p16;
 	
 	/**
-	 * @ORM\Column(type="string", length=40, nullable=true)
+	 * @ORM\Column(type="string", length=20, nullable=true)
 	 */
 	private $p17;
 	
 	/**
-	 * @ORM\Column(type="string", length=50, nullable=true)
+	 * @ORM\Column(type="string", length=30, nullable=true)
 	 */
 	private $p18;
 	
 	/**
-	 * @ORM\Column(type="string", length=20, nullable=true)
+	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
-	private $p19;
+	private $p19a;
 	
 	/**
-	 * @ORM\Column(type="string", length=30, nullable=true)
+	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
-	private $p20;
+	private $p19b;
 	
 	/**
-	 * @ORM\Column(type="string", length=40, nullable=true)
+	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
-	private $p21;
+	private $p19c;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p19d;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p19e;
+	
+	/**
+	 * @ORM\Column(type="array", nullable=true)
+	 */
+	private $p20 = array();
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p20a;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p20b;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p20c;
+		
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p20d;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p20e;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p20f;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p20g;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p20h;
+	
+	/**
+	 * @ORM\Column(type="array", nullable=true)
+	 */
+	private $p21 = array();
 	
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)
@@ -267,7 +289,12 @@ class Cuestionario
 	private $p22e;
 	
 	/**
-	 * @ORM\Column(type="string", length=80, nullable=true)
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p22f;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
 	private $p23;
 	
@@ -277,92 +304,27 @@ class Cuestionario
 	private $p24 = array();
 	
 	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p24a;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p24b;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p24c;
-		
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p24d;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p24e;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p24f;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p24g;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p24h;
-	
-	/**
-	 * @ORM\Column(type="string", length=50, nullable=true)
+	 * @ORM\Column(type="string", length=30, nullable=true)
 	 */
 	private $p25;
 	
 	/**
-	 * @ORM\Column(type="simple_array", nullable=true)
+	 * @ORM\Column(type="array", nullable=true)
 	 */
 	private $p26 = array();
 	
 	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
+	 * @ORM\Column(type="array", nullable=true)
 	 */
-	private $p27a;
+	private $p27 = array();
 	
 	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p27b;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p27c;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p27d;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p27e;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p27f;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
+	 * @ORM\Column(type="string", length=100, nullable=true)
 	 */
 	private $p28;
 	
 	/**
-	 * @ORM\Column(type="string", length=30, nullable=true)
+	 * @ORM\Column(type="string", length=80, nullable=true)
 	 */
 	private $p29;
 	
@@ -372,27 +334,27 @@ class Cuestionario
 	private $p30 = array();
 	
 	/**
-	 * @ORM\Column(type="string", length=30, nullable=true)
+	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
 	private $p31;
 	
 	/**
-	 * @ORM\Column(type="array", nullable=true)
+	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
-	private $p32 = array();
+	private $p32;
 	
 	/**
-	 * @ORM\Column(type="array", nullable=true)
+	 * @ORM\Column(type="string", length=80, nullable=true)
 	 */
-	private $p33 = array();
+	private $p33;
 	
 	/**
-	 * @ORM\Column(type="string", length=100, nullable=true)
+	 * @ORM\Column(type="string", length=80, nullable=true)
 	 */
 	private $p34;
 	
 	/**
-	 * @ORM\Column(type="string", length=80, nullable=true)
+	 * @ORM\Column(type="string", length=120, nullable=true)
 	 */
 	private $p35;
 	
@@ -404,52 +366,227 @@ class Cuestionario
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
-	private $p37;
+	private $p37a;
 	
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
-	private $p38;
+	private $p37b;
 	
 	/**
-	 * @ORM\Column(type="string", length=80, nullable=true)
+	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
-	private $p39;
+	private $p37c;
 	
 	/**
-	 * @ORM\Column(type="string", length=80, nullable=true)
+	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
-	private $p40;
+	private $p37d;
 	
 	/**
-	 * @ORM\Column(type="string", length=120, nullable=true)
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38a;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38b;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38c;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38d;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38e;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38f;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38g;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38h;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38i;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38j;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38k;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38l;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38m;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38n;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38o;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38p;
+	
+	/**
+	 * @ORM\Column(type="string", length=30, nullable=true)
+	 */
+	private $p39a;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p39b;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p39c;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p39d;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p39e;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p39f;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p39g;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p39h;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p39i;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p39j;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p39k;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p39l;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p39m;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p39n;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p39o;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p40a;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p40b;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p40c;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p40d;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p40e;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p40f;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p40g;
+	
+	/**
+	 * @ORM\Column(type="string", length=50, nullable=true)
 	 */
 	private $p41;
 	
 	/**
-	 * @ORM\Column(type="array", nullable=true)
+	 * @ORM\Column(type="string", length=50, nullable=true)
 	 */
-	private $p42 = array();
+	private $p42;
 	
 	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
+	 * @ORM\Column(type="string", length=50, nullable=true)
 	 */
-	private $p43a;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p43b;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p43c;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p43d;
+	private $p43;
 	
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)
@@ -472,174 +609,14 @@ class Cuestionario
 	private $p44d;
 	
 	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
+	 * @ORM\Column(type="string", length=100, nullable=true)
 	 */
-	private $p44e;
+	private $p45;
 	
 	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
+	 * @ORM\Column(type="string", length=60, nullable=true)
 	 */
-	private $p44f;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p44g;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p44h;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p44i;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p44j;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p44k;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p44l;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p44m;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p44n;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p44o;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p44p;
-	
-	/**
-	 * @ORM\Column(type="string", length=30, nullable=true)
-	 */
-	private $p45a;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p45b;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p45c;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p45d;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p45e;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p45f;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p45g;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p45h;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p45i;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p45j;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p45k;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p45l;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p45m;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p45n;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p45o;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p46a;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p46b;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p46c;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p46d;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p46e;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p46f;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p46g;
+	private $p46;
 	
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)
@@ -647,59 +624,64 @@ class Cuestionario
 	private $p47;
 	
 	/**
-	 * @ORM\Column(type="string", length=50, nullable=true)
+	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
 	private $p48;
 	
 	/**
-	 * @ORM\Column(type="string", length=50, nullable=true)
+	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
 	private $p49;
 	
 	/**
-	 * @ORM\Column(type="string", length=50, nullable=true)
+	 * @ORM\Column(type="string", length=80, nullable=true)
 	 */
 	private $p50;
 	
 	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
+	 * @ORM\Column(type="string", length=120, nullable=true)
 	 */
-	private $p51a;
+	private $p51;
 	
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p51b;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p51c;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p51d;
-	
-	/**
-	 * @ORM\Column(type="string", length=100, nullable=true)
 	 */
 	private $p52;
 	
 	/**
-	 * @ORM\Column(type="string", length=60, nullable=true)
+	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
 	private $p53;
 	
 	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
+	 * @ORM\Column(type="string", length=80, nullable=true)
 	 */
 	private $p54;
 	
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
-	private $p55;
+	private $p55a;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p55b;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p55c;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p55d;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p55e;
 	
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)
@@ -707,54 +689,119 @@ class Cuestionario
 	private $p56;
 	
 	/**
-	 * @ORM\Column(type="string", length=80, nullable=true)
+	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
-	private $p57;
+	private $p57a;
 	
 	/**
-	 * @ORM\Column(type="string", length=120, nullable=true)
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p57b;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p57c;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p57d;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p57e;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p57f;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p57g;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p57h;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p57i;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p57j;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p57k;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p57l;
+	
+	/**
+	 * @ORM\Column(type="string", length=100, nullable=true)
 	 */
 	private $p58;
 	
 	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
+	 * @ORM\Column(type="string", length=100, nullable=true)
 	 */
 	private $p59;
 	
 	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
+	 * @ORM\Column(type="string", length=100, nullable=true)
 	 */
 	private $p60;
 	
 	/**
-	 * @ORM\Column(type="string", length=80, nullable=true)
+	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
-	private $p61;
+	private $p61a;
 	
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
-	private $p62a;
+	private $p61b;
 	
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
-	private $p62b;
+	private $p61c;
 	
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
-	private $p62c;
+	private $p61d;
 	
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
-	private $p62d;
+	private $p61e;
 	
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
-	private $p62e;
+	private $p61f;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p61g;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p62;
 	
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)
@@ -769,70 +816,15 @@ class Cuestionario
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
-	private $p65a;
+	private $p65;
 	
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p65b;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p65c;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p65d;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p65e;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p65f;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p65g;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p65h;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p65i;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p65j;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p65k;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p65l;
-	
-	/**
-	 * @ORM\Column(type="string", length=100, nullable=true)
 	 */
 	private $p66;
 	
 	/**
-	 * @ORM\Column(type="string", length=100, nullable=true)
+	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
 	private $p67;
 	
@@ -842,44 +834,14 @@ class Cuestionario
 	private $p68;
 	
 	/**
-	 * @ORM\Column(type="string", length=100, nullable=true)
+	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
 	private $p69;
 	
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
-	private $p70a;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p70b;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p70c;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p70d;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p70e;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p70f;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p70g;
+	private $p70;
 	
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)
@@ -892,80 +854,34 @@ class Cuestionario
 	private $p72;
 	
 	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
+	 * @ORM\Column(type="string", length=30, nullable=true)
 	 */
 	private $p73;
 	
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
-	private $p74;
+	private $p74a;
 	
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
-	private $p75;
+	private $p74b;
 	
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
-	private $p76;
-	
-	/**
-	 * @ORM\Column(type="string", length=80, nullable=true)
-	 */
-	private $p77;
+	private $p74c;
 	
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
-	private $p78;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p79;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p80;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p81;
-	
-	/**
-	 * @ORM\Column(type="string", length=30, nullable=true)
-	 */
-	private $p82;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p83a;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p83b;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p83c;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p83d;
+	private $p74d;
 	
 	/**
 	 * @ORM\Column(type="string", length=60, nullable=true)
 	 */
-	private $p84;
-	
+	private $p75;
 
     /**
      * Get id
@@ -1626,123 +1542,27 @@ class Cuestionario
     }
 
     /**
-     * Set p12a
+     * Set p12
      *
-     * @param string $p12a
+     * @param string $p12
      *
      * @return Cuestionario
      */
-    public function setP12a($p12a)
+    public function setP12($p12)
     {
-        $this->p12a = $p12a;
+        $this->p12 = $p12;
 
         return $this;
     }
 
     /**
-     * Get p12a
+     * Get p12
      *
      * @return string
      */
-    public function getP12a()
+    public function getP12()
     {
-        return $this->p12a;
-    }
-
-    /**
-     * Set p12b
-     *
-     * @param string $p12b
-     *
-     * @return Cuestionario
-     */
-    public function setP12b($p12b)
-    {
-        $this->p12b = $p12b;
-
-        return $this;
-    }
-
-    /**
-     * Get p12b
-     *
-     * @return string
-     */
-    public function getP12b()
-    {
-        return $this->p12b;
-    }
-
-    /**
-     * Set p12c
-     *
-     * @param string $p12c
-     *
-     * @return Cuestionario
-     */
-    public function setP12c($p12c)
-    {
-        $this->p12c = $p12c;
-
-        return $this;
-    }
-
-    /**
-     * Get p12c
-     *
-     * @return string
-     */
-    public function getP12c()
-    {
-        return $this->p12c;
-    }
-
-    /**
-     * Set p12d
-     *
-     * @param string $p12d
-     *
-     * @return Cuestionario
-     */
-    public function setP12d($p12d)
-    {
-        $this->p12d = $p12d;
-
-        return $this;
-    }
-
-    /**
-     * Get p12d
-     *
-     * @return string
-     */
-    public function getP12d()
-    {
-        return $this->p12d;
-    }
-
-    /**
-     * Set p12e
-     *
-     * @param string $p12e
-     *
-     * @return Cuestionario
-     */
-    public function setP12e($p12e)
-    {
-        $this->p12e = $p12e;
-
-        return $this;
-    }
-
-    /**
-     * Get p12e
-     *
-     * @return string
-     */
-    public function getP12e()
-    {
-        return $this->p12e;
+        return $this->p12;
     }
 
     /**
@@ -1890,33 +1710,129 @@ class Cuestionario
     }
 
     /**
-     * Set p19
+     * Set p19a
      *
-     * @param string $p19
+     * @param string $p19a
      *
      * @return Cuestionario
      */
-    public function setP19($p19)
+    public function setP19a($p19a)
     {
-        $this->p19 = $p19;
+        $this->p19a = $p19a;
 
         return $this;
     }
 
     /**
-     * Get p19
+     * Get p19a
      *
      * @return string
      */
-    public function getP19()
+    public function getP19a()
     {
-        return $this->p19;
+        return $this->p19a;
+    }
+
+    /**
+     * Set p19b
+     *
+     * @param string $p19b
+     *
+     * @return Cuestionario
+     */
+    public function setP19b($p19b)
+    {
+        $this->p19b = $p19b;
+
+        return $this;
+    }
+
+    /**
+     * Get p19b
+     *
+     * @return string
+     */
+    public function getP19b()
+    {
+        return $this->p19b;
+    }
+
+    /**
+     * Set p19c
+     *
+     * @param string $p19c
+     *
+     * @return Cuestionario
+     */
+    public function setP19c($p19c)
+    {
+        $this->p19c = $p19c;
+
+        return $this;
+    }
+
+    /**
+     * Get p19c
+     *
+     * @return string
+     */
+    public function getP19c()
+    {
+        return $this->p19c;
+    }
+
+    /**
+     * Set p19d
+     *
+     * @param string $p19d
+     *
+     * @return Cuestionario
+     */
+    public function setP19d($p19d)
+    {
+        $this->p19d = $p19d;
+
+        return $this;
+    }
+
+    /**
+     * Get p19d
+     *
+     * @return string
+     */
+    public function getP19d()
+    {
+        return $this->p19d;
+    }
+
+    /**
+     * Set p19e
+     *
+     * @param string $p19e
+     *
+     * @return Cuestionario
+     */
+    public function setP19e($p19e)
+    {
+        $this->p19e = $p19e;
+
+        return $this;
+    }
+
+    /**
+     * Get p19e
+     *
+     * @return string
+     */
+    public function getP19e()
+    {
+        return $this->p19e;
     }
 
     /**
      * Set p20
      *
-     * @param string $p20
+     * @param array $p20
      *
      * @return Cuestionario
      */
@@ -1930,7 +1846,7 @@ class Cuestionario
     /**
      * Get p20
      *
-     * @return string
+     * @return array
      */
     public function getP20()
     {
@@ -1938,9 +1854,201 @@ class Cuestionario
     }
 
     /**
+     * Set p20a
+     *
+     * @param string $p20a
+     *
+     * @return Cuestionario
+     */
+    public function setP20a($p20a)
+    {
+        $this->p20a = $p20a;
+
+        return $this;
+    }
+
+    /**
+     * Get p20a
+     *
+     * @return string
+     */
+    public function getP20a()
+    {
+        return $this->p20a;
+    }
+
+    /**
+     * Set p20b
+     *
+     * @param string $p20b
+     *
+     * @return Cuestionario
+     */
+    public function setP20b($p20b)
+    {
+        $this->p20b = $p20b;
+
+        return $this;
+    }
+
+    /**
+     * Get p20b
+     *
+     * @return string
+     */
+    public function getP20b()
+    {
+        return $this->p20b;
+    }
+
+    /**
+     * Set p20c
+     *
+     * @param string $p20c
+     *
+     * @return Cuestionario
+     */
+    public function setP20c($p20c)
+    {
+        $this->p20c = $p20c;
+
+        return $this;
+    }
+
+    /**
+     * Get p20c
+     *
+     * @return string
+     */
+    public function getP20c()
+    {
+        return $this->p20c;
+    }
+
+    /**
+     * Set p20d
+     *
+     * @param string $p20d
+     *
+     * @return Cuestionario
+     */
+    public function setP20d($p20d)
+    {
+        $this->p20d = $p20d;
+
+        return $this;
+    }
+
+    /**
+     * Get p20d
+     *
+     * @return string
+     */
+    public function getP20d()
+    {
+        return $this->p20d;
+    }
+
+    /**
+     * Set p20e
+     *
+     * @param string $p20e
+     *
+     * @return Cuestionario
+     */
+    public function setP20e($p20e)
+    {
+        $this->p20e = $p20e;
+
+        return $this;
+    }
+
+    /**
+     * Get p20e
+     *
+     * @return string
+     */
+    public function getP20e()
+    {
+        return $this->p20e;
+    }
+
+    /**
+     * Set p20f
+     *
+     * @param string $p20f
+     *
+     * @return Cuestionario
+     */
+    public function setP20f($p20f)
+    {
+        $this->p20f = $p20f;
+
+        return $this;
+    }
+
+    /**
+     * Get p20f
+     *
+     * @return string
+     */
+    public function getP20f()
+    {
+        return $this->p20f;
+    }
+
+    /**
+     * Set p20g
+     *
+     * @param string $p20g
+     *
+     * @return Cuestionario
+     */
+    public function setP20g($p20g)
+    {
+        $this->p20g = $p20g;
+
+        return $this;
+    }
+
+    /**
+     * Get p20g
+     *
+     * @return string
+     */
+    public function getP20g()
+    {
+        return $this->p20g;
+    }
+
+    /**
+     * Set p20h
+     *
+     * @param string $p20h
+     *
+     * @return Cuestionario
+     */
+    public function setP20h($p20h)
+    {
+        $this->p20h = $p20h;
+
+        return $this;
+    }
+
+    /**
+     * Get p20h
+     *
+     * @return string
+     */
+    public function getP20h()
+    {
+        return $this->p20h;
+    }
+
+    /**
      * Set p21
      *
-     * @param string $p21
+     * @param array $p21
      *
      * @return Cuestionario
      */
@@ -1954,7 +2062,7 @@ class Cuestionario
     /**
      * Get p21
      *
-     * @return string
+     * @return array
      */
     public function getP21()
     {
@@ -2082,6 +2190,30 @@ class Cuestionario
     }
 
     /**
+     * Set p22f
+     *
+     * @param string $p22f
+     *
+     * @return Cuestionario
+     */
+    public function setP22f($p22f)
+    {
+        $this->p22f = $p22f;
+
+        return $this;
+    }
+
+    /**
+     * Get p22f
+     *
+     * @return string
+     */
+    public function getP22f()
+    {
+        return $this->p22f;
+    }
+
+    /**
      * Set p23
      *
      * @param string $p23
@@ -2127,198 +2259,6 @@ class Cuestionario
     public function getP24()
     {
         return $this->p24;
-    }
-
-    /**
-     * Set p24a
-     *
-     * @param string $p24a
-     *
-     * @return Cuestionario
-     */
-    public function setP24a($p24a)
-    {
-        $this->p24a = $p24a;
-
-        return $this;
-    }
-
-    /**
-     * Get p24a
-     *
-     * @return string
-     */
-    public function getP24a()
-    {
-        return $this->p24a;
-    }
-
-    /**
-     * Set p24b
-     *
-     * @param string $p24b
-     *
-     * @return Cuestionario
-     */
-    public function setP24b($p24b)
-    {
-        $this->p24b = $p24b;
-
-        return $this;
-    }
-
-    /**
-     * Get p24b
-     *
-     * @return string
-     */
-    public function getP24b()
-    {
-        return $this->p24b;
-    }
-
-    /**
-     * Set p24c
-     *
-     * @param string $p24c
-     *
-     * @return Cuestionario
-     */
-    public function setP24c($p24c)
-    {
-        $this->p24c = $p24c;
-
-        return $this;
-    }
-
-    /**
-     * Get p24c
-     *
-     * @return string
-     */
-    public function getP24c()
-    {
-        return $this->p24c;
-    }
-
-    /**
-     * Set p24d
-     *
-     * @param string $p24d
-     *
-     * @return Cuestionario
-     */
-    public function setP24d($p24d)
-    {
-        $this->p24d = $p24d;
-
-        return $this;
-    }
-
-    /**
-     * Get p24d
-     *
-     * @return string
-     */
-    public function getP24d()
-    {
-        return $this->p24d;
-    }
-
-    /**
-     * Set p24e
-     *
-     * @param string $p24e
-     *
-     * @return Cuestionario
-     */
-    public function setP24e($p24e)
-    {
-        $this->p24e = $p24e;
-
-        return $this;
-    }
-
-    /**
-     * Get p24e
-     *
-     * @return string
-     */
-    public function getP24e()
-    {
-        return $this->p24e;
-    }
-
-    /**
-     * Set p24f
-     *
-     * @param string $p24f
-     *
-     * @return Cuestionario
-     */
-    public function setP24f($p24f)
-    {
-        $this->p24f = $p24f;
-
-        return $this;
-    }
-
-    /**
-     * Get p24f
-     *
-     * @return string
-     */
-    public function getP24f()
-    {
-        return $this->p24f;
-    }
-
-    /**
-     * Set p24g
-     *
-     * @param string $p24g
-     *
-     * @return Cuestionario
-     */
-    public function setP24g($p24g)
-    {
-        $this->p24g = $p24g;
-
-        return $this;
-    }
-
-    /**
-     * Get p24g
-     *
-     * @return string
-     */
-    public function getP24g()
-    {
-        return $this->p24g;
-    }
-
-    /**
-     * Set p24h
-     *
-     * @param string $p24h
-     *
-     * @return Cuestionario
-     */
-    public function setP24h($p24h)
-    {
-        $this->p24h = $p24h;
-
-        return $this;
-    }
-
-    /**
-     * Get p24h
-     *
-     * @return string
-     */
-    public function getP24h()
-    {
-        return $this->p24h;
     }
 
     /**
@@ -2370,147 +2310,27 @@ class Cuestionario
     }
 
     /**
-     * Set p27a
+     * Set p27
      *
-     * @param string $p27a
+     * @param array $p27
      *
      * @return Cuestionario
      */
-    public function setP27a($p27a)
+    public function setP27($p27)
     {
-        $this->p27a = $p27a;
+        $this->p27 = $p27;
 
         return $this;
     }
 
     /**
-     * Get p27a
+     * Get p27
      *
-     * @return string
+     * @return array
      */
-    public function getP27a()
+    public function getP27()
     {
-        return $this->p27a;
-    }
-
-    /**
-     * Set p27b
-     *
-     * @param string $p27b
-     *
-     * @return Cuestionario
-     */
-    public function setP27b($p27b)
-    {
-        $this->p27b = $p27b;
-
-        return $this;
-    }
-
-    /**
-     * Get p27b
-     *
-     * @return string
-     */
-    public function getP27b()
-    {
-        return $this->p27b;
-    }
-
-    /**
-     * Set p27c
-     *
-     * @param string $p27c
-     *
-     * @return Cuestionario
-     */
-    public function setP27c($p27c)
-    {
-        $this->p27c = $p27c;
-
-        return $this;
-    }
-
-    /**
-     * Get p27c
-     *
-     * @return string
-     */
-    public function getP27c()
-    {
-        return $this->p27c;
-    }
-
-    /**
-     * Set p27d
-     *
-     * @param string $p27d
-     *
-     * @return Cuestionario
-     */
-    public function setP27d($p27d)
-    {
-        $this->p27d = $p27d;
-
-        return $this;
-    }
-
-    /**
-     * Get p27d
-     *
-     * @return string
-     */
-    public function getP27d()
-    {
-        return $this->p27d;
-    }
-
-    /**
-     * Set p27e
-     *
-     * @param string $p27e
-     *
-     * @return Cuestionario
-     */
-    public function setP27e($p27e)
-    {
-        $this->p27e = $p27e;
-
-        return $this;
-    }
-
-    /**
-     * Get p27e
-     *
-     * @return string
-     */
-    public function getP27e()
-    {
-        return $this->p27e;
-    }
-
-    /**
-     * Set p27f
-     *
-     * @param string $p27f
-     *
-     * @return Cuestionario
-     */
-    public function setP27f($p27f)
-    {
-        $this->p27f = $p27f;
-
-        return $this;
-    }
-
-    /**
-     * Get p27f
-     *
-     * @return string
-     */
-    public function getP27f()
-    {
-        return $this->p27f;
+        return $this->p27;
     }
 
     /**
@@ -2612,7 +2432,7 @@ class Cuestionario
     /**
      * Set p32
      *
-     * @param array $p32
+     * @param string $p32
      *
      * @return Cuestionario
      */
@@ -2626,7 +2446,7 @@ class Cuestionario
     /**
      * Get p32
      *
-     * @return array
+     * @return string
      */
     public function getP32()
     {
@@ -2636,7 +2456,7 @@ class Cuestionario
     /**
      * Set p33
      *
-     * @param array $p33
+     * @param string $p33
      *
      * @return Cuestionario
      */
@@ -2650,7 +2470,7 @@ class Cuestionario
     /**
      * Get p33
      *
-     * @return array
+     * @return string
      */
     public function getP33()
     {
@@ -2730,99 +2550,1011 @@ class Cuestionario
     }
 
     /**
-     * Set p37
+     * Set p37a
      *
-     * @param string $p37
+     * @param string $p37a
      *
      * @return Cuestionario
      */
-    public function setP37($p37)
+    public function setP37a($p37a)
     {
-        $this->p37 = $p37;
+        $this->p37a = $p37a;
 
         return $this;
     }
 
     /**
-     * Get p37
+     * Get p37a
      *
      * @return string
      */
-    public function getP37()
+    public function getP37a()
     {
-        return $this->p37;
+        return $this->p37a;
     }
 
     /**
-     * Set p38
+     * Set p37b
      *
-     * @param string $p38
+     * @param string $p37b
      *
      * @return Cuestionario
      */
-    public function setP38($p38)
+    public function setP37b($p37b)
     {
-        $this->p38 = $p38;
+        $this->p37b = $p37b;
 
         return $this;
     }
 
     /**
-     * Get p38
+     * Get p37b
      *
      * @return string
      */
-    public function getP38()
+    public function getP37b()
     {
-        return $this->p38;
+        return $this->p37b;
     }
 
     /**
-     * Set p39
+     * Set p37c
      *
-     * @param string $p39
+     * @param string $p37c
      *
      * @return Cuestionario
      */
-    public function setP39($p39)
+    public function setP37c($p37c)
     {
-        $this->p39 = $p39;
+        $this->p37c = $p37c;
 
         return $this;
     }
 
     /**
-     * Get p39
+     * Get p37c
      *
      * @return string
      */
-    public function getP39()
+    public function getP37c()
     {
-        return $this->p39;
+        return $this->p37c;
     }
 
     /**
-     * Set p40
+     * Set p37d
      *
-     * @param string $p40
+     * @param string $p37d
      *
      * @return Cuestionario
      */
-    public function setP40($p40)
+    public function setP37d($p37d)
     {
-        $this->p40 = $p40;
+        $this->p37d = $p37d;
 
         return $this;
     }
 
     /**
-     * Get p40
+     * Get p37d
      *
      * @return string
      */
-    public function getP40()
+    public function getP37d()
     {
-        return $this->p40;
+        return $this->p37d;
+    }
+
+    /**
+     * Set p38a
+     *
+     * @param string $p38a
+     *
+     * @return Cuestionario
+     */
+    public function setP38a($p38a)
+    {
+        $this->p38a = $p38a;
+
+        return $this;
+    }
+
+    /**
+     * Get p38a
+     *
+     * @return string
+     */
+    public function getP38a()
+    {
+        return $this->p38a;
+    }
+
+    /**
+     * Set p38b
+     *
+     * @param string $p38b
+     *
+     * @return Cuestionario
+     */
+    public function setP38b($p38b)
+    {
+        $this->p38b = $p38b;
+
+        return $this;
+    }
+
+    /**
+     * Get p38b
+     *
+     * @return string
+     */
+    public function getP38b()
+    {
+        return $this->p38b;
+    }
+
+    /**
+     * Set p38c
+     *
+     * @param string $p38c
+     *
+     * @return Cuestionario
+     */
+    public function setP38c($p38c)
+    {
+        $this->p38c = $p38c;
+
+        return $this;
+    }
+
+    /**
+     * Get p38c
+     *
+     * @return string
+     */
+    public function getP38c()
+    {
+        return $this->p38c;
+    }
+
+    /**
+     * Set p38d
+     *
+     * @param string $p38d
+     *
+     * @return Cuestionario
+     */
+    public function setP38d($p38d)
+    {
+        $this->p38d = $p38d;
+
+        return $this;
+    }
+
+    /**
+     * Get p38d
+     *
+     * @return string
+     */
+    public function getP38d()
+    {
+        return $this->p38d;
+    }
+
+    /**
+     * Set p38e
+     *
+     * @param string $p38e
+     *
+     * @return Cuestionario
+     */
+    public function setP38e($p38e)
+    {
+        $this->p38e = $p38e;
+
+        return $this;
+    }
+
+    /**
+     * Get p38e
+     *
+     * @return string
+     */
+    public function getP38e()
+    {
+        return $this->p38e;
+    }
+
+    /**
+     * Set p38f
+     *
+     * @param string $p38f
+     *
+     * @return Cuestionario
+     */
+    public function setP38f($p38f)
+    {
+        $this->p38f = $p38f;
+
+        return $this;
+    }
+
+    /**
+     * Get p38f
+     *
+     * @return string
+     */
+    public function getP38f()
+    {
+        return $this->p38f;
+    }
+
+    /**
+     * Set p38g
+     *
+     * @param string $p38g
+     *
+     * @return Cuestionario
+     */
+    public function setP38g($p38g)
+    {
+        $this->p38g = $p38g;
+
+        return $this;
+    }
+
+    /**
+     * Get p38g
+     *
+     * @return string
+     */
+    public function getP38g()
+    {
+        return $this->p38g;
+    }
+
+    /**
+     * Set p38h
+     *
+     * @param string $p38h
+     *
+     * @return Cuestionario
+     */
+    public function setP38h($p38h)
+    {
+        $this->p38h = $p38h;
+
+        return $this;
+    }
+
+    /**
+     * Get p38h
+     *
+     * @return string
+     */
+    public function getP38h()
+    {
+        return $this->p38h;
+    }
+
+    /**
+     * Set p38i
+     *
+     * @param string $p38i
+     *
+     * @return Cuestionario
+     */
+    public function setP38i($p38i)
+    {
+        $this->p38i = $p38i;
+
+        return $this;
+    }
+
+    /**
+     * Get p38i
+     *
+     * @return string
+     */
+    public function getP38i()
+    {
+        return $this->p38i;
+    }
+
+    /**
+     * Set p38j
+     *
+     * @param string $p38j
+     *
+     * @return Cuestionario
+     */
+    public function setP38j($p38j)
+    {
+        $this->p38j = $p38j;
+
+        return $this;
+    }
+
+    /**
+     * Get p38j
+     *
+     * @return string
+     */
+    public function getP38j()
+    {
+        return $this->p38j;
+    }
+
+    /**
+     * Set p38k
+     *
+     * @param string $p38k
+     *
+     * @return Cuestionario
+     */
+    public function setP38k($p38k)
+    {
+        $this->p38k = $p38k;
+
+        return $this;
+    }
+
+    /**
+     * Get p38k
+     *
+     * @return string
+     */
+    public function getP38k()
+    {
+        return $this->p38k;
+    }
+
+    /**
+     * Set p38l
+     *
+     * @param string $p38l
+     *
+     * @return Cuestionario
+     */
+    public function setP38l($p38l)
+    {
+        $this->p38l = $p38l;
+
+        return $this;
+    }
+
+    /**
+     * Get p38l
+     *
+     * @return string
+     */
+    public function getP38l()
+    {
+        return $this->p38l;
+    }
+
+    /**
+     * Set p38m
+     *
+     * @param string $p38m
+     *
+     * @return Cuestionario
+     */
+    public function setP38m($p38m)
+    {
+        $this->p38m = $p38m;
+
+        return $this;
+    }
+
+    /**
+     * Get p38m
+     *
+     * @return string
+     */
+    public function getP38m()
+    {
+        return $this->p38m;
+    }
+
+    /**
+     * Set p38n
+     *
+     * @param string $p38n
+     *
+     * @return Cuestionario
+     */
+    public function setP38n($p38n)
+    {
+        $this->p38n = $p38n;
+
+        return $this;
+    }
+
+    /**
+     * Get p38n
+     *
+     * @return string
+     */
+    public function getP38n()
+    {
+        return $this->p38n;
+    }
+
+    /**
+     * Set p38o
+     *
+     * @param string $p38o
+     *
+     * @return Cuestionario
+     */
+    public function setP38o($p38o)
+    {
+        $this->p38o = $p38o;
+
+        return $this;
+    }
+
+    /**
+     * Get p38o
+     *
+     * @return string
+     */
+    public function getP38o()
+    {
+        return $this->p38o;
+    }
+
+    /**
+     * Set p38p
+     *
+     * @param string $p38p
+     *
+     * @return Cuestionario
+     */
+    public function setP38p($p38p)
+    {
+        $this->p38p = $p38p;
+
+        return $this;
+    }
+
+    /**
+     * Get p38p
+     *
+     * @return string
+     */
+    public function getP38p()
+    {
+        return $this->p38p;
+    }
+
+    /**
+     * Set p39a
+     *
+     * @param string $p39a
+     *
+     * @return Cuestionario
+     */
+    public function setP39a($p39a)
+    {
+        $this->p39a = $p39a;
+
+        return $this;
+    }
+
+    /**
+     * Get p39a
+     *
+     * @return string
+     */
+    public function getP39a()
+    {
+        return $this->p39a;
+    }
+
+    /**
+     * Set p39b
+     *
+     * @param string $p39b
+     *
+     * @return Cuestionario
+     */
+    public function setP39b($p39b)
+    {
+        $this->p39b = $p39b;
+
+        return $this;
+    }
+
+    /**
+     * Get p39b
+     *
+     * @return string
+     */
+    public function getP39b()
+    {
+        return $this->p39b;
+    }
+
+    /**
+     * Set p39c
+     *
+     * @param string $p39c
+     *
+     * @return Cuestionario
+     */
+    public function setP39c($p39c)
+    {
+        $this->p39c = $p39c;
+
+        return $this;
+    }
+
+    /**
+     * Get p39c
+     *
+     * @return string
+     */
+    public function getP39c()
+    {
+        return $this->p39c;
+    }
+
+    /**
+     * Set p39d
+     *
+     * @param string $p39d
+     *
+     * @return Cuestionario
+     */
+    public function setP39d($p39d)
+    {
+        $this->p39d = $p39d;
+
+        return $this;
+    }
+
+    /**
+     * Get p39d
+     *
+     * @return string
+     */
+    public function getP39d()
+    {
+        return $this->p39d;
+    }
+
+    /**
+     * Set p39e
+     *
+     * @param string $p39e
+     *
+     * @return Cuestionario
+     */
+    public function setP39e($p39e)
+    {
+        $this->p39e = $p39e;
+
+        return $this;
+    }
+
+    /**
+     * Get p39e
+     *
+     * @return string
+     */
+    public function getP39e()
+    {
+        return $this->p39e;
+    }
+
+    /**
+     * Set p39f
+     *
+     * @param string $p39f
+     *
+     * @return Cuestionario
+     */
+    public function setP39f($p39f)
+    {
+        $this->p39f = $p39f;
+
+        return $this;
+    }
+
+    /**
+     * Get p39f
+     *
+     * @return string
+     */
+    public function getP39f()
+    {
+        return $this->p39f;
+    }
+
+    /**
+     * Set p39g
+     *
+     * @param string $p39g
+     *
+     * @return Cuestionario
+     */
+    public function setP39g($p39g)
+    {
+        $this->p39g = $p39g;
+
+        return $this;
+    }
+
+    /**
+     * Get p39g
+     *
+     * @return string
+     */
+    public function getP39g()
+    {
+        return $this->p39g;
+    }
+
+    /**
+     * Set p39h
+     *
+     * @param string $p39h
+     *
+     * @return Cuestionario
+     */
+    public function setP39h($p39h)
+    {
+        $this->p39h = $p39h;
+
+        return $this;
+    }
+
+    /**
+     * Get p39h
+     *
+     * @return string
+     */
+    public function getP39h()
+    {
+        return $this->p39h;
+    }
+
+    /**
+     * Set p39i
+     *
+     * @param string $p39i
+     *
+     * @return Cuestionario
+     */
+    public function setP39i($p39i)
+    {
+        $this->p39i = $p39i;
+
+        return $this;
+    }
+
+    /**
+     * Get p39i
+     *
+     * @return string
+     */
+    public function getP39i()
+    {
+        return $this->p39i;
+    }
+
+    /**
+     * Set p39j
+     *
+     * @param string $p39j
+     *
+     * @return Cuestionario
+     */
+    public function setP39j($p39j)
+    {
+        $this->p39j = $p39j;
+
+        return $this;
+    }
+
+    /**
+     * Get p39j
+     *
+     * @return string
+     */
+    public function getP39j()
+    {
+        return $this->p39j;
+    }
+
+    /**
+     * Set p39k
+     *
+     * @param string $p39k
+     *
+     * @return Cuestionario
+     */
+    public function setP39k($p39k)
+    {
+        $this->p39k = $p39k;
+
+        return $this;
+    }
+
+    /**
+     * Get p39k
+     *
+     * @return string
+     */
+    public function getP39k()
+    {
+        return $this->p39k;
+    }
+
+    /**
+     * Set p39l
+     *
+     * @param string $p39l
+     *
+     * @return Cuestionario
+     */
+    public function setP39l($p39l)
+    {
+        $this->p39l = $p39l;
+
+        return $this;
+    }
+
+    /**
+     * Get p39l
+     *
+     * @return string
+     */
+    public function getP39l()
+    {
+        return $this->p39l;
+    }
+
+    /**
+     * Set p39m
+     *
+     * @param string $p39m
+     *
+     * @return Cuestionario
+     */
+    public function setP39m($p39m)
+    {
+        $this->p39m = $p39m;
+
+        return $this;
+    }
+
+    /**
+     * Get p39m
+     *
+     * @return string
+     */
+    public function getP39m()
+    {
+        return $this->p39m;
+    }
+
+    /**
+     * Set p39n
+     *
+     * @param string $p39n
+     *
+     * @return Cuestionario
+     */
+    public function setP39n($p39n)
+    {
+        $this->p39n = $p39n;
+
+        return $this;
+    }
+
+    /**
+     * Get p39n
+     *
+     * @return string
+     */
+    public function getP39n()
+    {
+        return $this->p39n;
+    }
+
+    /**
+     * Set p39o
+     *
+     * @param string $p39o
+     *
+     * @return Cuestionario
+     */
+    public function setP39o($p39o)
+    {
+        $this->p39o = $p39o;
+
+        return $this;
+    }
+
+    /**
+     * Get p39o
+     *
+     * @return string
+     */
+    public function getP39o()
+    {
+        return $this->p39o;
+    }
+
+    /**
+     * Set p40a
+     *
+     * @param string $p40a
+     *
+     * @return Cuestionario
+     */
+    public function setP40a($p40a)
+    {
+        $this->p40a = $p40a;
+
+        return $this;
+    }
+
+    /**
+     * Get p40a
+     *
+     * @return string
+     */
+    public function getP40a()
+    {
+        return $this->p40a;
+    }
+
+    /**
+     * Set p40b
+     *
+     * @param string $p40b
+     *
+     * @return Cuestionario
+     */
+    public function setP40b($p40b)
+    {
+        $this->p40b = $p40b;
+
+        return $this;
+    }
+
+    /**
+     * Get p40b
+     *
+     * @return string
+     */
+    public function getP40b()
+    {
+        return $this->p40b;
+    }
+
+    /**
+     * Set p40c
+     *
+     * @param string $p40c
+     *
+     * @return Cuestionario
+     */
+    public function setP40c($p40c)
+    {
+        $this->p40c = $p40c;
+
+        return $this;
+    }
+
+    /**
+     * Get p40c
+     *
+     * @return string
+     */
+    public function getP40c()
+    {
+        return $this->p40c;
+    }
+
+    /**
+     * Set p40d
+     *
+     * @param string $p40d
+     *
+     * @return Cuestionario
+     */
+    public function setP40d($p40d)
+    {
+        $this->p40d = $p40d;
+
+        return $this;
+    }
+
+    /**
+     * Get p40d
+     *
+     * @return string
+     */
+    public function getP40d()
+    {
+        return $this->p40d;
+    }
+
+    /**
+     * Set p40e
+     *
+     * @param string $p40e
+     *
+     * @return Cuestionario
+     */
+    public function setP40e($p40e)
+    {
+        $this->p40e = $p40e;
+
+        return $this;
+    }
+
+    /**
+     * Get p40e
+     *
+     * @return string
+     */
+    public function getP40e()
+    {
+        return $this->p40e;
+    }
+
+    /**
+     * Set p40f
+     *
+     * @param string $p40f
+     *
+     * @return Cuestionario
+     */
+    public function setP40f($p40f)
+    {
+        $this->p40f = $p40f;
+
+        return $this;
+    }
+
+    /**
+     * Get p40f
+     *
+     * @return string
+     */
+    public function getP40f()
+    {
+        return $this->p40f;
+    }
+
+    /**
+     * Set p40g
+     *
+     * @param string $p40g
+     *
+     * @return Cuestionario
+     */
+    public function setP40g($p40g)
+    {
+        $this->p40g = $p40g;
+
+        return $this;
+    }
+
+    /**
+     * Get p40g
+     *
+     * @return string
+     */
+    public function getP40g()
+    {
+        return $this->p40g;
     }
 
     /**
@@ -2852,7 +3584,7 @@ class Cuestionario
     /**
      * Set p42
      *
-     * @param array $p42
+     * @param string $p42
      *
      * @return Cuestionario
      */
@@ -2866,7 +3598,7 @@ class Cuestionario
     /**
      * Get p42
      *
-     * @return array
+     * @return string
      */
     public function getP42()
     {
@@ -2874,99 +3606,27 @@ class Cuestionario
     }
 
     /**
-     * Set p43a
+     * Set p43
      *
-     * @param string $p43a
+     * @param string $p43
      *
      * @return Cuestionario
      */
-    public function setP43a($p43a)
+    public function setP43($p43)
     {
-        $this->p43a = $p43a;
+        $this->p43 = $p43;
 
         return $this;
     }
 
     /**
-     * Get p43a
+     * Get p43
      *
      * @return string
      */
-    public function getP43a()
+    public function getP43()
     {
-        return $this->p43a;
-    }
-
-    /**
-     * Set p43b
-     *
-     * @param string $p43b
-     *
-     * @return Cuestionario
-     */
-    public function setP43b($p43b)
-    {
-        $this->p43b = $p43b;
-
-        return $this;
-    }
-
-    /**
-     * Get p43b
-     *
-     * @return string
-     */
-    public function getP43b()
-    {
-        return $this->p43b;
-    }
-
-    /**
-     * Set p43c
-     *
-     * @param string $p43c
-     *
-     * @return Cuestionario
-     */
-    public function setP43c($p43c)
-    {
-        $this->p43c = $p43c;
-
-        return $this;
-    }
-
-    /**
-     * Get p43c
-     *
-     * @return string
-     */
-    public function getP43c()
-    {
-        return $this->p43c;
-    }
-
-    /**
-     * Set p43d
-     *
-     * @param string $p43d
-     *
-     * @return Cuestionario
-     */
-    public function setP43d($p43d)
-    {
-        $this->p43d = $p43d;
-
-        return $this;
-    }
-
-    /**
-     * Get p43d
-     *
-     * @return string
-     */
-    public function getP43d()
-    {
-        return $this->p43d;
+        return $this->p43;
     }
 
     /**
@@ -3066,819 +3726,51 @@ class Cuestionario
     }
 
     /**
-     * Set p44e
+     * Set p45
      *
-     * @param string $p44e
+     * @param string $p45
      *
      * @return Cuestionario
      */
-    public function setP44e($p44e)
+    public function setP45($p45)
     {
-        $this->p44e = $p44e;
+        $this->p45 = $p45;
 
         return $this;
     }
 
     /**
-     * Get p44e
+     * Get p45
      *
      * @return string
      */
-    public function getP44e()
+    public function getP45()
     {
-        return $this->p44e;
+        return $this->p45;
     }
 
     /**
-     * Set p44f
+     * Set p46
      *
-     * @param string $p44f
+     * @param string $p46
      *
      * @return Cuestionario
      */
-    public function setP44f($p44f)
+    public function setP46($p46)
     {
-        $this->p44f = $p44f;
+        $this->p46 = $p46;
 
         return $this;
     }
 
     /**
-     * Get p44f
+     * Get p46
      *
      * @return string
      */
-    public function getP44f()
+    public function getP46()
     {
-        return $this->p44f;
-    }
-
-    /**
-     * Set p44g
-     *
-     * @param string $p44g
-     *
-     * @return Cuestionario
-     */
-    public function setP44g($p44g)
-    {
-        $this->p44g = $p44g;
-
-        return $this;
-    }
-
-    /**
-     * Get p44g
-     *
-     * @return string
-     */
-    public function getP44g()
-    {
-        return $this->p44g;
-    }
-
-    /**
-     * Set p44h
-     *
-     * @param string $p44h
-     *
-     * @return Cuestionario
-     */
-    public function setP44h($p44h)
-    {
-        $this->p44h = $p44h;
-
-        return $this;
-    }
-
-    /**
-     * Get p44h
-     *
-     * @return string
-     */
-    public function getP44h()
-    {
-        return $this->p44h;
-    }
-
-    /**
-     * Set p44i
-     *
-     * @param string $p44i
-     *
-     * @return Cuestionario
-     */
-    public function setP44i($p44i)
-    {
-        $this->p44i = $p44i;
-
-        return $this;
-    }
-
-    /**
-     * Get p44i
-     *
-     * @return string
-     */
-    public function getP44i()
-    {
-        return $this->p44i;
-    }
-
-    /**
-     * Set p44j
-     *
-     * @param string $p44j
-     *
-     * @return Cuestionario
-     */
-    public function setP44j($p44j)
-    {
-        $this->p44j = $p44j;
-
-        return $this;
-    }
-
-    /**
-     * Get p44j
-     *
-     * @return string
-     */
-    public function getP44j()
-    {
-        return $this->p44j;
-    }
-
-    /**
-     * Set p44k
-     *
-     * @param string $p44k
-     *
-     * @return Cuestionario
-     */
-    public function setP44k($p44k)
-    {
-        $this->p44k = $p44k;
-
-        return $this;
-    }
-
-    /**
-     * Get p44k
-     *
-     * @return string
-     */
-    public function getP44k()
-    {
-        return $this->p44k;
-    }
-
-    /**
-     * Set p44l
-     *
-     * @param string $p44l
-     *
-     * @return Cuestionario
-     */
-    public function setP44l($p44l)
-    {
-        $this->p44l = $p44l;
-
-        return $this;
-    }
-
-    /**
-     * Get p44l
-     *
-     * @return string
-     */
-    public function getP44l()
-    {
-        return $this->p44l;
-    }
-
-    /**
-     * Set p44m
-     *
-     * @param string $p44m
-     *
-     * @return Cuestionario
-     */
-    public function setP44m($p44m)
-    {
-        $this->p44m = $p44m;
-
-        return $this;
-    }
-
-    /**
-     * Get p44m
-     *
-     * @return string
-     */
-    public function getP44m()
-    {
-        return $this->p44m;
-    }
-
-    /**
-     * Set p44n
-     *
-     * @param string $p44n
-     *
-     * @return Cuestionario
-     */
-    public function setP44n($p44n)
-    {
-        $this->p44n = $p44n;
-
-        return $this;
-    }
-
-    /**
-     * Get p44n
-     *
-     * @return string
-     */
-    public function getP44n()
-    {
-        return $this->p44n;
-    }
-
-    /**
-     * Set p44o
-     *
-     * @param string $p44o
-     *
-     * @return Cuestionario
-     */
-    public function setP44o($p44o)
-    {
-        $this->p44o = $p44o;
-
-        return $this;
-    }
-
-    /**
-     * Get p44o
-     *
-     * @return string
-     */
-    public function getP44o()
-    {
-        return $this->p44o;
-    }
-
-    /**
-     * Set p44p
-     *
-     * @param string $p44p
-     *
-     * @return Cuestionario
-     */
-    public function setP44p($p44p)
-    {
-        $this->p44p = $p44p;
-
-        return $this;
-    }
-
-    /**
-     * Get p44p
-     *
-     * @return string
-     */
-    public function getP44p()
-    {
-        return $this->p44p;
-    }
-
-    /**
-     * Set p45a
-     *
-     * @param string $p45a
-     *
-     * @return Cuestionario
-     */
-    public function setP45a($p45a)
-    {
-        $this->p45a = $p45a;
-
-        return $this;
-    }
-
-    /**
-     * Get p45a
-     *
-     * @return string
-     */
-    public function getP45a()
-    {
-        return $this->p45a;
-    }
-
-    /**
-     * Set p45b
-     *
-     * @param string $p45b
-     *
-     * @return Cuestionario
-     */
-    public function setP45b($p45b)
-    {
-        $this->p45b = $p45b;
-
-        return $this;
-    }
-
-    /**
-     * Get p45b
-     *
-     * @return string
-     */
-    public function getP45b()
-    {
-        return $this->p45b;
-    }
-
-    /**
-     * Set p45c
-     *
-     * @param string $p45c
-     *
-     * @return Cuestionario
-     */
-    public function setP45c($p45c)
-    {
-        $this->p45c = $p45c;
-
-        return $this;
-    }
-
-    /**
-     * Get p45c
-     *
-     * @return string
-     */
-    public function getP45c()
-    {
-        return $this->p45c;
-    }
-
-    /**
-     * Set p45d
-     *
-     * @param string $p45d
-     *
-     * @return Cuestionario
-     */
-    public function setP45d($p45d)
-    {
-        $this->p45d = $p45d;
-
-        return $this;
-    }
-
-    /**
-     * Get p45d
-     *
-     * @return string
-     */
-    public function getP45d()
-    {
-        return $this->p45d;
-    }
-
-    /**
-     * Set p45e
-     *
-     * @param string $p45e
-     *
-     * @return Cuestionario
-     */
-    public function setP45e($p45e)
-    {
-        $this->p45e = $p45e;
-
-        return $this;
-    }
-
-    /**
-     * Get p45e
-     *
-     * @return string
-     */
-    public function getP45e()
-    {
-        return $this->p45e;
-    }
-
-    /**
-     * Set p45f
-     *
-     * @param string $p45f
-     *
-     * @return Cuestionario
-     */
-    public function setP45f($p45f)
-    {
-        $this->p45f = $p45f;
-
-        return $this;
-    }
-
-    /**
-     * Get p45f
-     *
-     * @return string
-     */
-    public function getP45f()
-    {
-        return $this->p45f;
-    }
-
-    /**
-     * Set p45g
-     *
-     * @param string $p45g
-     *
-     * @return Cuestionario
-     */
-    public function setP45g($p45g)
-    {
-        $this->p45g = $p45g;
-
-        return $this;
-    }
-
-    /**
-     * Get p45g
-     *
-     * @return string
-     */
-    public function getP45g()
-    {
-        return $this->p45g;
-    }
-
-    /**
-     * Set p45h
-     *
-     * @param string $p45h
-     *
-     * @return Cuestionario
-     */
-    public function setP45h($p45h)
-    {
-        $this->p45h = $p45h;
-
-        return $this;
-    }
-
-    /**
-     * Get p45h
-     *
-     * @return string
-     */
-    public function getP45h()
-    {
-        return $this->p45h;
-    }
-
-    /**
-     * Set p45i
-     *
-     * @param string $p45i
-     *
-     * @return Cuestionario
-     */
-    public function setP45i($p45i)
-    {
-        $this->p45i = $p45i;
-
-        return $this;
-    }
-
-    /**
-     * Get p45i
-     *
-     * @return string
-     */
-    public function getP45i()
-    {
-        return $this->p45i;
-    }
-
-    /**
-     * Set p45j
-     *
-     * @param string $p45j
-     *
-     * @return Cuestionario
-     */
-    public function setP45j($p45j)
-    {
-        $this->p45j = $p45j;
-
-        return $this;
-    }
-
-    /**
-     * Get p45j
-     *
-     * @return string
-     */
-    public function getP45j()
-    {
-        return $this->p45j;
-    }
-
-    /**
-     * Set p45k
-     *
-     * @param string $p45k
-     *
-     * @return Cuestionario
-     */
-    public function setP45k($p45k)
-    {
-        $this->p45k = $p45k;
-
-        return $this;
-    }
-
-    /**
-     * Get p45k
-     *
-     * @return string
-     */
-    public function getP45k()
-    {
-        return $this->p45k;
-    }
-
-    /**
-     * Set p45l
-     *
-     * @param string $p45l
-     *
-     * @return Cuestionario
-     */
-    public function setP45l($p45l)
-    {
-        $this->p45l = $p45l;
-
-        return $this;
-    }
-
-    /**
-     * Get p45l
-     *
-     * @return string
-     */
-    public function getP45l()
-    {
-        return $this->p45l;
-    }
-
-    /**
-     * Set p45m
-     *
-     * @param string $p45m
-     *
-     * @return Cuestionario
-     */
-    public function setP45m($p45m)
-    {
-        $this->p45m = $p45m;
-
-        return $this;
-    }
-
-    /**
-     * Get p45m
-     *
-     * @return string
-     */
-    public function getP45m()
-    {
-        return $this->p45m;
-    }
-
-    /**
-     * Set p45n
-     *
-     * @param string $p45n
-     *
-     * @return Cuestionario
-     */
-    public function setP45n($p45n)
-    {
-        $this->p45n = $p45n;
-
-        return $this;
-    }
-
-    /**
-     * Get p45n
-     *
-     * @return string
-     */
-    public function getP45n()
-    {
-        return $this->p45n;
-    }
-
-    /**
-     * Set p45o
-     *
-     * @param string $p45o
-     *
-     * @return Cuestionario
-     */
-    public function setP45o($p45o)
-    {
-        $this->p45o = $p45o;
-
-        return $this;
-    }
-
-    /**
-     * Get p45o
-     *
-     * @return string
-     */
-    public function getP45o()
-    {
-        return $this->p45o;
-    }
-
-    /**
-     * Set p46a
-     *
-     * @param string $p46a
-     *
-     * @return Cuestionario
-     */
-    public function setP46a($p46a)
-    {
-        $this->p46a = $p46a;
-
-        return $this;
-    }
-
-    /**
-     * Get p46a
-     *
-     * @return string
-     */
-    public function getP46a()
-    {
-        return $this->p46a;
-    }
-
-    /**
-     * Set p46b
-     *
-     * @param string $p46b
-     *
-     * @return Cuestionario
-     */
-    public function setP46b($p46b)
-    {
-        $this->p46b = $p46b;
-
-        return $this;
-    }
-
-    /**
-     * Get p46b
-     *
-     * @return string
-     */
-    public function getP46b()
-    {
-        return $this->p46b;
-    }
-
-    /**
-     * Set p46c
-     *
-     * @param string $p46c
-     *
-     * @return Cuestionario
-     */
-    public function setP46c($p46c)
-    {
-        $this->p46c = $p46c;
-
-        return $this;
-    }
-
-    /**
-     * Get p46c
-     *
-     * @return string
-     */
-    public function getP46c()
-    {
-        return $this->p46c;
-    }
-
-    /**
-     * Set p46d
-     *
-     * @param string $p46d
-     *
-     * @return Cuestionario
-     */
-    public function setP46d($p46d)
-    {
-        $this->p46d = $p46d;
-
-        return $this;
-    }
-
-    /**
-     * Get p46d
-     *
-     * @return string
-     */
-    public function getP46d()
-    {
-        return $this->p46d;
-    }
-
-    /**
-     * Set p46e
-     *
-     * @param string $p46e
-     *
-     * @return Cuestionario
-     */
-    public function setP46e($p46e)
-    {
-        $this->p46e = $p46e;
-
-        return $this;
-    }
-
-    /**
-     * Get p46e
-     *
-     * @return string
-     */
-    public function getP46e()
-    {
-        return $this->p46e;
-    }
-
-    /**
-     * Set p46f
-     *
-     * @param string $p46f
-     *
-     * @return Cuestionario
-     */
-    public function setP46f($p46f)
-    {
-        $this->p46f = $p46f;
-
-        return $this;
-    }
-
-    /**
-     * Get p46f
-     *
-     * @return string
-     */
-    public function getP46f()
-    {
-        return $this->p46f;
-    }
-
-    /**
-     * Set p46g
-     *
-     * @param string $p46g
-     *
-     * @return Cuestionario
-     */
-    public function setP46g($p46g)
-    {
-        $this->p46g = $p46g;
-
-        return $this;
-    }
-
-    /**
-     * Get p46g
-     *
-     * @return string
-     */
-    public function getP46g()
-    {
-        return $this->p46g;
+        return $this->p46;
     }
 
     /**
@@ -3978,99 +3870,27 @@ class Cuestionario
     }
 
     /**
-     * Set p51a
+     * Set p51
      *
-     * @param string $p51a
+     * @param string $p51
      *
      * @return Cuestionario
      */
-    public function setP51a($p51a)
+    public function setP51($p51)
     {
-        $this->p51a = $p51a;
+        $this->p51 = $p51;
 
         return $this;
     }
 
     /**
-     * Get p51a
+     * Get p51
      *
      * @return string
      */
-    public function getP51a()
+    public function getP51()
     {
-        return $this->p51a;
-    }
-
-    /**
-     * Set p51b
-     *
-     * @param string $p51b
-     *
-     * @return Cuestionario
-     */
-    public function setP51b($p51b)
-    {
-        $this->p51b = $p51b;
-
-        return $this;
-    }
-
-    /**
-     * Get p51b
-     *
-     * @return string
-     */
-    public function getP51b()
-    {
-        return $this->p51b;
-    }
-
-    /**
-     * Set p51c
-     *
-     * @param string $p51c
-     *
-     * @return Cuestionario
-     */
-    public function setP51c($p51c)
-    {
-        $this->p51c = $p51c;
-
-        return $this;
-    }
-
-    /**
-     * Get p51c
-     *
-     * @return string
-     */
-    public function getP51c()
-    {
-        return $this->p51c;
-    }
-
-    /**
-     * Set p51d
-     *
-     * @param string $p51d
-     *
-     * @return Cuestionario
-     */
-    public function setP51d($p51d)
-    {
-        $this->p51d = $p51d;
-
-        return $this;
-    }
-
-    /**
-     * Get p51d
-     *
-     * @return string
-     */
-    public function getP51d()
-    {
-        return $this->p51d;
+        return $this->p51;
     }
 
     /**
@@ -4146,27 +3966,123 @@ class Cuestionario
     }
 
     /**
-     * Set p55
+     * Set p55a
      *
-     * @param string $p55
+     * @param string $p55a
      *
      * @return Cuestionario
      */
-    public function setP55($p55)
+    public function setP55a($p55a)
     {
-        $this->p55 = $p55;
+        $this->p55a = $p55a;
 
         return $this;
     }
 
     /**
-     * Get p55
+     * Get p55a
      *
      * @return string
      */
-    public function getP55()
+    public function getP55a()
     {
-        return $this->p55;
+        return $this->p55a;
+    }
+
+    /**
+     * Set p55b
+     *
+     * @param string $p55b
+     *
+     * @return Cuestionario
+     */
+    public function setP55b($p55b)
+    {
+        $this->p55b = $p55b;
+
+        return $this;
+    }
+
+    /**
+     * Get p55b
+     *
+     * @return string
+     */
+    public function getP55b()
+    {
+        return $this->p55b;
+    }
+
+    /**
+     * Set p55c
+     *
+     * @param string $p55c
+     *
+     * @return Cuestionario
+     */
+    public function setP55c($p55c)
+    {
+        $this->p55c = $p55c;
+
+        return $this;
+    }
+
+    /**
+     * Get p55c
+     *
+     * @return string
+     */
+    public function getP55c()
+    {
+        return $this->p55c;
+    }
+
+    /**
+     * Set p55d
+     *
+     * @param string $p55d
+     *
+     * @return Cuestionario
+     */
+    public function setP55d($p55d)
+    {
+        $this->p55d = $p55d;
+
+        return $this;
+    }
+
+    /**
+     * Get p55d
+     *
+     * @return string
+     */
+    public function getP55d()
+    {
+        return $this->p55d;
+    }
+
+    /**
+     * Set p55e
+     *
+     * @param string $p55e
+     *
+     * @return Cuestionario
+     */
+    public function setP55e($p55e)
+    {
+        $this->p55e = $p55e;
+
+        return $this;
+    }
+
+    /**
+     * Get p55e
+     *
+     * @return string
+     */
+    public function getP55e()
+    {
+        return $this->p55e;
     }
 
     /**
@@ -4194,27 +4110,291 @@ class Cuestionario
     }
 
     /**
-     * Set p57
+     * Set p57a
      *
-     * @param string $p57
+     * @param string $p57a
      *
      * @return Cuestionario
      */
-    public function setP57($p57)
+    public function setP57a($p57a)
     {
-        $this->p57 = $p57;
+        $this->p57a = $p57a;
 
         return $this;
     }
 
     /**
-     * Get p57
+     * Get p57a
      *
      * @return string
      */
-    public function getP57()
+    public function getP57a()
     {
-        return $this->p57;
+        return $this->p57a;
+    }
+
+    /**
+     * Set p57b
+     *
+     * @param string $p57b
+     *
+     * @return Cuestionario
+     */
+    public function setP57b($p57b)
+    {
+        $this->p57b = $p57b;
+
+        return $this;
+    }
+
+    /**
+     * Get p57b
+     *
+     * @return string
+     */
+    public function getP57b()
+    {
+        return $this->p57b;
+    }
+
+    /**
+     * Set p57c
+     *
+     * @param string $p57c
+     *
+     * @return Cuestionario
+     */
+    public function setP57c($p57c)
+    {
+        $this->p57c = $p57c;
+
+        return $this;
+    }
+
+    /**
+     * Get p57c
+     *
+     * @return string
+     */
+    public function getP57c()
+    {
+        return $this->p57c;
+    }
+
+    /**
+     * Set p57d
+     *
+     * @param string $p57d
+     *
+     * @return Cuestionario
+     */
+    public function setP57d($p57d)
+    {
+        $this->p57d = $p57d;
+
+        return $this;
+    }
+
+    /**
+     * Get p57d
+     *
+     * @return string
+     */
+    public function getP57d()
+    {
+        return $this->p57d;
+    }
+
+    /**
+     * Set p57e
+     *
+     * @param string $p57e
+     *
+     * @return Cuestionario
+     */
+    public function setP57e($p57e)
+    {
+        $this->p57e = $p57e;
+
+        return $this;
+    }
+
+    /**
+     * Get p57e
+     *
+     * @return string
+     */
+    public function getP57e()
+    {
+        return $this->p57e;
+    }
+
+    /**
+     * Set p57f
+     *
+     * @param string $p57f
+     *
+     * @return Cuestionario
+     */
+    public function setP57f($p57f)
+    {
+        $this->p57f = $p57f;
+
+        return $this;
+    }
+
+    /**
+     * Get p57f
+     *
+     * @return string
+     */
+    public function getP57f()
+    {
+        return $this->p57f;
+    }
+
+    /**
+     * Set p57g
+     *
+     * @param string $p57g
+     *
+     * @return Cuestionario
+     */
+    public function setP57g($p57g)
+    {
+        $this->p57g = $p57g;
+
+        return $this;
+    }
+
+    /**
+     * Get p57g
+     *
+     * @return string
+     */
+    public function getP57g()
+    {
+        return $this->p57g;
+    }
+
+    /**
+     * Set p57h
+     *
+     * @param string $p57h
+     *
+     * @return Cuestionario
+     */
+    public function setP57h($p57h)
+    {
+        $this->p57h = $p57h;
+
+        return $this;
+    }
+
+    /**
+     * Get p57h
+     *
+     * @return string
+     */
+    public function getP57h()
+    {
+        return $this->p57h;
+    }
+
+    /**
+     * Set p57i
+     *
+     * @param string $p57i
+     *
+     * @return Cuestionario
+     */
+    public function setP57i($p57i)
+    {
+        $this->p57i = $p57i;
+
+        return $this;
+    }
+
+    /**
+     * Get p57i
+     *
+     * @return string
+     */
+    public function getP57i()
+    {
+        return $this->p57i;
+    }
+
+    /**
+     * Set p57j
+     *
+     * @param string $p57j
+     *
+     * @return Cuestionario
+     */
+    public function setP57j($p57j)
+    {
+        $this->p57j = $p57j;
+
+        return $this;
+    }
+
+    /**
+     * Get p57j
+     *
+     * @return string
+     */
+    public function getP57j()
+    {
+        return $this->p57j;
+    }
+
+    /**
+     * Set p57k
+     *
+     * @param string $p57k
+     *
+     * @return Cuestionario
+     */
+    public function setP57k($p57k)
+    {
+        $this->p57k = $p57k;
+
+        return $this;
+    }
+
+    /**
+     * Get p57k
+     *
+     * @return string
+     */
+    public function getP57k()
+    {
+        return $this->p57k;
+    }
+
+    /**
+     * Set p57l
+     *
+     * @param string $p57l
+     *
+     * @return Cuestionario
+     */
+    public function setP57l($p57l)
+    {
+        $this->p57l = $p57l;
+
+        return $this;
+    }
+
+    /**
+     * Get p57l
+     *
+     * @return string
+     */
+    public function getP57l()
+    {
+        return $this->p57l;
     }
 
     /**
@@ -4290,147 +4470,195 @@ class Cuestionario
     }
 
     /**
-     * Set p61
+     * Set p61a
      *
-     * @param string $p61
+     * @param string $p61a
      *
      * @return Cuestionario
      */
-    public function setP61($p61)
+    public function setP61a($p61a)
     {
-        $this->p61 = $p61;
+        $this->p61a = $p61a;
 
         return $this;
     }
 
     /**
-     * Get p61
+     * Get p61a
      *
      * @return string
      */
-    public function getP61()
+    public function getP61a()
     {
-        return $this->p61;
+        return $this->p61a;
     }
 
     /**
-     * Set p62a
+     * Set p61b
      *
-     * @param string $p62a
+     * @param string $p61b
      *
      * @return Cuestionario
      */
-    public function setP62a($p62a)
+    public function setP61b($p61b)
     {
-        $this->p62a = $p62a;
+        $this->p61b = $p61b;
 
         return $this;
     }
 
     /**
-     * Get p62a
+     * Get p61b
      *
      * @return string
      */
-    public function getP62a()
+    public function getP61b()
     {
-        return $this->p62a;
+        return $this->p61b;
     }
 
     /**
-     * Set p62b
+     * Set p61c
      *
-     * @param string $p62b
+     * @param string $p61c
      *
      * @return Cuestionario
      */
-    public function setP62b($p62b)
+    public function setP61c($p61c)
     {
-        $this->p62b = $p62b;
+        $this->p61c = $p61c;
 
         return $this;
     }
 
     /**
-     * Get p62b
+     * Get p61c
      *
      * @return string
      */
-    public function getP62b()
+    public function getP61c()
     {
-        return $this->p62b;
+        return $this->p61c;
     }
 
     /**
-     * Set p62c
+     * Set p61d
      *
-     * @param string $p62c
+     * @param string $p61d
      *
      * @return Cuestionario
      */
-    public function setP62c($p62c)
+    public function setP61d($p61d)
     {
-        $this->p62c = $p62c;
+        $this->p61d = $p61d;
 
         return $this;
     }
 
     /**
-     * Get p62c
+     * Get p61d
      *
      * @return string
      */
-    public function getP62c()
+    public function getP61d()
     {
-        return $this->p62c;
+        return $this->p61d;
     }
 
     /**
-     * Set p62d
+     * Set p61e
      *
-     * @param string $p62d
+     * @param string $p61e
      *
      * @return Cuestionario
      */
-    public function setP62d($p62d)
+    public function setP61e($p61e)
     {
-        $this->p62d = $p62d;
+        $this->p61e = $p61e;
 
         return $this;
     }
 
     /**
-     * Get p62d
+     * Get p61e
      *
      * @return string
      */
-    public function getP62d()
+    public function getP61e()
     {
-        return $this->p62d;
+        return $this->p61e;
     }
 
     /**
-     * Set p62e
+     * Set p61f
      *
-     * @param string $p62e
+     * @param string $p61f
      *
      * @return Cuestionario
      */
-    public function setP62e($p62e)
+    public function setP61f($p61f)
     {
-        $this->p62e = $p62e;
+        $this->p61f = $p61f;
 
         return $this;
     }
 
     /**
-     * Get p62e
+     * Get p61f
      *
      * @return string
      */
-    public function getP62e()
+    public function getP61f()
     {
-        return $this->p62e;
+        return $this->p61f;
+    }
+
+    /**
+     * Set p61g
+     *
+     * @param string $p61g
+     *
+     * @return Cuestionario
+     */
+    public function setP61g($p61g)
+    {
+        $this->p61g = $p61g;
+
+        return $this;
+    }
+
+    /**
+     * Get p61g
+     *
+     * @return string
+     */
+    public function getP61g()
+    {
+        return $this->p61g;
+    }
+
+    /**
+     * Set p62
+     *
+     * @param string $p62
+     *
+     * @return Cuestionario
+     */
+    public function setP62($p62)
+    {
+        $this->p62 = $p62;
+
+        return $this;
+    }
+
+    /**
+     * Get p62
+     *
+     * @return string
+     */
+    public function getP62()
+    {
+        return $this->p62;
     }
 
     /**
@@ -4482,291 +4710,27 @@ class Cuestionario
     }
 
     /**
-     * Set p65a
+     * Set p65
      *
-     * @param string $p65a
+     * @param string $p65
      *
      * @return Cuestionario
      */
-    public function setP65a($p65a)
+    public function setP65($p65)
     {
-        $this->p65a = $p65a;
+        $this->p65 = $p65;
 
         return $this;
     }
 
     /**
-     * Get p65a
+     * Get p65
      *
      * @return string
      */
-    public function getP65a()
+    public function getP65()
     {
-        return $this->p65a;
-    }
-
-    /**
-     * Set p65b
-     *
-     * @param string $p65b
-     *
-     * @return Cuestionario
-     */
-    public function setP65b($p65b)
-    {
-        $this->p65b = $p65b;
-
-        return $this;
-    }
-
-    /**
-     * Get p65b
-     *
-     * @return string
-     */
-    public function getP65b()
-    {
-        return $this->p65b;
-    }
-
-    /**
-     * Set p65c
-     *
-     * @param string $p65c
-     *
-     * @return Cuestionario
-     */
-    public function setP65c($p65c)
-    {
-        $this->p65c = $p65c;
-
-        return $this;
-    }
-
-    /**
-     * Get p65c
-     *
-     * @return string
-     */
-    public function getP65c()
-    {
-        return $this->p65c;
-    }
-
-    /**
-     * Set p65d
-     *
-     * @param string $p65d
-     *
-     * @return Cuestionario
-     */
-    public function setP65d($p65d)
-    {
-        $this->p65d = $p65d;
-
-        return $this;
-    }
-
-    /**
-     * Get p65d
-     *
-     * @return string
-     */
-    public function getP65d()
-    {
-        return $this->p65d;
-    }
-
-    /**
-     * Set p65e
-     *
-     * @param string $p65e
-     *
-     * @return Cuestionario
-     */
-    public function setP65e($p65e)
-    {
-        $this->p65e = $p65e;
-
-        return $this;
-    }
-
-    /**
-     * Get p65e
-     *
-     * @return string
-     */
-    public function getP65e()
-    {
-        return $this->p65e;
-    }
-
-    /**
-     * Set p65f
-     *
-     * @param string $p65f
-     *
-     * @return Cuestionario
-     */
-    public function setP65f($p65f)
-    {
-        $this->p65f = $p65f;
-
-        return $this;
-    }
-
-    /**
-     * Get p65f
-     *
-     * @return string
-     */
-    public function getP65f()
-    {
-        return $this->p65f;
-    }
-
-    /**
-     * Set p65g
-     *
-     * @param string $p65g
-     *
-     * @return Cuestionario
-     */
-    public function setP65g($p65g)
-    {
-        $this->p65g = $p65g;
-
-        return $this;
-    }
-
-    /**
-     * Get p65g
-     *
-     * @return string
-     */
-    public function getP65g()
-    {
-        return $this->p65g;
-    }
-
-    /**
-     * Set p65h
-     *
-     * @param string $p65h
-     *
-     * @return Cuestionario
-     */
-    public function setP65h($p65h)
-    {
-        $this->p65h = $p65h;
-
-        return $this;
-    }
-
-    /**
-     * Get p65h
-     *
-     * @return string
-     */
-    public function getP65h()
-    {
-        return $this->p65h;
-    }
-
-    /**
-     * Set p65i
-     *
-     * @param string $p65i
-     *
-     * @return Cuestionario
-     */
-    public function setP65i($p65i)
-    {
-        $this->p65i = $p65i;
-
-        return $this;
-    }
-
-    /**
-     * Get p65i
-     *
-     * @return string
-     */
-    public function getP65i()
-    {
-        return $this->p65i;
-    }
-
-    /**
-     * Set p65j
-     *
-     * @param string $p65j
-     *
-     * @return Cuestionario
-     */
-    public function setP65j($p65j)
-    {
-        $this->p65j = $p65j;
-
-        return $this;
-    }
-
-    /**
-     * Get p65j
-     *
-     * @return string
-     */
-    public function getP65j()
-    {
-        return $this->p65j;
-    }
-
-    /**
-     * Set p65k
-     *
-     * @param string $p65k
-     *
-     * @return Cuestionario
-     */
-    public function setP65k($p65k)
-    {
-        $this->p65k = $p65k;
-
-        return $this;
-    }
-
-    /**
-     * Get p65k
-     *
-     * @return string
-     */
-    public function getP65k()
-    {
-        return $this->p65k;
-    }
-
-    /**
-     * Set p65l
-     *
-     * @param string $p65l
-     *
-     * @return Cuestionario
-     */
-    public function setP65l($p65l)
-    {
-        $this->p65l = $p65l;
-
-        return $this;
-    }
-
-    /**
-     * Get p65l
-     *
-     * @return string
-     */
-    public function getP65l()
-    {
-        return $this->p65l;
+        return $this->p65;
     }
 
     /**
@@ -4866,171 +4830,27 @@ class Cuestionario
     }
 
     /**
-     * Set p70a
+     * Set p70
      *
-     * @param string $p70a
+     * @param string $p70
      *
      * @return Cuestionario
      */
-    public function setP70a($p70a)
+    public function setP70($p70)
     {
-        $this->p70a = $p70a;
+        $this->p70 = $p70;
 
         return $this;
     }
 
     /**
-     * Get p70a
+     * Get p70
      *
      * @return string
      */
-    public function getP70a()
+    public function getP70()
     {
-        return $this->p70a;
-    }
-
-    /**
-     * Set p70b
-     *
-     * @param string $p70b
-     *
-     * @return Cuestionario
-     */
-    public function setP70b($p70b)
-    {
-        $this->p70b = $p70b;
-
-        return $this;
-    }
-
-    /**
-     * Get p70b
-     *
-     * @return string
-     */
-    public function getP70b()
-    {
-        return $this->p70b;
-    }
-
-    /**
-     * Set p70c
-     *
-     * @param string $p70c
-     *
-     * @return Cuestionario
-     */
-    public function setP70c($p70c)
-    {
-        $this->p70c = $p70c;
-
-        return $this;
-    }
-
-    /**
-     * Get p70c
-     *
-     * @return string
-     */
-    public function getP70c()
-    {
-        return $this->p70c;
-    }
-
-    /**
-     * Set p70d
-     *
-     * @param string $p70d
-     *
-     * @return Cuestionario
-     */
-    public function setP70d($p70d)
-    {
-        $this->p70d = $p70d;
-
-        return $this;
-    }
-
-    /**
-     * Get p70d
-     *
-     * @return string
-     */
-    public function getP70d()
-    {
-        return $this->p70d;
-    }
-
-    /**
-     * Set p70e
-     *
-     * @param string $p70e
-     *
-     * @return Cuestionario
-     */
-    public function setP70e($p70e)
-    {
-        $this->p70e = $p70e;
-
-        return $this;
-    }
-
-    /**
-     * Get p70e
-     *
-     * @return string
-     */
-    public function getP70e()
-    {
-        return $this->p70e;
-    }
-
-    /**
-     * Set p70f
-     *
-     * @param string $p70f
-     *
-     * @return Cuestionario
-     */
-    public function setP70f($p70f)
-    {
-        $this->p70f = $p70f;
-
-        return $this;
-    }
-
-    /**
-     * Get p70f
-     *
-     * @return string
-     */
-    public function getP70f()
-    {
-        return $this->p70f;
-    }
-
-    /**
-     * Set p70g
-     *
-     * @param string $p70g
-     *
-     * @return Cuestionario
-     */
-    public function setP70g($p70g)
-    {
-        $this->p70g = $p70g;
-
-        return $this;
-    }
-
-    /**
-     * Get p70g
-     *
-     * @return string
-     */
-    public function getP70g()
-    {
-        return $this->p70g;
+        return $this->p70;
     }
 
     /**
@@ -5106,27 +4926,99 @@ class Cuestionario
     }
 
     /**
-     * Set p74
+     * Set p74a
      *
-     * @param string $p74
+     * @param string $p74a
      *
      * @return Cuestionario
      */
-    public function setP74($p74)
+    public function setP74a($p74a)
     {
-        $this->p74 = $p74;
+        $this->p74a = $p74a;
 
         return $this;
     }
 
     /**
-     * Get p74
+     * Get p74a
      *
      * @return string
      */
-    public function getP74()
+    public function getP74a()
     {
-        return $this->p74;
+        return $this->p74a;
+    }
+
+    /**
+     * Set p74b
+     *
+     * @param string $p74b
+     *
+     * @return Cuestionario
+     */
+    public function setP74b($p74b)
+    {
+        $this->p74b = $p74b;
+
+        return $this;
+    }
+
+    /**
+     * Get p74b
+     *
+     * @return string
+     */
+    public function getP74b()
+    {
+        return $this->p74b;
+    }
+
+    /**
+     * Set p74c
+     *
+     * @param string $p74c
+     *
+     * @return Cuestionario
+     */
+    public function setP74c($p74c)
+    {
+        $this->p74c = $p74c;
+
+        return $this;
+    }
+
+    /**
+     * Get p74c
+     *
+     * @return string
+     */
+    public function getP74c()
+    {
+        return $this->p74c;
+    }
+
+    /**
+     * Set p74d
+     *
+     * @param string $p74d
+     *
+     * @return Cuestionario
+     */
+    public function setP74d($p74d)
+    {
+        $this->p74d = $p74d;
+
+        return $this;
+    }
+
+    /**
+     * Get p74d
+     *
+     * @return string
+     */
+    public function getP74d()
+    {
+        return $this->p74d;
     }
 
     /**
@@ -5152,294 +5044,6 @@ class Cuestionario
     {
         return $this->p75;
     }
-
-    /**
-     * Set p76
-     *
-     * @param string $p76
-     *
-     * @return Cuestionario
-     */
-    public function setP76($p76)
-    {
-        $this->p76 = $p76;
-
-        return $this;
-    }
-
-    /**
-     * Get p76
-     *
-     * @return string
-     */
-    public function getP76()
-    {
-        return $this->p76;
-    }
-
-    /**
-     * Set p77
-     *
-     * @param string $p77
-     *
-     * @return Cuestionario
-     */
-    public function setP77($p77)
-    {
-        $this->p77 = $p77;
-
-        return $this;
-    }
-
-    /**
-     * Get p77
-     *
-     * @return string
-     */
-    public function getP77()
-    {
-        return $this->p77;
-    }
-
-    /**
-     * Set p78
-     *
-     * @param string $p78
-     *
-     * @return Cuestionario
-     */
-    public function setP78($p78)
-    {
-        $this->p78 = $p78;
-
-        return $this;
-    }
-
-    /**
-     * Get p78
-     *
-     * @return string
-     */
-    public function getP78()
-    {
-        return $this->p78;
-    }
-
-    /**
-     * Set p79
-     *
-     * @param string $p79
-     *
-     * @return Cuestionario
-     */
-    public function setP79($p79)
-    {
-        $this->p79 = $p79;
-
-        return $this;
-    }
-
-    /**
-     * Get p79
-     *
-     * @return string
-     */
-    public function getP79()
-    {
-        return $this->p79;
-    }
-
-    /**
-     * Set p80
-     *
-     * @param string $p80
-     *
-     * @return Cuestionario
-     */
-    public function setP80($p80)
-    {
-        $this->p80 = $p80;
-
-        return $this;
-    }
-
-    /**
-     * Get p80
-     *
-     * @return string
-     */
-    public function getP80()
-    {
-        return $this->p80;
-    }
-
-    /**
-     * Set p81
-     *
-     * @param string $p81
-     *
-     * @return Cuestionario
-     */
-    public function setP81($p81)
-    {
-        $this->p81 = $p81;
-
-        return $this;
-    }
-
-    /**
-     * Get p81
-     *
-     * @return string
-     */
-    public function getP81()
-    {
-        return $this->p81;
-    }
-
-    /**
-     * Set p82
-     *
-     * @param string $p82
-     *
-     * @return Cuestionario
-     */
-    public function setP82($p82)
-    {
-        $this->p82 = $p82;
-
-        return $this;
-    }
-
-    /**
-     * Get p82
-     *
-     * @return string
-     */
-    public function getP82()
-    {
-        return $this->p82;
-    }
-
-    /**
-     * Set p83a
-     *
-     * @param string $p83a
-     *
-     * @return Cuestionario
-     */
-    public function setP83a($p83a)
-    {
-        $this->p83a = $p83a;
-
-        return $this;
-    }
-
-    /**
-     * Get p83a
-     *
-     * @return string
-     */
-    public function getP83a()
-    {
-        return $this->p83a;
-    }
-
-    /**
-     * Set p83b
-     *
-     * @param string $p83b
-     *
-     * @return Cuestionario
-     */
-    public function setP83b($p83b)
-    {
-        $this->p83b = $p83b;
-
-        return $this;
-    }
-
-    /**
-     * Get p83b
-     *
-     * @return string
-     */
-    public function getP83b()
-    {
-        return $this->p83b;
-    }
-
-    /**
-     * Set p83c
-     *
-     * @param string $p83c
-     *
-     * @return Cuestionario
-     */
-    public function setP83c($p83c)
-    {
-        $this->p83c = $p83c;
-
-        return $this;
-    }
-
-    /**
-     * Get p83c
-     *
-     * @return string
-     */
-    public function getP83c()
-    {
-        return $this->p83c;
-    }
-
-    /**
-     * Set p83d
-     *
-     * @param string $p83d
-     *
-     * @return Cuestionario
-     */
-    public function setP83d($p83d)
-    {
-        $this->p83d = $p83d;
-
-        return $this;
-    }
-
-    /**
-     * Get p83d
-     *
-     * @return string
-     */
-    public function getP83d()
-    {
-        return $this->p83d;
-    }
-
-    /**
-     * Set p84
-     *
-     * @param string $p84
-     *
-     * @return Cuestionario
-     */
-    public function setP84($p84)
-    {
-        $this->p84 = $p84;
-
-        return $this;
-    }
-
-    /**
-     * Get p84
-     *
-     * @return string
-     */
-    public function getP84()
-    {
-        return $this->p84;
-    }
     
     /**
      * Get array p24 as string
@@ -5450,65 +5054,4 @@ class Cuestionario
     {
     	return implode(', ', (array) $this->p24);
     }
-    
-    /**
-     * Get array p26 as string
-     *
-     * @return string
-     */
-    public function getP26asString()
-    {    	
-    	return implode(', ', (array) $this->p26);
-    }
-    
-    /**
-     * Get array p30 as string
-     *
-     * @return string
-     */
-    public function getP30asString()
-    {
-    	return implode(', ', (array) $this->p30);
-    }
-    
-    /**
-     * Get array p32 as string
-     *
-     * @return string
-     */
-    public function getP32asString()
-    {
-    	return implode(', ', (array) $this->p32);
-    }
-    
-    /**
-     * Get array p33 as string
-     *
-     * @return string
-     */
-    public function getP33asString()
-    {
-    	return implode(', ', (array) $this->p33);
-    }
-    
-    /**
-     * Get array p36 as string
-     *
-     * @return string
-     */
-    public function getP36asString()
-    {
-    	return implode(', ', (array) $this->p36);
-    }
-    
-    /**
-     * Get array p42 as string
-     *
-     * @return string
-     */
-    public function getP42asString()
-    {
-    	return implode(', ', (array) $this->p42);
-    }
-    
 }

@@ -1,0 +1,169 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="valterapeutica")
+ */
+class ValTerapeutica
+{
+	/**
+	 * @ORM\Id
+	 * @ORM\Column(type="integer")
+	 * @ORM\GeneratedValue(strategy="AUTO")
+	 */
+	private $id;
+
+	/**
+	 * @ORM\Column(type="integer")
+	 */
+	private $userid;
+	
+	/**
+	 * @ORM\Column(type="string", length=80, nullable=true)
+	 */
+	private $p54;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p55a;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p55b;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p55c;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p55d;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p55e;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p56;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p57a;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p57b;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p57c;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p57d;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p57e;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p57f;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p57g;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p57h;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p57i;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p57j;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p57k;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p57l;
+	
+	/**
+	 * @ORM\Column(type="string", length=100, nullable=true)
+	 */
+	private $p58;
+	
+	/**
+	 * @ORM\Column(type="string", length=100, nullable=true)
+	 */
+	private $p59;
+	
+	/**
+	 * @ORM\Column(type="string", length=100, nullable=true)
+	 */
+	private $p60;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p61a;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p61b;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p61c;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p61d;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p61e;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p61f;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p61g;
+}

@@ -1,0 +1,49 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="datospersonales")
+ */
+class DatosPersonales
+{
+	/**
+	 * @ORM\Id
+	 * @ORM\Column(type="integer")
+	 * @ORM\GeneratedValue(strategy="AUTO")
+	 */
+	private $id;
+
+	/**
+	 * @ORM\Column(type="integer")
+	 */
+	private $userid;
+
+	/**
+	 * @ORM\Column(type="string", length=1, nullable=true)
+	 */
+	private $p0a;
+
+	/**
+	 * @ORM\Column(type="smallint", nullable=true)
+	 */
+	private $p0b;
+
+	/**
+	 * @ORM\Column(type="smallint", nullable=true)
+	 */
+	private $p0c;
+
+	/**
+	 * @ORM\Column(type="string", length=30, nullable=true)
+	 */
+	private $p0d;
+
+	/**
+	 * @ORM\Column(type="smallint", nullable=true)
+	 */
+	private $p0e;
+}

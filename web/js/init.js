@@ -1,17 +1,17 @@
 $(function() {
 	
-	$("#form_p15_0").change(function() {
-		$("#form_p15_0").each(function() {
+	$("#form_p14_0").change(function() {
+		$("#form_p14_0").each(function() {
 			if($(this).is(":checked")){
-				$("#p15texto").removeAttr('disabled');
+				$("#p14texto").removeAttr('disabled');
 			}	
 		});
 	});
 	
-	$("#form_p15_1").change(function() {
-		$("#form_p15_1").each(function() {
+	$("#form_p14_1").change(function() {
+		$("#form_p14_1").each(function() {
 			if($(this).is(":checked")){
-				$("#p15texto").attr('disabled', 'true');
+				$("#p14texto").attr('disabled', 'true');
 			}	
 		});
 	});

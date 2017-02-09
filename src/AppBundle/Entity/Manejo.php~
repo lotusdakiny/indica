@@ -1,0 +1,219 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="manejo")
+ */
+class Manejo
+{
+	/**
+	 * @ORM\Id
+	 * @ORM\Column(type="integer")
+	 * @ORM\GeneratedValue(strategy="AUTO")
+	 */
+	private $id;
+
+	/**
+	 * @ORM\Column(type="integer")
+	 */
+	private $userid;
+
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38a;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38b;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38c;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38d;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38e;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38f;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38g;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38h;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38i;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38j;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38k;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38l;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38m;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38n;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38o;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p38p;
+	
+	/**
+	 * @ORM\Column(type="string", length=30, nullable=true)
+	 */
+	private $p39a;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p39b;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p39c;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p39d;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p39e;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p39f;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p39g;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p39h;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p39i;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p39j;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p39k;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p39l;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p39m;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p39n;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p39o;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p40a;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p40b;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p40c;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p40d;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p40e;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p40f;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p40g;
+	
+	/**
+	 * @ORM\Column(type="string", length=50, nullable=true)
+	 */
+	private $p41;
+}

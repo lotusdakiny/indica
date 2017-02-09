@@ -3,17 +3,17 @@
 	<label class="col-md-4 control-label p1-label" for="radios"><span class="badge">{{ letra | capitalize }}</span> {{ titulo | raw }}</label>
 	<div class="col-md-7">
 		{% for var in form %}
-			<label class="radio-inline" for="form_p24{{ letra }}_{{ loop.index0}}">
+			<label class="radio-inline" for="form_p20{{ letra }}_{{ loop.index0}}">
 				{{ form_widget(var) }}
-				<label for="form_p24{{ letra }}_{{ loop.index0 }}">&nbsp;</label>
+				<label for="form_p20{{ letra }}_{{ loop.index0 }}">&nbsp;</label>
 				<span>{{ loop.index }}</span>
 			</label>
 		{% endfor %}
 	</div>
 	<div class="col-md-1">
-		<label class="checkbox-inline" for="form_p24_{{ numero }}">
+		<label class="checkbox-inline" for="form_p20_{{ numero }}">
 			{{ form_widget(formd) }}						
-			<label for="form_p24_{{ numero }}">&nbsp;</label>
+			<label for="form_p20_{{ numero }}">&nbsp;</label>
 		</label>
 	</div>
 </div>	

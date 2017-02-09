@@ -1,0 +1,154 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="diagnostico")
+ */
+class Diagnostico
+{
+	/**
+	 * @ORM\Id
+	 * @ORM\Column(type="integer")
+	 * @ORM\GeneratedValue(strategy="AUTO")
+	 */
+	private $id;
+
+	/**
+	 * @ORM\Column(type="integer")
+	 */
+	private $userid;
+	
+	/**
+	 * @ORM\Column(type="string", length=40, nullable=true)
+	 */
+	private $p15;
+	
+	/**
+	 * @ORM\Column(type="string", length=50, nullable=true)
+	 */
+	private $p16;
+	
+	/**
+	 * @ORM\Column(type="string", length=20, nullable=true)
+	 */
+	private $p17;
+	
+	/**
+	 * @ORM\Column(type="string", length=30, nullable=true)
+	 */
+	private $p18;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p19a;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p19b;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p19c;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p19d;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p19e;
+	
+	/**
+	 * @ORM\Column(type="array", nullable=true)
+	 */
+	private $p20 = array();
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p20a;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p20b;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p20c;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p20d;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p20e;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p20f;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p20g;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p20h;
+	
+	/**
+	 * @ORM\Column(type="array", nullable=true)
+	 */
+	private $p21 = array();
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p22a;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p22b;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p22c;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p22d;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p22e;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p22f;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p23;
+}

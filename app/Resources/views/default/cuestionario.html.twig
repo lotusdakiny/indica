@@ -39,8 +39,8 @@
 	
 	<div class="form-block">
 		<h4 class="tittle-section">{{ titulos.titulo1 | raw }}</h4>
-	</div>
-	
+	</div>	
+												
 	<!-- Pregunta1 -->
 	<div class="form-block">
 		<p class="tittle-form"><span class="label simplicity">1</span> {{ titulos.p1 | raw }}</p>
@@ -74,84 +74,36 @@
 	<!-- Pregunta3 -->
 	{% include 'preguntas/porcentaje1.html.twig' with {'titulo': titulos.p3, 'numero': '3', 'form': form.p3} %}
 		
-		<!-- Pregunta4 -->
-		<div class="form-block radios-block">
-			<p class="tittle-form"><span class="label simplicity">4</span>{{ titulos.p4 | raw }}</p>
+	<!-- Pregunta4 -->
+	<div class="form-block radios-block">
+		<p class="tittle-form"><span class="label simplicity">4</span>{{ titulos.p4 | raw }}</p>
 
-			<div class="form-group">
-				<div class="col-md-6">
-					{{ form_errors(form.p4) }}
-					{{ form_widget(form.p4, {'attr': {'class': 'form-control input-sm'}}) }}		
-				</div>
+		<div class="form-group">
+			<div class="col-md-6">
+				{{ form_errors(form.p4) }}
+				{{ form_widget(form.p4, {'attr': {'class': 'form-control input-sm'}}) }}		
 			</div>
-						
-		</div>			
-		
-		<!-- Pregunta5 -->
-		<div class="form-block radios-block">
-			<p class="tittle-form"><span class="label simplicity">5</span>{{ titulos.p5 | raw }}</p>
-			
-			{% for var in form.p5 %}
-				<div class="form-group">
-					<div class="col-xs-12">
-						<label class="control-label2 no-margin" for="radios"><span class="badge">{{ form_label(var) }}</span></label>
-						<label class="radio-inline" for="form_p5_{{ loop.index0 }}">
-							{{ form_widget(var) }}						
-							<label for="form_p5_{{ loop.index0 }}">&nbsp;</label>
-							<span class="control-label bold">{{ var.vars.value }}</span>
-						</label>							
-					</div>
-				</div>
-			{% endfor %}
-						
-		</div>			
-		
-		<!-- Pregunta6 -->
-		{% include 'preguntas/porcentaje1.html.twig' with {'titulo': titulos.p6, 'numero': '6', 'form': form.p6} %}
-		
-		<!-- Pregunta7 -->
-		{% include 'preguntas/porcentaje1.html.twig' with {'titulo': titulos.p7, 'numero': '7', 'form': form.p7} %}		
-		
-		<!-- Pregunta8 -->
-		<div class="form-block radios-block">
-			<p class="tittle-form"><span class="label simplicity">8</span>{{ titulos.p8 | raw }}</p>
-			
-			{% for var in form.p8 %}
-				<div class="form-group">
-					<div class="col-xs-12">
-						<label class="control-label2 no-margin" for="radios"><span class="badge">{{ form_label(var) }}</span></label>
-						<label class="radio-inline" for="form_p8_{{ loop.index0 }}">
-							{{ form_widget(var) }}						
-							<label for="form_p8_{{ loop.index0 }}">&nbsp;</label>
-							<span class="control-label bold">{{ var.vars.value }}</span>
-						</label>							
-					</div>
-				</div>
-			{% endfor %}
-						
-		</div>			
+		</div>
+					
+	</div>			
+	
+	<!-- Pregunta5 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p5, 'numero': '5', 'form': form.p5, 'type': 'radio'} %}	
+	
+	<!-- Pregunta6 -->
+	{% include 'preguntas/porcentaje1.html.twig' with {'titulo': titulos.p6, 'numero': '6', 'form': form.p6} %}
+	
+	<!-- Pregunta7 -->
+	{% include 'preguntas/porcentaje1.html.twig' with {'titulo': titulos.p7, 'numero': '7', 'form': form.p7} %}		
+	
+	<!-- Pregunta8 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p8, 'numero': '8', 'form': form.p8, 'type': 'radio'} %}			
 
-		<!-- Pregunta9 -->
-		<div class="form-block radios-block">
-			<p class="tittle-form"><span class="label simplicity">9</span>{{ titulos.p9 | raw }}</p>
-			
-			{% for var in form.p9 %}
-				<div class="form-group">
-					<div class="col-xs-12">
-						<label class="control-label2 no-margin" for="radios"><span class="badge">{{ form_label(var) }}</span></label>
-						<label class="radio-inline" for="form_p9_{{ loop.index0 }}">
-							{{ form_widget(var) }}						
-							<label for="form_p9_{{ loop.index0 }}">&nbsp;</label>
-							<span class="control-label bold">{{ var.vars.value }}</span>
-						</label>							
-					</div>
-				</div>
-			{% endfor %}
-						
-		</div>			
+	<!-- Pregunta9 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p9, 'numero': '9', 'form': form.p9, 'type': 'radio'} %}				
 		
 	<!-- Pregunta10 -->
-	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p10, 'numero': '10', 'form': form.p10, 'type': 'radio'} %}			
+	{% include 'preguntas/porcentaje1.html.twig' with {'titulo': titulos.p10, 'numero': '10', 'form': form.p10} %}		
 		
 	<!-- Pregunta11 -->
 	<div class="form-block">
@@ -189,97 +141,21 @@
 			</div>
 		</div>								
 
-	</div>	
-		
+	</div>		
+	
 	<!-- Pregunta12 -->
-	<div class="form-block">
-		<p class="tittle-form"><span class="label simplicity">12</span> {{ titulos.p12 | raw }}</p>
-
-		<!-- Multiple Radios (inline) Pregunta12.A -->
-		<div class="form-group">
-			<label class="col-md-4 control-label p1-label" for="radios"><span class="badge">A</span> {{ titulos.p12a | raw }}</label>
-			<div class="col-md-8">
-				{% for var in form.p12a %}
-					<label class="radio-inline" for="form_p12a_{{ loop.index0}}">
-						{{ form_widget(var) }}
-						<label for="form_p12a_{{ loop.index0 }}">&nbsp;</label>
-						<span>{{ loop.index }}</span>
-					</label>
-				{% endfor %}
-			</div>
-		</div>	
-
-		<!-- Multiple Radios (inline) Pregunta12.B -->
-		<div class="form-group">
-			<label class="col-md-4 control-label p1-label" for="radios"><span class="badge">B</span> {{ titulos.p12b | raw }}</label>
-			<div class="col-md-8">
-				{% for var in form.p12b %}
-					<label class="radio-inline" for="form_p12b_{{ loop.index0}}">
-						{{ form_widget(var) }}
-						<label for="form_p12b_{{ loop.index0 }}">&nbsp;</label>
-						<span>{{ loop.index }}</span>
-					</label>
-				{% endfor %}
-			</div>
-		</div>	
-
-		<!-- Multiple Radios (inline) Pregunta12.C -->
-		<div class="form-group">
-			<label class="col-md-4 control-label p1-label" for="radios"><span class="badge">C</span> {{ titulos.p12c | raw }}</label>
-			<div class="col-md-8">
-				{% for var in form.p12c %}
-					<label class="radio-inline" for="form_p12c_{{ loop.index0}}">
-						{{ form_widget(var) }}
-						<label for="form_p12c_{{ loop.index0 }}">&nbsp;</label>
-						<span>{{ loop.index }}</span>
-					</label>
-				{% endfor %}
-			</div>
-		</div>	
-
-		<!-- Multiple Radios (inline) Pregunta12.D -->
-		<div class="form-group">
-			<label class="col-md-4 control-label p1-label" for="radios"><span class="badge">D</span> {{ titulos.p12d | raw }}</label>
-			<div class="col-md-8">
-				{% for var in form.p12d %}
-					<label class="radio-inline" for="form_p12d_{{ loop.index0}}">
-						{{ form_widget(var, {'attr': {'class': 'radio-bloque1'}}) }}
-						<label for="form_p12d_{{ loop.index0 }}">&nbsp;</label>
-						<span>{{ loop.index }}</span>
-					</label>
-				{% endfor %}
-			</div>
-		</div>	
-		
-		<!-- Multiple Radios (inline) Pregunta12.E -->
-		<div class="form-group">
-			<label class="col-md-4 control-label p1-label" for="radios"><span class="badge">E</span> {{ titulos.p12e | raw }}</label>
-			<div class="col-md-8">
-				{% for var in form.p12e %}
-					<label class="radio-inline" for="form_p12e_{{ loop.index0}}">
-						{{ form_widget(var) }}
-						<label for="form_p12e_{{ loop.index0 }}">&nbsp;</label>
-						<span>{{ loop.index }}</span>
-					</label>
-				{% endfor %}
-			</div>
-		</div>		
-											
-	</div>
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p12, 'numero': '12', 'form': form.p12} %}
 	
 	<!-- Pregunta13 -->
-	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p13, 'numero': '13', 'form': form.p13} %}
+	{% include 'preguntas/porcentaje1.html.twig' with {'titulo': titulos.p13, 'numero': '13', 'form': form.p13} %}
 	
 	<!-- Pregunta14 -->
-	{% include 'preguntas/porcentaje1.html.twig' with {'titulo': titulos.p14, 'numero': '14', 'form': form.p14} %}
-	
-	<!-- Pregunta15 -->
-	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p15, 'numero': '15', 'form': form.p15} %}
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p14, 'numero': '14', 'form': form.p14} %}
 	
 	<div class="form-block">
 		<div class="form-group">
 			<div class="col-md-7">
-				{{ titulos.p15texto | raw }} <input type="text" id="p15texto" required name="p15texto" class="form-control input-sm" disabled>
+				{{ titulos.p14texto | raw }} <input type="text" id="p14texto" required name="p14texto" class="form-control input-sm" disabled>
 			</div>
 		</div>
 	</div>
@@ -288,46 +164,37 @@
 		<h4 class="tittle-section">{{ titulos.titulo2 | raw }}</h4>
 	</div>
 	
+	<!-- Pregunta15 -->
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p15, 'numero': '15', 'form': form.p15} %}
+	
 	<!-- Pregunta16 -->
-	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p16, 'numero': '16', 'form': form.p16} %}
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p16, 'numero': '16', 'form': form.p16, 'type': 'radio'} %}
 	
 	<!-- Pregunta17 -->
-	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p17, 'numero': '17', 'form': form.p17} %}
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p17, 'numero': '17', 'form': form.p17, 'type': 'radio'} %}
 	
 	<!-- Pregunta18 -->
 	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p18, 'numero': '18', 'form': form.p18, 'type': 'radio'} %}
-	
-	<!-- Pregunta19 -->
-	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p19, 'numero': '19', 'form': form.p19, 'type': 'radio'} %}
-	
-	<!-- Pregunta20 -->
-	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p20, 'numero': '20', 'form': form.p20, 'type': 'radio'} %}
-	
-	<!-- Pregunta21 -->
-	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p21, 'numero': '21', 'form': form.p21, 'type': 'radio'} %}
 
-	<!-- Pregunta22 -->
+	<!-- Pregunta19 -->
 	<div class="form-block">
-		<p class="tittle-form"><span class="label simplicity">22</span> {{ titulos.p22 | raw }}</p>
+		<p class="tittle-form"><span class="label simplicity">19</span> {{ titulos.p19 | raw }}</p>
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p22a, 'numero': '22', 'letra': 'a', 'form': form.p22a} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p19a, 'numero': '19', 'letra': 'a', 'form': form.p19a} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p22b, 'numero': '22', 'letra': 'b', 'form': form.p22b} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p19b, 'numero': '19', 'letra': 'b', 'form': form.p19b} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p22c, 'numero': '22', 'letra': 'c', 'form': form.p22c} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p19c, 'numero': '19', 'letra': 'c', 'form': form.p19c} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p22d, 'numero': '22', 'letra': 'd', 'form': form.p22d} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p19d, 'numero': '19', 'letra': 'd', 'form': form.p19d} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p22e, 'numero': '22', 'letra': 'e', 'form': form.p22e} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p19e, 'numero': '19', 'letra': 'e', 'form': form.p19e} %}
 		
 	</div>			
-	
-	<!-- Pregunta23 -->
-	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p23, 'numero': '23', 'form': form.p23, 'type': 'radio'} %}
 
-	<!-- Pregunta24 -->
+	<!-- Pregunta20 -->
 	<div class="form-block">
-		<p class="tittle-form"><span class="label simplicity">24</span> {{ titulos.p24 | raw }}</p>
+		<p class="tittle-form"><span class="label simplicity">20</span> {{ titulos.p20 | raw }}</p>
 
 		<div class="form-group">
 			<label class="col-md-4"></label>
@@ -335,69 +202,82 @@
 			<label class="col-md-2"><center>Disponibilidad en mi centro</center></label>
 		</div>	
 		
-		{% include 'preguntas/pregunta24.html.twig' with {'titulo': titulos.p24a, 'form': form.p24a, 'formd': form.p24.0, 'letra': 'a', 'numero': '0'} %}		
+		{% include 'preguntas/pregunta20.html.twig' with {'titulo': titulos.p20a, 'form': form.p20a, 'formd': form.p20.0, 'letra': 'a', 'numero': '0'} %}		
 		
-		{% include 'preguntas/pregunta24.html.twig' with {'titulo': titulos.p24b, 'form': form.p24b, 'formd': form.p24.1, 'letra': 'b', 'numero': '1'} %}
+		{% include 'preguntas/pregunta20.html.twig' with {'titulo': titulos.p20b, 'form': form.p20b, 'formd': form.p20.1, 'letra': 'b', 'numero': '1'} %}
 		
-		{% include 'preguntas/pregunta24.html.twig' with {'titulo': titulos.p24c, 'form': form.p24c, 'formd': form.p24.2, 'letra': 'c', 'numero': '2'} %}
+		{% include 'preguntas/pregunta20.html.twig' with {'titulo': titulos.p20c, 'form': form.p20c, 'formd': form.p20.2, 'letra': 'c', 'numero': '2'} %}
 		
-		{% include 'preguntas/pregunta24.html.twig' with {'titulo': titulos.p24d, 'form': form.p24d, 'formd': form.p24.3, 'letra': 'd', 'numero': '3'} %}
+		{% include 'preguntas/pregunta20.html.twig' with {'titulo': titulos.p20d, 'form': form.p20d, 'formd': form.p20.3, 'letra': 'd', 'numero': '3'} %}
 		
-		{% include 'preguntas/pregunta24.html.twig' with {'titulo': titulos.p24e, 'form': form.p24e, 'formd': form.p24.4, 'letra': 'e', 'numero': '4'} %}
+		{% include 'preguntas/pregunta20.html.twig' with {'titulo': titulos.p20e, 'form': form.p20e, 'formd': form.p20.4, 'letra': 'e', 'numero': '4'} %}
 		
-		{% include 'preguntas/pregunta24.html.twig' with {'titulo': titulos.p24f, 'form': form.p24f, 'formd': form.p24.5, 'letra': 'f', 'numero': '5'} %}
+		{% include 'preguntas/pregunta20.html.twig' with {'titulo': titulos.p20f, 'form': form.p20f, 'formd': form.p20.5, 'letra': 'f', 'numero': '5'} %}
 		
-		{% include 'preguntas/pregunta24.html.twig' with {'titulo': titulos.p24g, 'form': form.p24g, 'formd': form.p24.6, 'letra': 'g', 'numero': '6'} %}
+		{% include 'preguntas/pregunta20.html.twig' with {'titulo': titulos.p20g, 'form': form.p20g, 'formd': form.p20.6, 'letra': 'g', 'numero': '6'} %}
 		
-		{% include 'preguntas/pregunta24.html.twig' with {'titulo': titulos.p24h, 'form': form.p24h, 'formd': form.p24.7, 'letra': 'h', 'numero': '7'} %}
+		{% include 'preguntas/pregunta20.html.twig' with {'titulo': titulos.p20h, 'form': form.p20h, 'formd': form.p20.7, 'letra': 'h', 'numero': '7'} %}
 												
 	</div>
 	
-	<!-- Pregunta25 -->
-	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p25, 'numero': '25', 'form': form.p25, 'type': 'radio'} %}		
-	
-	<!-- Pregunta26 -->
-	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p26, 'numero': '26', 'form': form.p26, 'type': 'checkbox'} %}	
+	<!-- Pregunta21 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p21, 'numero': '21', 'form': form.p21, 'type': 'checkbox'} %}	
 
-	<!-- Pregunta27 -->
+	<!-- Pregunta22 -->
 	<div class="form-block">
-		<p class="tittle-form"><span class="label simplicity">27</span> {{ titulos.p27 | raw }}</p>
+		<p class="tittle-form"><span class="label simplicity">22</span> {{ titulos.p22 | raw }}</p>
 		
-		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p27a, 'letra': 'a', 'form': form.p27a} %}
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p22a, 'letra': 'a', 'form': form.p22a} %}
 		
-		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p27b, 'letra': 'b', 'form': form.p27b} %}
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p22b, 'letra': 'b', 'form': form.p22b} %}
 		
-		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p27c, 'letra': 'c', 'form': form.p27c} %}
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p22c, 'letra': 'c', 'form': form.p22c} %}
 		
-		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p27d, 'letra': 'd', 'form': form.p27d} %}
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p22d, 'letra': 'd', 'form': form.p22d} %}
 		
-		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p27e, 'letra': 'e', 'form': form.p27e} %}
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p22e, 'letra': 'e', 'form': form.p22e} %}
 		
-		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p27f, 'letra': 'f', 'form': form.p27f} %}
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p22f, 'letra': 'f', 'form': form.p22f} %}
 		
 	</div>
 	
-	<!-- Pregunta28 -->
-	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p28, 'numero': '28', 'form': form.p28} %}
+	<!-- Pregunta23 -->
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p23, 'numero': '23', 'form': form.p23} %}
 
 	<div class="form-block">
 		<h4 class="tittle-section">{{ titulos.titulo3 | raw }}</h4>
-	</div>
+	</div>	
 
+	<!-- Pregunta24 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p24, 'numero': '24', 'form': form.p24, 'type': 'checkbox'} %}	
+	
+	<!-- Pregunta25 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p25, 'numero': '25', 'form': form.p25, 'type': 'radio'} %}	
+	
+	<!-- Pregunta26 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p26, 'numero': '26', 'form': form.p26, 'type': 'checkbox'} %}	
+	
+	<!-- Pregunta27 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p27, 'numero': '27', 'form': form.p27, 'type': 'checkbox'} %}	
+	
+	<!-- Pregunta28 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p28, 'numero': '28', 'form': form.p28, 'type': 'radio'} %}	
+	
 	<!-- Pregunta29 -->
-	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p29, 'numero': '29', 'form': form.p29, 'type': 'radio'} %}				
-
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p29, 'numero': '29', 'form': form.p29, 'type': 'radio'} %}	
+	
 	<!-- Pregunta30 -->
 	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p30, 'numero': '30', 'form': form.p30, 'type': 'checkbox'} %}	
 	
 	<!-- Pregunta31 -->
-	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p31, 'numero': '31', 'form': form.p31, 'type': 'radio'} %}	
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p31, 'numero': '31', 'form': form.p31} %}	
 	
 	<!-- Pregunta32 -->
-	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p32, 'numero': '32', 'form': form.p32, 'type': 'checkbox'} %}	
+	{% include 'preguntas/porcentaje1.html.twig' with {'titulo': titulos.p32, 'numero': '32', 'form': form.p32} %}		
+
 	
 	<!-- Pregunta33 -->
-	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p33, 'numero': '33', 'form': form.p33, 'type': 'checkbox'} %}	
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p33, 'numero': '33', 'form': form.p33, 'type': 'radio'} %}	
 	
 	<!-- Pregunta34 -->
 	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p34, 'numero': '34', 'form': form.p34, 'type': 'radio'} %}	
@@ -407,36 +287,18 @@
 	
 	<!-- Pregunta36 -->
 	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p36, 'numero': '36', 'form': form.p36, 'type': 'checkbox'} %}	
-	
-	<!-- Pregunta37 -->
-	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p37, 'numero': '37', 'form': form.p37} %}	
-	
-	<!-- Pregunta38 -->
-	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p38, 'numero': '38', 'form': form.p38, 'type': 'radio'} %}	
-	
-	<!-- Pregunta39 -->
-	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p39, 'numero': '39', 'form': form.p39, 'type': 'radio'} %}	
-	
-	<!-- Pregunta40 -->
-	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p40, 'numero': '40', 'form': form.p40, 'type': 'radio'} %}	
-	
-	<!-- Pregunta41 -->
-	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p41, 'numero': '41', 'form': form.p41, 'type': 'radio'} %}	
-	
-	<!-- Pregunta42 -->
-	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p42, 'numero': '42', 'form': form.p42, 'type': 'checkbox'} %}	
 												
-	<!-- Pregunta43 -->
+	<!-- Pregunta37 -->
 	<div class="form-block">
-		<p class="tittle-form"><span class="label simplicity">43</span> {{ titulos.p43 | raw }}</p>
+		<p class="tittle-form"><span class="label simplicity">37</span> {{ titulos.p37 | raw }}</p>
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p43a, 'numero': '43', 'letra': 'a', 'form': form.p43a} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p37a, 'numero': '37', 'letra': 'a', 'form': form.p37a} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p43b, 'numero': '43', 'letra': 'b', 'form': form.p43b} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p37b, 'numero': '37', 'letra': 'b', 'form': form.p37b} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p43c, 'numero': '43', 'letra': 'c', 'form': form.p43c} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p37c, 'numero': '37', 'letra': 'c', 'form': form.p37c} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p43d, 'numero': '43', 'letra': 'd', 'form': form.p43d} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p37d, 'numero': '37', 'letra': 'd', 'form': form.p37d} %}
 		
 	</div>
 
@@ -444,245 +306,236 @@
 		<h4 class="tittle-section">{{ titulos.titulo4 | raw }}</h4>
 	</div>
 		
-	<!-- Pregunta44 -->
+	<!-- Pregunta38 -->
 	<div class="form-block">
-		<p class="tittle-form"><span class="label simplicity">44</span> {{ titulos.p44 | raw }}</p>
+		<p class="tittle-form"><span class="label simplicity">38</span> {{ titulos.p38 | raw }}</p>
 		
-		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p44a, 'letra': 'a', 'form': form.p44a} %}
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p38a, 'letra': 'a', 'form': form.p38a} %}
 		
-		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p44b, 'letra': 'b', 'form': form.p44b} %}
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p38b, 'letra': 'b', 'form': form.p38b} %}
 		
-		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p44c, 'letra': 'c', 'form': form.p44c} %}
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p38c, 'letra': 'c', 'form': form.p38c} %}
 		
-		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p44d, 'letra': 'd', 'form': form.p44d} %}
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p38d, 'letra': 'd', 'form': form.p38d} %}
 		
-		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p44e, 'letra': 'e', 'form': form.p44e} %}
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p38e, 'letra': 'e', 'form': form.p38e} %}
 		
-		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p44f, 'letra': 'f', 'form': form.p44f} %}		
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p38f, 'letra': 'f', 'form': form.p38f} %}		
 		
-		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p44g, 'letra': 'g', 'form': form.p44g} %}
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p38g, 'letra': 'g', 'form': form.p38g} %}
 		
-		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p44h, 'letra': 'h', 'form': form.p44h} %}
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p38h, 'letra': 'h', 'form': form.p38h} %}
 		
-		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p44i, 'letra': 'i', 'form': form.p44i} %}
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p38i, 'letra': 'i', 'form': form.p38i} %}
 		
-		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p44j, 'letra': 'j', 'form': form.p44j} %}
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p38j, 'letra': 'j', 'form': form.p38j} %}
 		
-		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p44k, 'letra': 'k', 'form': form.p44k} %}
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p38k, 'letra': 'k', 'form': form.p38k} %}
 		
-		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p44l, 'letra': 'l', 'form': form.p44l} %}
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p38l, 'letra': 'l', 'form': form.p38l} %}
 		
-		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p44m, 'letra': 'm', 'form': form.p44m} %}
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p38m, 'letra': 'm', 'form': form.p38m} %}
 		
-		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p44n, 'letra': 'n', 'form': form.p44n} %}
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p38n, 'letra': 'n', 'form': form.p38n} %}
 		
-		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p44o, 'letra': 'o', 'form': form.p44o} %}
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p38o, 'letra': 'o', 'form': form.p38o} %}
 		
-		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p44p, 'letra': 'p', 'form': form.p44p} %}
+		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p38p, 'letra': 'p', 'form': form.p38p} %}
 		
 	</div>	
 
-	<!-- Pregunta45 -->
+	<!-- Pregunta39 -->
 	<div class="form-block">
-		<p class="tittle-form"><span class="label simplicity">45</span> {{ titulos.p45 | raw }}</p>
+		<p class="tittle-form"><span class="label simplicity">39</span> {{ titulos.p39 | raw }}</p>
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p45a, 'numero': '45', 'letra': 'a', 'form': form.p45a} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p39a, 'numero': '39', 'letra': 'a', 'form': form.p39a} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p45b, 'numero': '45', 'letra': 'b', 'form': form.p45b} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p39b, 'numero': '39', 'letra': 'b', 'form': form.p39b} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p45c, 'numero': '45', 'letra': 'c', 'form': form.p45c} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p39c, 'numero': '39', 'letra': 'c', 'form': form.p39c} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p45d, 'numero': '45', 'letra': 'd', 'form': form.p45d} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p39d, 'numero': '39', 'letra': 'd', 'form': form.p39d} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p45e, 'numero': '45', 'letra': 'e', 'form': form.p45e} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p39e, 'numero': '39', 'letra': 'e', 'form': form.p39e} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p45f, 'numero': '45', 'letra': 'f', 'form': form.p45f} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p39f, 'numero': '39', 'letra': 'f', 'form': form.p39f} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p45g, 'numero': '45', 'letra': 'g', 'form': form.p45g} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p39g, 'numero': '39', 'letra': 'g', 'form': form.p39g} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p45h, 'numero': '45', 'letra': 'h', 'form': form.p45h} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p39h, 'numero': '39', 'letra': 'h', 'form': form.p39h} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p45i, 'numero': '45', 'letra': 'i', 'form': form.p45i} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p39i, 'numero': '39', 'letra': 'i', 'form': form.p39i} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p45j, 'numero': '45', 'letra': 'j', 'form': form.p45j} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p39j, 'numero': '39', 'letra': 'j', 'form': form.p39j} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p45k, 'numero': '45', 'letra': 'k', 'form': form.p45k} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p39k, 'numero': '39', 'letra': 'k', 'form': form.p39k} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p45l, 'numero': '45', 'letra': 'l', 'form': form.p45l} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p39l, 'numero': '39', 'letra': 'l', 'form': form.p39l} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p45m, 'numero': '45', 'letra': 'm', 'form': form.p45m} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p39m, 'numero': '39', 'letra': 'm', 'form': form.p39m} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p45n, 'numero': '45', 'letra': 'n', 'form': form.p45n} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p39n, 'numero': '39', 'letra': 'n', 'form': form.p39n} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p45o, 'numero': '45', 'letra': 'o', 'form': form.p45o} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p39o, 'numero': '39', 'letra': 'o', 'form': form.p39o} %}
 		
 	</div>
 	
-	<!-- Pregunta46 -->
+	<!-- Pregunta40 -->
 	<div class="form-block">
-		<p class="tittle-form"><span class="label simplicity">46</span> {{ titulos.p46 | raw }}</p>
+		<p class="tittle-form"><span class="label simplicity">40</span> {{ titulos.p40 | raw }}</p>
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p46a, 'numero': '46', 'letra': 'a', 'form': form.p46a} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p40a, 'numero': '40', 'letra': 'a', 'form': form.p40a} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p46b, 'numero': '46', 'letra': 'b', 'form': form.p46b} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p40b, 'numero': '40', 'letra': 'b', 'form': form.p40b} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p46c, 'numero': '46', 'letra': 'c', 'form': form.p46c} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p40c, 'numero': '40', 'letra': 'c', 'form': form.p40c} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p46d, 'numero': '46', 'letra': 'd', 'form': form.p46d} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p40d, 'numero': '40', 'letra': 'd', 'form': form.p40d} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p46e, 'numero': '46', 'letra': 'e', 'form': form.p46e} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p40e, 'numero': '40', 'letra': 'e', 'form': form.p40e} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p46f, 'numero': '46', 'letra': 'f', 'form': form.p46f} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p40f, 'numero': '40', 'letra': 'f', 'form': form.p40f} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p46g, 'numero': '46', 'letra': 'g', 'form': form.p46g} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p40g, 'numero': '40', 'letra': 'g', 'form': form.p40g} %}
 				
 	</div>	
 	
-	<!-- Pregunta47 -->
-	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p47, 'numero': '47', 'form': form.p47, 'type': 'radio'} %}	
-	
-	<!-- Pregunta48 -->
-	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p48, 'numero': '48', 'form': form.p48, 'type': 'radio'} %}		
+	<!-- Pregunta41 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p41, 'numero': '41', 'form': form.p41, 'type': 'radio'} %}		
 	
 	<div class="form-block">
 		<h4 class="tittle-section">{{ titulos.titulo5 | raw }}</h4>
 	</div>
+	
+	<!-- Pregunta42 -->
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p42, 'numero': '42', 'form': form.p42, 'type': 'radio'} %}
+	
+	<!-- Pregunta43 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p43, 'numero': '43', 'form': form.p43, 'type': 'radio'} %}	
+
+	<!-- Pregunta44 -->
+	<div class="form-block">
+		<p class="tittle-form"><span class="label simplicity">44</span> {{ titulos.p44 | raw }}</p>
+		
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p44a, 'numero': '44', 'letra': 'a', 'form': form.p44a} %}
+		
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p44b, 'numero': '44', 'letra': 'b', 'form': form.p44b} %}
+		
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p44c, 'numero': '44', 'letra': 'c', 'form': form.p44c} %}
+		
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p44d, 'numero': '44', 'letra': 'd', 'form': form.p44d} %}
+				
+	</div>
+	
+	<!-- Pregunta45 -->
+	{% include 'preguntas/porcentaje1.html.twig' with {'titulo': titulos.p45, 'numero': '45', 'form': form.p45} %}
+	
+	<!-- Pregunta46 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p46, 'numero': '46', 'form': form.p46, 'type': 'radio'} %}
+	
+	<!-- Pregunta47 -->
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p47, 'numero': '47', 'form': form.p47, 'type': 'radio'} %}	
+	
+	<!-- Pregunta48 -->
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p48, 'numero': '48', 'form': form.p48, 'type': 'radio'} %}
 	
 	<!-- Pregunta49 -->
 	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p49, 'numero': '49', 'form': form.p49, 'type': 'radio'} %}
 	
 	<!-- Pregunta50 -->
 	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p50, 'numero': '50', 'form': form.p50, 'type': 'radio'} %}	
-
+	
 	<!-- Pregunta51 -->
-	<div class="form-block">
-		<p class="tittle-form"><span class="label simplicity">51</span> {{ titulos.p51 | raw }}</p>
-		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p51a, 'numero': '51', 'letra': 'a', 'form': form.p51a} %}
-		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p51b, 'numero': '51', 'letra': 'b', 'form': form.p51b} %}
-		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p51c, 'numero': '51', 'letra': 'c', 'form': form.p51c} %}
-		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p51d, 'numero': '51', 'letra': 'd', 'form': form.p51d} %}
-				
-	</div>
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p51, 'numero': '51', 'form': form.p51, 'type': 'radio'} %}	
 	
 	<!-- Pregunta52 -->
-	{% include 'preguntas/porcentaje1.html.twig' with {'titulo': titulos.p52, 'numero': '52', 'form': form.p52} %}
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p52, 'numero': '52', 'form': form.p52, 'type': 'radio'} %}
 	
 	<!-- Pregunta53 -->
-	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p53, 'numero': '53', 'form': form.p53, 'type': 'radio'} %}
-	
-	<!-- Pregunta54 -->
-	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p54, 'numero': '54', 'form': form.p54, 'type': 'radio'} %}	
-	
-	<!-- Pregunta55 -->
-	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p55, 'numero': '55', 'form': form.p55, 'type': 'radio'} %}
-	
-	<!-- Pregunta56 -->
-	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p56, 'numero': '56', 'form': form.p56, 'type': 'radio'} %}
-	
-	<!-- Pregunta57 -->
-	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p57, 'numero': '57', 'form': form.p57, 'type': 'radio'} %}	
-	
-	<!-- Pregunta58 -->
-	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p58, 'numero': '58', 'form': form.p58, 'type': 'radio'} %}	
-	
-	<!-- Pregunta59 -->
-	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p59, 'numero': '59', 'form': form.p59, 'type': 'radio'} %}
-	
-	<!-- Pregunta60 -->
-	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p60, 'numero': '60', 'form': form.p60, 'type': 'radio'} %}
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p53, 'numero': '53', 'form': form.p53, 'type': 'radio'} %}
 	
 	<div class="form-block">
 		<h4 class="tittle-section">{{ titulos.titulo6 | raw }}</h4>
 	</div>
 		
-	<!-- Pregunta61 -->
-	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p61, 'numero': '61', 'form': form.p61, 'type': 'radio'} %}	
+	<!-- Pregunta54 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p54, 'numero': '54', 'form': form.p54, 'type': 'radio'} %}	
 	
-	<!-- Pregunta62 -->
+	<!-- Pregunta55 -->
 	<div class="form-block">
-		<p class="tittle-form"><span class="label simplicity">62</span> {{ titulos.p62 | raw }}</p>
+		<p class="tittle-form"><span class="label simplicity">55</span> {{ titulos.p55 | raw }}</p>
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p62a, 'numero': '62', 'letra': 'a', 'form': form.p62a} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p55a, 'numero': '55', 'letra': 'a', 'form': form.p55a} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p62b, 'numero': '62', 'letra': 'b', 'form': form.p62b} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p55b, 'numero': '55', 'letra': 'b', 'form': form.p55b} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p62c, 'numero': '62', 'letra': 'c', 'form': form.p62c} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p55c, 'numero': '55', 'letra': 'c', 'form': form.p55c} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p62d, 'numero': '62', 'letra': 'd', 'form': form.p62d} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p55d, 'numero': '55', 'letra': 'd', 'form': form.p55d} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p62e, 'numero': '62', 'letra': 'e', 'form': form.p62e} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p55e, 'numero': '55', 'letra': 'e', 'form': form.p55e} %}
 				
 	</div>
 		
-	<!-- Pregunta63 -->
-	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p63, 'numero': '63', 'form': form.p63, 'type': 'radio'} %}
+	<!-- Pregunta56 -->
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p56, 'numero': '56', 'form': form.p56, 'type': 'radio'} %}
 	
-	<!-- Pregunta64 -->
-	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p64, 'numero': '64', 'form': form.p64, 'type': 'radio'} %}	
-	
-	<!-- Pregunta65 -->
+	<!-- Pregunta57 -->
 	<div class="form-block">
-		<p class="tittle-form"><span class="label simplicity">65</span> {{ titulos.p65 | raw }}</p>
+		<p class="tittle-form"><span class="label simplicity">57</span> {{ titulos.p57 | raw }}</p>
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p65a, 'numero': '65', 'letra': 'a', 'form': form.p65a} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p57a, 'numero': '57', 'letra': 'a', 'form': form.p57a} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p65b, 'numero': '65', 'letra': 'b', 'form': form.p65b} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p57b, 'numero': '57', 'letra': 'b', 'form': form.p57b} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p65c, 'numero': '65', 'letra': 'c', 'form': form.p65c} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p57c, 'numero': '57', 'letra': 'c', 'form': form.p57c} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p65d, 'numero': '65', 'letra': 'd', 'form': form.p65d} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p57d, 'numero': '57', 'letra': 'd', 'form': form.p57d} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p65e, 'numero': '65', 'letra': 'e', 'form': form.p65e} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p57e, 'numero': '57', 'letra': 'e', 'form': form.p57e} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p65f, 'numero': '65', 'letra': 'f', 'form': form.p65f} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p57f, 'numero': '57', 'letra': 'f', 'form': form.p57f} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p65g, 'numero': '65', 'letra': 'g', 'form': form.p65g} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p57g, 'numero': '57', 'letra': 'g', 'form': form.p57g} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p65h, 'numero': '65', 'letra': 'h', 'form': form.p65h} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p57h, 'numero': '57', 'letra': 'h', 'form': form.p57h} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p65i, 'numero': '65', 'letra': 'i', 'form': form.p65i} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p57i, 'numero': '57', 'letra': 'i', 'form': form.p57i} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p65j, 'numero': '65', 'letra': 'j', 'form': form.p65j} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p57j, 'numero': '57', 'letra': 'j', 'form': form.p57j} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p65k, 'numero': '65', 'letra': 'k', 'form': form.p65k} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p57k, 'numero': '57', 'letra': 'k', 'form': form.p57k} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p65l, 'numero': '65', 'letra': 'l', 'form': form.p65l} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p57l, 'numero': '57', 'letra': 'l', 'form': form.p57l} %}
 				
 	</div>	
 
-	<!-- Pregunta66 -->
-	{% include 'preguntas/porcentaje1.html.twig' with {'titulo': titulos.p66, 'numero': '66', 'form': form.p66} %}
+	<!-- Pregunta58 -->
+	{% include 'preguntas/porcentaje1.html.twig' with {'titulo': titulos.p58, 'numero': '58', 'form': form.p58} %}
 	
-	<!-- Pregunta67 -->
-	{% include 'preguntas/porcentaje1.html.twig' with {'titulo': titulos.p67, 'numero': '67', 'form': form.p67} %}
-	
-	<!-- Pregunta68 -->
-	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p68, 'numero': '68', 'form': form.p68, 'type': 'radio'} %}	
+	<!-- Pregunta59 -->
+	{% include 'preguntas/porcentaje1.html.twig' with {'titulo': titulos.p59, 'numero': '59', 'form': form.p59} %}
 
-	<!-- Pregunta69 -->
-	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p69, 'numero': '69', 'form': form.p69, 'type': 'radio'} %}	
+	<!-- Pregunta60 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p60, 'numero': '60', 'form': form.p60, 'type': 'radio'} %}	
 
-	<!-- Pregunta70 -->
+	<!-- Pregunta61 -->
 	<div class="form-block">
-		<p class="tittle-form"><span class="label simplicity">70</span> {{ titulos.p70 | raw }}</p>
+		<p class="tittle-form"><span class="label simplicity">61</span> {{ titulos.p61 | raw }}</p>
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p70a, 'numero': '70', 'letra': 'a', 'form': form.p70a} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p61a, 'numero': '61', 'letra': 'a', 'form': form.p61a} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p70b, 'numero': '70', 'letra': 'b', 'form': form.p70b} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p61b, 'numero': '61', 'letra': 'b', 'form': form.p61b} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p70c, 'numero': '70', 'letra': 'c', 'form': form.p70c} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p61c, 'numero': '61', 'letra': 'c', 'form': form.p61c} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p70d, 'numero': '70', 'letra': 'd', 'form': form.p70d} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p61d, 'numero': '61', 'letra': 'd', 'form': form.p61d} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p70e, 'numero': '70', 'letra': 'e', 'form': form.p70e} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p61e, 'numero': '61', 'letra': 'e', 'form': form.p61e} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p70f, 'numero': '70', 'letra': 'f', 'form': form.p70f} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p61f, 'numero': '61', 'letra': 'f', 'form': form.p61f} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p70g, 'numero': '70', 'letra': 'g', 'form': form.p70g} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p61g, 'numero': '61', 'letra': 'g', 'form': form.p61g} %}
 				
 	</div>	
 	
@@ -690,59 +543,59 @@
 		<h4 class="tittle-section">{{ titulos.titulo7 | raw }}</h4>
 	</div>
 		
-	<!-- Pregunta71 -->
-	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p71, 'numero': '71', 'form': form.p71, 'type': 'radio'} %}	
+	<!-- Pregunta62 -->
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p62, 'numero': '62', 'form': form.p62, 'type': 'radio'} %}	
 	
+	<!-- Pregunta63 -->
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p63, 'numero': '63', 'form': form.p63, 'type': 'radio'} %}	
+
+	<!-- Pregunta64 -->
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p64, 'numero': '64', 'form': form.p64, 'type': 'radio'} %}	
+
+	<!-- Pregunta65 -->
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p65, 'numero': '65', 'form': form.p65, 'type': 'radio'} %}	
+
+	<!-- Pregunta66 -->
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p66, 'numero': '66', 'form': form.p66, 'type': 'radio'} %}	
+
+	<!-- Pregunta67 -->
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p67, 'numero': '67', 'form': form.p67, 'type': 'radio'} %}
+	
+	<!-- Pregunta68 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p68, 'numero': '68', 'form': form.p68, 'type': 'radio'} %}		
+
+	<!-- Pregunta69 -->
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p69, 'numero': '69', 'form': form.p69, 'type': 'radio'} %}
+
+	<!-- Pregunta70 -->
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p70, 'numero': '70', 'form': form.p70, 'type': 'radio'} %}
+
+	<!-- Pregunta71 -->
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p71, 'numero': '71', 'form': form.p71, 'type': 'radio'} %}
+
 	<!-- Pregunta72 -->
-	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p72, 'numero': '72', 'form': form.p72, 'type': 'radio'} %}	
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p72, 'numero': '72', 'form': form.p72, 'type': 'radio'} %}
 
 	<!-- Pregunta73 -->
-	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p73, 'numero': '73', 'form': form.p73, 'type': 'radio'} %}	
-
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p73, 'numero': '73', 'form': form.p73, 'type': 'radio'} %}		
+	
 	<!-- Pregunta74 -->
-	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p74, 'numero': '74', 'form': form.p74, 'type': 'radio'} %}	
-
-	<!-- Pregunta75 -->
-	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p75, 'numero': '75', 'form': form.p75, 'type': 'radio'} %}	
-
-	<!-- Pregunta76 -->
-	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p76, 'numero': '76', 'form': form.p76, 'type': 'radio'} %}
-	
-	<!-- Pregunta77 -->
-	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p77, 'numero': '77', 'form': form.p77, 'type': 'radio'} %}		
-
-	<!-- Pregunta78 -->
-	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p78, 'numero': '78', 'form': form.p78, 'type': 'radio'} %}
-
-	<!-- Pregunta79 -->
-	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p79, 'numero': '79', 'form': form.p79, 'type': 'radio'} %}
-
-	<!-- Pregunta80 -->
-	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p80, 'numero': '80', 'form': form.p80, 'type': 'radio'} %}
-
-	<!-- Pregunta81 -->
-	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p81, 'numero': '81', 'form': form.p81, 'type': 'radio'} %}
-
-	<!-- Pregunta82 -->
-	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p82, 'numero': '82', 'form': form.p82, 'type': 'radio'} %}		
-	
-	<!-- Pregunta83 -->
 	<div class="form-block">
-		<p class="tittle-form"><span class="label simplicity">83</span> {{ titulos.p83 | raw }}</p>
+		<p class="tittle-form"><span class="label simplicity">74</span> {{ titulos.p74 | raw }}</p>
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p83a, 'numero': '83', 'letra': 'a', 'form': form.p83a} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p74a, 'numero': '74', 'letra': 'a', 'form': form.p74a} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p83b, 'numero': '83', 'letra': 'b', 'form': form.p83b} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p74b, 'numero': '74', 'letra': 'b', 'form': form.p74b} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p83c, 'numero': '83', 'letra': 'c', 'form': form.p83c} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p74c, 'numero': '74', 'letra': 'c', 'form': form.p74c} %}
 		
-		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p83d, 'numero': '83', 'letra': 'd', 'form': form.p83d} %}
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p74d, 'numero': '74', 'letra': 'd', 'form': form.p74d} %}
 				
 	</div>	
 	
-	<!-- Pregunta84 -->
-	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p84, 'numero': '84', 'form': form.p84, 'type': 'radio'} %}		
-				
+	<!-- Pregunta75 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p75, 'numero': '75', 'form': form.p75, 'type': 'radio'} %}		
+	
 <!-- BUTTON -->
 <div class="form-block button-block">
 	<!-- Button (Double) -->

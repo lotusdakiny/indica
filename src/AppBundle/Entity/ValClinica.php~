@@ -1,0 +1,99 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="valclinica")
+ */
+class ValClinica
+{
+	/**
+	 * @ORM\Id
+	 * @ORM\Column(type="integer")
+	 * @ORM\GeneratedValue(strategy="AUTO")
+	 */
+	private $id;
+
+	/**
+	 * @ORM\Column(type="integer")
+	 */
+	private $userid;
+	
+	/**
+	 * @ORM\Column(type="string", length=50, nullable=true)
+	 */
+	private $p42;
+	
+	/**
+	 * @ORM\Column(type="string", length=50, nullable=true)
+	 */
+	private $p43;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p44a;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p44b;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p44c;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p44d;
+	
+	/**
+	 * @ORM\Column(type="string", length=100, nullable=true)
+	 */
+	private $p45;
+	
+	/**
+	 * @ORM\Column(type="string", length=60, nullable=true)
+	 */
+	private $p46;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p47;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p48;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p49;
+	
+	/**
+	 * @ORM\Column(type="string", length=80, nullable=true)
+	 */
+	private $p50;
+	
+	/**
+	 * @ORM\Column(type="string", length=120, nullable=true)
+	 */
+	private $p51;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p52;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p53;
+}
