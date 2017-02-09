@@ -29,6 +29,24 @@ class DefaultController extends Controller
 		// if user is logged, $user get user's object
 		$user = $this->get('security.token_storage')->getToken()->getUser();
 		
+		return $this->render('default/index.html.twig', array(
+				'user' => $user,
+		));
+	}
+	
+	/**
+	 * @Route("/cu")
+	 */
+	public function cuAction(Request $request)
+	{
+		//check if user is logged
+		if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+			throw $this->createAccessDeniedException();
+		}
+			
+		// if user is logged, $user get user's object
+		$user = $this->get('security.token_storage')->getToken()->getUser();
+		
 		// create an object of arrays of choices
 		$datas = new Datas();
 		
