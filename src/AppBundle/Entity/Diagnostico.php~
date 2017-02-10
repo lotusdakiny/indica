@@ -38,9 +38,9 @@ class Diagnostico
 	private $p17;
 	
 	/**
-	 * @ORM\Column(type="string", length=30, nullable=true)
+	 * @ORM\Column(type="array", nullable=true)
 	 */
-	private $p18;
+	private $p18 = array();
 	
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)
@@ -151,4 +151,662 @@ class Diagnostico
 	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
 	private $p23;
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set userid
+     *
+     * @param integer $userid
+     *
+     * @return Diagnostico
+     */
+    public function setUserid($userid)
+    {
+        $this->userid = $userid;
+
+        return $this;
+    }
+
+    /**
+     * Get userid
+     *
+     * @return integer
+     */
+    public function getUserid()
+    {
+        return $this->userid;
+    }
+
+    /**
+     * Set p15
+     *
+     * @param string $p15
+     *
+     * @return Diagnostico
+     */
+    public function setP15($p15)
+    {
+        $this->p15 = $p15;
+
+        return $this;
+    }
+
+    /**
+     * Get p15
+     *
+     * @return string
+     */
+    public function getP15()
+    {
+        return $this->p15;
+    }
+
+    /**
+     * Set p16
+     *
+     * @param string $p16
+     *
+     * @return Diagnostico
+     */
+    public function setP16($p16)
+    {
+        $this->p16 = $p16;
+
+        return $this;
+    }
+
+    /**
+     * Get p16
+     *
+     * @return string
+     */
+    public function getP16()
+    {
+        return $this->p16;
+    }
+
+    /**
+     * Set p17
+     *
+     * @param string $p17
+     *
+     * @return Diagnostico
+     */
+    public function setP17($p17)
+    {
+        $this->p17 = $p17;
+
+        return $this;
+    }
+
+    /**
+     * Get p17
+     *
+     * @return string
+     */
+    public function getP17()
+    {
+        return $this->p17;
+    }
+
+    /**
+     * Set p18
+     *
+     * @param string $p18
+     *
+     * @return Diagnostico
+     */
+    public function setP18($p18)
+    {
+        $this->p18 = $p18;
+
+        return $this;
+    }
+
+    /**
+     * Get p18
+     *
+     * @return string
+     */
+    public function getP18()
+    {
+        return $this->p18;
+    }
+
+    /**
+     * Set p19a
+     *
+     * @param string $p19a
+     *
+     * @return Diagnostico
+     */
+    public function setP19a($p19a)
+    {
+        $this->p19a = $p19a;
+
+        return $this;
+    }
+
+    /**
+     * Get p19a
+     *
+     * @return string
+     */
+    public function getP19a()
+    {
+        return $this->p19a;
+    }
+
+    /**
+     * Set p19b
+     *
+     * @param string $p19b
+     *
+     * @return Diagnostico
+     */
+    public function setP19b($p19b)
+    {
+        $this->p19b = $p19b;
+
+        return $this;
+    }
+
+    /**
+     * Get p19b
+     *
+     * @return string
+     */
+    public function getP19b()
+    {
+        return $this->p19b;
+    }
+
+    /**
+     * Set p19c
+     *
+     * @param string $p19c
+     *
+     * @return Diagnostico
+     */
+    public function setP19c($p19c)
+    {
+        $this->p19c = $p19c;
+
+        return $this;
+    }
+
+    /**
+     * Get p19c
+     *
+     * @return string
+     */
+    public function getP19c()
+    {
+        return $this->p19c;
+    }
+
+    /**
+     * Set p19d
+     *
+     * @param string $p19d
+     *
+     * @return Diagnostico
+     */
+    public function setP19d($p19d)
+    {
+        $this->p19d = $p19d;
+
+        return $this;
+    }
+
+    /**
+     * Get p19d
+     *
+     * @return string
+     */
+    public function getP19d()
+    {
+        return $this->p19d;
+    }
+
+    /**
+     * Set p19e
+     *
+     * @param string $p19e
+     *
+     * @return Diagnostico
+     */
+    public function setP19e($p19e)
+    {
+        $this->p19e = $p19e;
+
+        return $this;
+    }
+
+    /**
+     * Get p19e
+     *
+     * @return string
+     */
+    public function getP19e()
+    {
+        return $this->p19e;
+    }
+
+    /**
+     * Set p20
+     *
+     * @param array $p20
+     *
+     * @return Diagnostico
+     */
+    public function setP20($p20)
+    {
+        $this->p20 = $p20;
+
+        return $this;
+    }
+
+    /**
+     * Get p20
+     *
+     * @return array
+     */
+    public function getP20()
+    {
+        return $this->p20;
+    }
+
+    /**
+     * Set p20a
+     *
+     * @param string $p20a
+     *
+     * @return Diagnostico
+     */
+    public function setP20a($p20a)
+    {
+        $this->p20a = $p20a;
+
+        return $this;
+    }
+
+    /**
+     * Get p20a
+     *
+     * @return string
+     */
+    public function getP20a()
+    {
+        return $this->p20a;
+    }
+
+    /**
+     * Set p20b
+     *
+     * @param string $p20b
+     *
+     * @return Diagnostico
+     */
+    public function setP20b($p20b)
+    {
+        $this->p20b = $p20b;
+
+        return $this;
+    }
+
+    /**
+     * Get p20b
+     *
+     * @return string
+     */
+    public function getP20b()
+    {
+        return $this->p20b;
+    }
+
+    /**
+     * Set p20c
+     *
+     * @param string $p20c
+     *
+     * @return Diagnostico
+     */
+    public function setP20c($p20c)
+    {
+        $this->p20c = $p20c;
+
+        return $this;
+    }
+
+    /**
+     * Get p20c
+     *
+     * @return string
+     */
+    public function getP20c()
+    {
+        return $this->p20c;
+    }
+
+    /**
+     * Set p20d
+     *
+     * @param string $p20d
+     *
+     * @return Diagnostico
+     */
+    public function setP20d($p20d)
+    {
+        $this->p20d = $p20d;
+
+        return $this;
+    }
+
+    /**
+     * Get p20d
+     *
+     * @return string
+     */
+    public function getP20d()
+    {
+        return $this->p20d;
+    }
+
+    /**
+     * Set p20e
+     *
+     * @param string $p20e
+     *
+     * @return Diagnostico
+     */
+    public function setP20e($p20e)
+    {
+        $this->p20e = $p20e;
+
+        return $this;
+    }
+
+    /**
+     * Get p20e
+     *
+     * @return string
+     */
+    public function getP20e()
+    {
+        return $this->p20e;
+    }
+
+    /**
+     * Set p20f
+     *
+     * @param string $p20f
+     *
+     * @return Diagnostico
+     */
+    public function setP20f($p20f)
+    {
+        $this->p20f = $p20f;
+
+        return $this;
+    }
+
+    /**
+     * Get p20f
+     *
+     * @return string
+     */
+    public function getP20f()
+    {
+        return $this->p20f;
+    }
+
+    /**
+     * Set p20g
+     *
+     * @param string $p20g
+     *
+     * @return Diagnostico
+     */
+    public function setP20g($p20g)
+    {
+        $this->p20g = $p20g;
+
+        return $this;
+    }
+
+    /**
+     * Get p20g
+     *
+     * @return string
+     */
+    public function getP20g()
+    {
+        return $this->p20g;
+    }
+
+    /**
+     * Set p20h
+     *
+     * @param string $p20h
+     *
+     * @return Diagnostico
+     */
+    public function setP20h($p20h)
+    {
+        $this->p20h = $p20h;
+
+        return $this;
+    }
+
+    /**
+     * Get p20h
+     *
+     * @return string
+     */
+    public function getP20h()
+    {
+        return $this->p20h;
+    }
+
+    /**
+     * Set p21
+     *
+     * @param array $p21
+     *
+     * @return Diagnostico
+     */
+    public function setP21($p21)
+    {
+        $this->p21 = $p21;
+
+        return $this;
+    }
+
+    /**
+     * Get p21
+     *
+     * @return array
+     */
+    public function getP21()
+    {
+        return $this->p21;
+    }
+
+    /**
+     * Set p22a
+     *
+     * @param string $p22a
+     *
+     * @return Diagnostico
+     */
+    public function setP22a($p22a)
+    {
+        $this->p22a = $p22a;
+
+        return $this;
+    }
+
+    /**
+     * Get p22a
+     *
+     * @return string
+     */
+    public function getP22a()
+    {
+        return $this->p22a;
+    }
+
+    /**
+     * Set p22b
+     *
+     * @param string $p22b
+     *
+     * @return Diagnostico
+     */
+    public function setP22b($p22b)
+    {
+        $this->p22b = $p22b;
+
+        return $this;
+    }
+
+    /**
+     * Get p22b
+     *
+     * @return string
+     */
+    public function getP22b()
+    {
+        return $this->p22b;
+    }
+
+    /**
+     * Set p22c
+     *
+     * @param string $p22c
+     *
+     * @return Diagnostico
+     */
+    public function setP22c($p22c)
+    {
+        $this->p22c = $p22c;
+
+        return $this;
+    }
+
+    /**
+     * Get p22c
+     *
+     * @return string
+     */
+    public function getP22c()
+    {
+        return $this->p22c;
+    }
+
+    /**
+     * Set p22d
+     *
+     * @param string $p22d
+     *
+     * @return Diagnostico
+     */
+    public function setP22d($p22d)
+    {
+        $this->p22d = $p22d;
+
+        return $this;
+    }
+
+    /**
+     * Get p22d
+     *
+     * @return string
+     */
+    public function getP22d()
+    {
+        return $this->p22d;
+    }
+
+    /**
+     * Set p22e
+     *
+     * @param string $p22e
+     *
+     * @return Diagnostico
+     */
+    public function setP22e($p22e)
+    {
+        $this->p22e = $p22e;
+
+        return $this;
+    }
+
+    /**
+     * Get p22e
+     *
+     * @return string
+     */
+    public function getP22e()
+    {
+        return $this->p22e;
+    }
+
+    /**
+     * Set p22f
+     *
+     * @param string $p22f
+     *
+     * @return Diagnostico
+     */
+    public function setP22f($p22f)
+    {
+        $this->p22f = $p22f;
+
+        return $this;
+    }
+
+    /**
+     * Get p22f
+     *
+     * @return string
+     */
+    public function getP22f()
+    {
+        return $this->p22f;
+    }
+
+    /**
+     * Set p23
+     *
+     * @param string $p23
+     *
+     * @return Diagnostico
+     */
+    public function setP23($p23)
+    {
+        $this->p23 = $p23;
+
+        return $this;
+    }
+
+    /**
+     * Get p23
+     *
+     * @return string
+     */
+    public function getP23()
+    {
+        return $this->p23;
+    }
 }

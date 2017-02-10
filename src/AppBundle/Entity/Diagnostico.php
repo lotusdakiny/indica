@@ -38,9 +38,9 @@ class Diagnostico
 	private $p17;
 	
 	/**
-	 * @ORM\Column(type="string", length=30, nullable=true)
+	 * @ORM\Column(type="array", nullable=true)
 	 */
-	private $p18;
+	private $p18 = array();
 	
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)
@@ -66,51 +66,11 @@ class Diagnostico
 	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
 	private $p19e;
-	
+		
 	/**
 	 * @ORM\Column(type="array", nullable=true)
 	 */
 	private $p20 = array();
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p20a;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p20b;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p20c;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p20d;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p20e;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p20f;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p20g;
-	
-	/**
-	 * @ORM\Column(type="string", length=10, nullable=true)
-	 */
-	private $p20h;
 	
 	/**
 	 * @ORM\Column(type="array", nullable=true)

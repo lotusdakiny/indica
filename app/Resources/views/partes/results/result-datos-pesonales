@@ -1,0 +1,16 @@
+<!-- Pregunta0 -->
+<div class="form-block">
+	<p class="tittle-form"><span class="label simplicity">0</span> {{ titulos.p0 | raw }}</p>
+	
+	{% include 'results/oneline.html.twig' with {'titulo': titulos.p0a, 'letra': 'a', 'result': datos.p0a} %}
+	
+{#
+	{% include 'preguntas/line.html.twig' with {'titulo': titulos.p19b, 'numero': '19', 'letra': 'b', 'form': form.p19b} %}
+	
+	{% include 'preguntas/line.html.twig' with {'titulo': titulos.p19c, 'numero': '19', 'letra': 'c', 'form': form.p19c} %}
+	
+	{% include 'preguntas/line.html.twig' with {'titulo': titulos.p19d, 'numero': '19', 'letra': 'd', 'form': form.p19d} %}
+	
+	{% include 'preguntas/line.html.twig' with {'titulo': titulos.p19e, 'numero': '19', 'letra': 'e', 'form': form.p19e} %}
+#}	
+</div>	

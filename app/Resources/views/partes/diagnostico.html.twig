@@ -4,6 +4,13 @@
 {% block submenu %}
 
 	<a href="datos-personales">Datos personales</a>
+	<a href="epidemiologia">Epidemiologia</a>
+	<a href="diagnostico">Diagnostico</a>
+	<a href="tratamiento">Tratamiento</a>
+	<a href="manejo">Manejo</a>
+	<a href="val-clinica">Val Clinica</a>
+	<a href="val-terapeutica">Val Terapeutica</a>
+	<a href="calidad">Calidad</a>
 
 {% endblock %}
 
@@ -23,7 +30,7 @@
 	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p17, 'numero': '17', 'form': form.p17, 'type': 'radio'} %}
 	
 	<!-- Pregunta18 -->
-	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p18, 'numero': '18', 'form': form.p18, 'type': 'radio'} %}
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p18, 'numero': '18', 'form': form.p18, 'type': 'checkbox'} %}	
 
 	<!-- Pregunta19 -->
 	<div class="form-block">
@@ -42,32 +49,7 @@
 	</div>			
 
 	<!-- Pregunta20 -->
-	<div class="form-block">
-		<p class="tittle-form"><span class="label simplicity">20</span> {{ titulos.p20 | raw }}</p>
-
-		<div class="form-group">
-			<label class="col-md-4"></label>
-			<label class="col-md-6"></label>
-			<label class="col-md-2"><center>Disponibilidad en mi centro</center></label>
-		</div>	
-		
-		{% include 'preguntas/pregunta20.html.twig' with {'titulo': titulos.p20a, 'form': form.p20a, 'formd': form.p20.0, 'letra': 'a', 'numero': '0'} %}		
-		
-		{% include 'preguntas/pregunta20.html.twig' with {'titulo': titulos.p20b, 'form': form.p20b, 'formd': form.p20.1, 'letra': 'b', 'numero': '1'} %}
-		
-		{% include 'preguntas/pregunta20.html.twig' with {'titulo': titulos.p20c, 'form': form.p20c, 'formd': form.p20.2, 'letra': 'c', 'numero': '2'} %}
-		
-		{% include 'preguntas/pregunta20.html.twig' with {'titulo': titulos.p20d, 'form': form.p20d, 'formd': form.p20.3, 'letra': 'd', 'numero': '3'} %}
-		
-		{% include 'preguntas/pregunta20.html.twig' with {'titulo': titulos.p20e, 'form': form.p20e, 'formd': form.p20.4, 'letra': 'e', 'numero': '4'} %}
-		
-		{% include 'preguntas/pregunta20.html.twig' with {'titulo': titulos.p20f, 'form': form.p20f, 'formd': form.p20.5, 'letra': 'f', 'numero': '5'} %}
-		
-		{% include 'preguntas/pregunta20.html.twig' with {'titulo': titulos.p20g, 'form': form.p20g, 'formd': form.p20.6, 'letra': 'g', 'numero': '6'} %}
-		
-		{% include 'preguntas/pregunta20.html.twig' with {'titulo': titulos.p20h, 'form': form.p20h, 'formd': form.p20.7, 'letra': 'h', 'numero': '7'} %}
-												
-	</div>
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p20, 'numero': '20', 'form': form.p20, 'type': 'checkbox'} %}	
 	
 	<!-- Pregunta21 -->
 	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p21, 'numero': '21', 'form': form.p21, 'type': 'checkbox'} %}	

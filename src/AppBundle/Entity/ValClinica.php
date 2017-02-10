@@ -58,9 +58,9 @@ class ValClinica
 	private $p45;
 	
 	/**
-	 * @ORM\Column(type="string", length=60, nullable=true)
+	 * @ORM\Column(type="array", nullable=true)
 	 */
-	private $p46;
+	private $p46 = array();
 	
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)

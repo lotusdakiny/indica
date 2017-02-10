@@ -1,0 +1,70 @@
+{# app/Resources/views/default/index.html.twig #}
+{% extends 'partes/basepartes.html.twig' %}
+	
+{% block submenu %}
+
+	<a href="datos-personales">Datos personales</a>
+	<a href="epidemiologia">Epidemiologia</a>
+	<a href="diagnostico">Diagnostico</a>
+	<a href="tratamiento">Tratamiento</a>
+	<a href="manejo">Manejo</a>
+	<a href="val-clinica">Val Clinica</a>
+	<a href="val-terapeutica">Val Terapeutica</a>
+	<a href="calidad">Calidad</a>
+
+{% endblock %}
+
+{% block form %}		
+				
+	<div class="form-block">
+		<h4 class="tittle-section">{{ titulos.titulo5 | raw }}</h4>
+	</div>
+	
+	<!-- Pregunta42 -->
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p42, 'numero': '42', 'form': form.p42, 'type': 'radio'} %}
+	
+	<!-- Pregunta43 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p43, 'numero': '43', 'form': form.p43, 'type': 'radio'} %}	
+
+	<!-- Pregunta44 -->
+	<div class="form-block">
+		<p class="tittle-form"><span class="label simplicity">44</span> {{ titulos.p44 | raw }}</p>
+		
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p44a, 'numero': '44', 'letra': 'a', 'form': form.p44a} %}
+		
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p44b, 'numero': '44', 'letra': 'b', 'form': form.p44b} %}
+		
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p44c, 'numero': '44', 'letra': 'c', 'form': form.p44c} %}
+		
+		{% include 'preguntas/line.html.twig' with {'titulo': titulos.p44d, 'numero': '44', 'letra': 'd', 'form': form.p44d} %}
+				
+	</div>
+	
+	<!-- Pregunta45 -->
+	{% include 'preguntas/porcentaje1.html.twig' with {'titulo': titulos.p45, 'numero': '45', 'form': form.p45} %}
+	
+	<!-- Pregunta46 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p46, 'numero': '46', 'form': form.p46, 'type': 'checkbox'} %}
+	
+	<!-- Pregunta47 -->
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p47, 'numero': '47', 'form': form.p47, 'type': 'radio'} %}	
+	
+	<!-- Pregunta48 -->
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p48, 'numero': '48', 'form': form.p48, 'type': 'radio'} %}
+	
+	<!-- Pregunta49 -->
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p49, 'numero': '49', 'form': form.p49, 'type': 'radio'} %}
+	
+	<!-- Pregunta50 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p50, 'numero': '50', 'form': form.p50, 'type': 'radio'} %}	
+	
+	<!-- Pregunta51 -->
+	{% include 'preguntas/column.html.twig' with {'titulo': titulos.p51, 'numero': '51', 'form': form.p51, 'type': 'radio'} %}	
+	
+	<!-- Pregunta52 -->
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p52, 'numero': '52', 'form': form.p52, 'type': 'radio'} %}
+	
+	<!-- Pregunta53 -->
+	{% include 'preguntas/sino.html.twig' with {'titulo': titulos.p53, 'numero': '53', 'form': form.p53, 'type': 'radio'} %}
+
+{% endblock %}

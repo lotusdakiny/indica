@@ -4,6 +4,13 @@
 {% block submenu %}
 
 	<a href="datos-personales">Datos personales</a>
+	<a href="epidemiologia">Epidemiologia</a>
+	<a href="diagnostico">Diagnostico</a>
+	<a href="tratamiento">Tratamiento</a>
+	<a href="manejo">Manejo</a>
+	<a href="val-clinica">Val Clinica</a>
+	<a href="val-terapeutica">Val Terapeutica</a>
+	<a href="calidad">Calidad</a>
 
 {% endblock %}
 
@@ -16,32 +23,15 @@
 	<!-- Pregunta0.A -->
 	<div class="form-block">
 
-		<div class="form-group">
-			<label class="col-md-8 control-label" for="textinput"><span class="badge">A</span> {{ titulos.p0a | raw }}</label>
-			<div class="col-md-2">
-				{% for var in form.p0a %}
-					<label class="radio-inline" for="form_p0a_{{ loop.index0 }}">
-						{{ form_widget(var) }}
-						<label for="form_p0a_{{ loop.index0 }}">&nbsp;</label>
-						<span>{{ form_label(var) }}</span>
-					</label>
-				{% endfor %}		
-			</div>
-		</div>	
+		{% if form is defined %}
 		
-		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p0b, 'letra': 'b', 'form': form.p0b} %}
+	    	{% include 'partes/formularios/formulario-datos-personales.html.twig' %}
+	    	
+		{% elseif datos is defined %}
 		
-		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p0c, 'letra': 'c', 'form': form.p0c} %}
-
-		<div class="form-group">
-			<label class="col-md-8 control-label" for="textinput"><span class="badge">D</span> {{ titulos.p0d | raw }}</label>			
-			<div class="col-md-3">
-					{{ form_errors(form.p0d) }}
-					{{ form_widget(form.p0d, {'attr': {'class': 'form-control input-sm'}}) }}		
-			</div>
-		</div>	
-		
-		{% include 'preguntas/lineporcentaje.html.twig' with {'titulo': titulos.p0e, 'letra': 'e', 'form': form.p0e} %}
+			{% include 'partes/results/result-datos-personales.html.twig' %}
+	
+		{% endif %}
 		
 	</div>
 

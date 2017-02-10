@@ -59,6 +59,39 @@ class Datas
 		return $choices;
 	}
 	
+	public function getChoices_porcentaje0()
+	{
+		$choices = array(
+				'choices'  => array(
+						'0' => 0,
+						'5' => 5,
+						'10' => 10,
+						'15' => 15,
+						'20' => 20,
+						'25' => 25,
+						'30' => 30,
+						'35' => 35,
+						'40' => 40,
+						'45' => 45,
+						'50' => 50,
+						'55' => 55,
+						'60' => 60,
+						'65' => 65,
+						'70' => 70,
+						'75' => 75,
+						'80' => 80,
+						'85' => 85,
+						'90' => 90,
+						'95' => 95,
+						'100' => 100,
+				),
+				'multiple'=>false,
+				'expanded'=>false,
+		);
+	
+		return $choices;
+	}
+	
 	public function getChoices_porcentaje()
 	{
 		$choices_porcentaje = array(
@@ -129,21 +162,6 @@ class Datas
 		return $choices_p3;
 	}
 	
-	public function getChoices_p5()
-	{
-		$choices_p5 = array('choices' => array(
-				'A' => utf8_encode('40-50 años'),
-				'B' => utf8_encode('50-60 años'),
-				'C' => utf8_encode('60-70 años'),
-				'D' => utf8_encode('>70 años'),
-		),
-				'multiple'=>false,
-				'expanded'=>true
-		);
-	
-		return $choices_p5;
-	}
-	
 	public function getChoices_p6()
 	{
 		$choices_p6 = array('choices' => array(
@@ -210,10 +228,10 @@ class Datas
 	public function getChoices_p17()
 	{
 		$choices = array('choices' => array(
-				'A' => utf8_encode('Una FE del VI < 50%.'),
-				'B' => utf8_encode('Una FE del VI < 40%.'),
-				'C' => utf8_encode('Una FE del VI < 35%.'),
-				'D' => utf8_encode('Una FE del VI < 45%.'),
+				'A' => utf8_encode('< 50%.'),
+				'B' => utf8_encode('< 40%.'),
+				'C' => utf8_encode('< 35%.'),
+				'D' => utf8_encode('< 45%.'),
 		), 'multiple'=>false, 'expanded'=>true );
 		return $choices;
 	}
@@ -227,29 +245,23 @@ class Datas
 				'D' => utf8_encode('ECG'),
 				'E' => utf8_encode('Rx de tórax'),
 				'F' => utf8_encode('Analítica general'),
-		), 'multiple'=>false, 'expanded'=>true );
+		), 'multiple'=>true, 'expanded'=>true );
 		return $choices;
 	}
 	
 	public function getChoices_p20()
 	{
-		$choices_porcentaje = array(
-				'choices'  => array(
-						'a' => 'a',
-						'b' => 'b',
-						'c' => 'c',
-						'd' => 'd',
-						'e' => 'e',
-						'f' => 'f',
-						'g' => 'g',
-						'h' => 'h',
-				),
-				'multiple'=>true,
-				'expanded'=>true,
-				'required' => false,
-		);
-	
-		return $choices_porcentaje;
+		$choices = array('choices' => array(
+				'A' => utf8_encode('Radiografía de tórax'),
+				'B'=>utf8_encode('Ecocardiograma transtorácico'),
+				'C'=>utf8_encode('Ecocardiograma transesofágico'),
+				'D'=>utf8_encode('Resonancia magnética cardíaca'),
+				'E'=>utf8_encode('SPECT'),
+				'F'=>utf8_encode('Tomografía por emisión de positrones (PET)'),
+				'G'=>utf8_encode('Angiografía coronaria'),
+				'H'=>utf8_encode('Tomografía cardíaca computerizada'),		
+		), 'multiple'=>true, 'expanded'=>true );
+		return $choices;
 	}
 	
 /*	public function getChoices_p21()
@@ -489,7 +501,7 @@ class Datas
 				'D' => utf8_encode('Consulta de Enfermería especializada'),
 				'E' => utf8_encode('Educación del paciente'),
 				'F' => utf8_encode('Otras'),
-		), 'multiple'=>false, 'expanded'=>true );
+		), 'multiple'=>true, 'expanded'=>true );
 		return $choices;
 	}
 	
@@ -573,6 +585,10 @@ class Datas
 				'p3'=>utf8_encode('De sus pacientes con IC, ¿qué porcentaje son mujeres?'),
 				'p4'=>utf8_encode('¿Cuál considera que es la edad media de sus pacientes con IC?'),
 				'p5'=>utf8_encode('¿Cómo se distribuyen por edades sus pacientes con IC? Indique el porcentaje'),
+				'p5a'=>utf8_encode('40-50 años'),
+				'p5b'=>utf8_encode('50-60 años'),
+				'p5c'=>utf8_encode('60-70 años'),
+				'p5d'=>utf8_encode('>70 años'),
 				'p6'=>utf8_encode('¿Qué porcentaje de sus pacientes con IC y FEVI reducida tienen ICC estable, entendida como ICC sin cambios en el último mes?'),
 				'p7'=>utf8_encode('¿Qué porcentaje de sus pacientes con IC tienen FEVI reducida en tratamiento actual?'),
 				'p8'=>utf8_encode('¿Cuál es, en su opinión, la causa más frecuente de agudización de la IC en pacientes con FEVI reducida?'),
@@ -591,24 +607,14 @@ class Datas
 				'p15'=>utf8_encode('A la hora de realizar un diagnóstico, ¿se suele basar en alguna Guía de Práctica Clínica, Protocolo de Actuación/Algoritmo de Decisión (PA)?'),
 				'p16'=>utf8_encode('En caso afirmativo, ¿cuál es su preferida?'),
 				'p17'=>utf8_encode('¿Qué considera una FEVI reducida?'),
-				'p18'=>utf8_encode('¿Cuáles son en su opinión las pruebas diagnósticas que deberían realizarse de rutina en todo pacientes con IC?'),
+				'p18'=>utf8_encode('¿Cuáles son en su opinión las pruebas diagnósticas que deberían realizarse de rutina en todo pacientes con IC? (señale todas las que considere adecuadas):'),
 				'p19'=>utf8_encode('Con respecto a los péptidos natriuréticos, señale su acuerdo o disconformidad con las siguientes afirmaciones. (Valore por favor del 1 al 9, siendo 9 el valor máximo):'),
 				'p19a'=>utf8_encode('Deberían determinarse ante todo paciente con disnea.'),
 				'p19b'=>utf8_encode('Sólo deberían solicitarlo cardiólogos o personal dedicado al manejo de la insuficiencia cardiaca, para evitar errores en su interpretación.'),
 				'p19c'=>utf8_encode('Deberían solicitarse a todos los pacientes con edemas en EEII.'),
 				'p19d'=>utf8_encode('Ante un valor intermedio debe considerarse igualmente la IC como principal sospecha diagnóstica.'),
 				'p19e'=>utf8_encode('Son útiles para valorar la eficacia del tratamiento.'),				
-				'p20'=>utf8_encode('¿Cómo valoraría del 1 al 9 (9= máxima puntuación) las disponibilidad de las distintas pruebas de imagen cardíaca en IC?'),
-				'p20a'=>utf8_encode('Radiografía de tórax'),
-				'p20b'=>utf8_encode('Ecocardiograma transtorácico'),
-				'p20c'=>utf8_encode('Ecocardiograma transesofágico'),
-				'p20d'=>utf8_encode('Resonancia magnética cardíaca'),
-				'p20e'=>utf8_encode('SPECT'),
-				'p20f'=>utf8_encode('Tomografía por emisión de positrones (PET)'),
-				'p20g'=>utf8_encode('Angiografía coronaria'),
-				'p20h'=>utf8_encode('Tomografía cardíaca computerizada'),
-				'p20titulo1'=>utf8_encode('Utilidad'),
-				'p20titulo2'=>utf8_encode('Disponibilidad en mi centro'),
+				'p20'=>utf8_encode('¿Tiene disponible las distintas pruebas de imagen cardíaca en IC?'),
 				'p21'=>utf8_encode('¿A qué pacientes con ICC solicita usted una resonancia magnética cardiaca? (señale todas las que considere adecuadas):'),
 				'p22'=>utf8_encode('¿En qué porcentaje de sus pacientes con IC evalúa usted?...'),
 				'p22a'=>utf8_encode('Los niveles de ferritina'),
@@ -689,7 +695,7 @@ class Datas
 				'p44c'=>utf8_encode('Exigencias de tratamiento de los pacientes'),
 				'p44d'=>utf8_encode('Experiencia de otros colegas'),
 				'p45'=>utf8_encode('Habitualmente, ¿cuánto tiempo de consulta dedica a un "paciente tipo" con ICC? (indicar en minutos)'),
-				'p46'=>utf8_encode('¿De qué tipo es la información que da al paciente acerca de la enfermedad  y su alcance?'),
+				'p46'=>utf8_encode('¿De qué tipo es la información que da al paciente acerca de la enfermedad  y su alcance? (señale todas las que considere adecuadas):'),
 				'p47'=>utf8_encode('A la hora de tratar a su paciente, ¿en qué medida tiene en cuenta el grado de conocimiento de la enfermedad y del tratamiento por parte del paciente? Valorar del 1  al  9 (siendo 9 el valor más elevado)'),
 				'p48'=>utf8_encode('A la hora de tratar a su paciente, ¿en qué medida tiene en cuenta el estilo de vida del paciente? Valorar del 1  al  9 (siendo 9 el valor más elevado)'),
 				'p49'=>utf8_encode('A la hora de tratar a su paciente, ¿en qué medida tiene en cuenta el entorno familiar del paciente? Valorar del 1  al  9 (siendo 9 el valor más elevado)'),
@@ -720,7 +726,7 @@ class Datas
 				'p57k'=>utf8_encode('Falta de apoyo familiar'),
 				'p57l'=>utf8_encode('Nivel socioeconómico bajo'),
 				'p58'=>utf8_encode('¿Podría estimar cuántos fármacos en total están tomando como media sus pacientes con IC?: (indicar número medio)'),
-				'p59'=>utf8_encode('¿Podría estimar cuántos comprimidos en total están tomando sus pacientes con IC (de media)?'),
+				'p59'=>utf8_encode('¿Podría estimar cuántos comprimidos en total están tomando sus pacientes con IC (de media al día)?'),
 				'p60'=>utf8_encode('¿Cuál es, en su opinión, el principal factor que determina la falta de adherencia al tratamiento en pacientes con ICC?'),
 				'p61'=>utf8_encode('¿Sobre qué factores hay que incidir, en su opinión, para mejorar la falta de adherencia? Valore cada uno de los puntos del 1 (nada) al 9 (completamente):'),
 				'p61a'=>utf8_encode('Número de tomas al día'),
@@ -748,7 +754,7 @@ class Datas
 				'p74b'=>utf8_encode('Formación sobre seguridad y efectos adversos de tratamientos'),
 				'p74c'=>utf8_encode('Talleres prácticos con situaciones y casos clínicos'),
 				'p74d'=>utf8_encode('Otros'),
-				'p75'=>utf8_encode('¿Qué iniciativas considera adecuadas para optimizar el conocimiento sobre la IC y su tratamiento en España?'),
+				'p75'=>utf8_encode('¿Qué iniciativas considera adecuadas para optimizar el conocimiento sobre la IC y su tratamiento en España? (señale todas las que considere adecuadas):'),
 				'webinar'=>utf8_encode('Elige tu webinar'),
 		);
 		return $titulos_cuestionario;

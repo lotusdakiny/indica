@@ -80,7 +80,22 @@ class Epidemiologia
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)
 	 */
-	private $p5;
+	private $p5a;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p5b;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p5c;
+	
+	/**
+	 * @ORM\Column(type="string", length=10, nullable=true)
+	 */
+	private $p5d;
 	
 	/**
 	 * @ORM\Column(type="string", length=10, nullable=true)
@@ -441,27 +456,99 @@ class Epidemiologia
     }
 
     /**
-     * Set p5
+     * Set p5a
      *
-     * @param string $p5
+     * @param string $p5a
      *
      * @return Epidemiologia
      */
-    public function setP5($p5)
+    public function setP5a($p5a)
     {
-        $this->p5 = $p5;
+        $this->p5a = $p5a;
 
         return $this;
     }
 
     /**
-     * Get p5
+     * Get p5a
      *
      * @return string
      */
-    public function getP5()
+    public function getP5a()
     {
-        return $this->p5;
+        return $this->p5a;
+    }
+
+    /**
+     * Set p5b
+     *
+     * @param string $p5b
+     *
+     * @return Epidemiologia
+     */
+    public function setP5b($p5b)
+    {
+        $this->p5b = $p5b;
+
+        return $this;
+    }
+
+    /**
+     * Get p5b
+     *
+     * @return string
+     */
+    public function getP5b()
+    {
+        return $this->p5b;
+    }
+
+    /**
+     * Set p5c
+     *
+     * @param string $p5c
+     *
+     * @return Epidemiologia
+     */
+    public function setP5c($p5c)
+    {
+        $this->p5c = $p5c;
+
+        return $this;
+    }
+
+    /**
+     * Get p5c
+     *
+     * @return string
+     */
+    public function getP5c()
+    {
+        return $this->p5c;
+    }
+
+    /**
+     * Set p5d
+     *
+     * @param string $p5d
+     *
+     * @return Epidemiologia
+     */
+    public function setP5d($p5d)
+    {
+        $this->p5d = $p5d;
+
+        return $this;
+    }
+
+    /**
+     * Get p5d
+     *
+     * @return string
+     */
+    public function getP5d()
+    {
+        return $this->p5d;
     }
 
     /**

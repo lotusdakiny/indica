@@ -103,9 +103,9 @@ class Calidad
 	private $p74d;
 	
 	/**
-	 * @ORM\Column(type="string", length=60, nullable=true)
+	 * @ORM\Column(type="array", nullable=true)
 	 */
-	private $p75;
+	private $p75 = array();
 	
 
     /**
